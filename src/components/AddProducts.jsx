@@ -43,9 +43,14 @@ function AddProducts() {
     }
   return (
     <div>
-        <div className="p-5 bg-light">
-            <form action="">
-                <div className="p-4 w-50">
+        <div className="p-3 bg-light">
+            <div className='p-3'>
+                <h4 className='text-center text-primary'>Create New Product</h4>
+            </div>
+            <form action="" className=" d-flex justify-content-center">
+                
+                <div className="p-5 w-50 border border-3">
+                    
                     <label htmlFor="" className="form-label">Image Url</label>
                     <input type="text" className="form-control" onChange={handlChange} name="image_url" placeholder="https://...." />
                     <label htmlFor="" className="form-label mt-3">Title </label>
