@@ -4,7 +4,9 @@ import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 function AddProducts() {
+    // product state to get products details 
     const [product, setProduct] = useState({image_url:"", title:"", description:"", price:""})
+    // get product info
     const handlChange= (e)=>{
         setProduct(old=>({
             ...old,
@@ -13,16 +15,17 @@ function AddProducts() {
     }
 
     const navigate = useNavigate()
+    // add product to data base
     const valider =(e)=>{
         e.preventDefault()
-        console.log(product);
+        // check the use fill out the form  
         if(product.image_url !=="" && product.title!=="" && product.description !== "" && product.price !== ""){
-        console.log("first")
             let formdata = new FormData()
             formdata.append("img_url",product.image_url)
             formdata.append("title",product.title)
             formdata.append("description",product.description)
             formdata.append("price", product.price);
+            // send the data to the php file 
             axios.post("http://localhost/php/w3ista/AddProducts.php", formdata).then(
                 (res)=>{
                     console.log(res.data)
@@ -30,7 +33,7 @@ function AddProducts() {
                         alert("Product added Successfully 👌")
                         navigate("/products");
                     }else{
-
+                        alert("error was detected !")
                     }
                 }
             );
