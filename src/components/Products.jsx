@@ -39,13 +39,17 @@ function Products() {
                     <div className="p-1">
                       <h6 className="p-0 mb-2 opacity-75">
                         {
-                          // check if the title is very long 
-                          item.title.length>30? item.title.slice(0,30)+ "...":item.title 
+                          // check if the title is very long
+                          item.title.length > 30
+                            ? item.title.slice(0, 30) + "..."
+                            : item.title
                         }
                       </h6>
                       <span className="mt-3">
                         <h5>
-                          <i><b>{item.price} Dhs</b></i>
+                          <i>
+                            <b>{item.price} Dhs</b>
+                          </i>
                         </h5>
                       </span>
                     </div>

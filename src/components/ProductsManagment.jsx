@@ -20,10 +20,11 @@ function ProductsManagment() {
       );
     })
 
-    const deleteProducts=(Idd)=>{
+    // delete product using his Id 
+    const deleteProducts=(product_id)=>{
       const format = new FormData()
-      console.log(Idd)
-      format.append("productId",Idd)
+      console.log(product_id)
+      format.append("productId",product_id)
       axios.post(`http://localhost/php/w3ista/deleteProduct.php` , format).then(
         (res)=>{
           console.log(res)
@@ -36,15 +37,15 @@ function ProductsManagment() {
       {!userData.isConnected ? (
         <div>
           <div>
-            <Link to="/addproduct" className="btn btn-primary">
-              New Product
+            <Link to="/addproduct" className="p-2">
+              Create New Product
             </Link>
-            <div>
+            <div className="mt-4">
               {products.length > 0 ? (
                 <div>
-                  <h6 className="text-center m-3">Products :</h6>
+                  {/* <h6 className="text-center m-3">Products :</h6> */}
                   <div className="p-2">
-                    <table className="table border border-2 tabel-hovered table-bordered">
+                    <table className="table  tabel-hovered table-bordered">
                       <tr>
                         <th>Id</th>
                         <th>Image URL</th>
@@ -55,15 +56,30 @@ function ProductsManagment() {
                       </tr>
                       {products.map((item) => (
                         <tr>
-                          <td >{item.id}</td>
-                          <td className='w-25 p-4'>{item.img_url}</td>
+                          <td>{item.id}</td>
+                          <td className="p-4">
+                            <img src={item.img_url} alt="" className='productmanagementImage'/>
+                          </td>
                           <td>{item.title}</td>
                           <td>{item.description}</td>
-                          <td>{item.price}</td>
+                          <td>{item.price} Dhs</td>
                           <td>
-                            <button className="btn bg-primary btn-primary m-2">Edit</button>
-                            <button className="btn bg-danger btn-danger"  onClick={
-                              () => { if (window.confirm('Are you sure you wish to delete this item?')) deleteProducts(item.id) } }>Delete</button>
+                            <button className="btn bg-primary btn-primary m-2">
+                              Edit
+                            </button>
+                            <button
+                              className="btn bg-danger btn-danger"
+                              onClick={() => {
+                                if (
+                                  window.confirm(
+                                    "Are you sure you wish to delete this item?"
+                                  )
+                                )
+                                  deleteProducts(item.id);
+                              }}
+                            >
+                              Delete
+                            </button>
                           </td>
                         </tr>
                       ))}
