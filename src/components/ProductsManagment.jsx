@@ -32,6 +32,13 @@ function ProductsManagment() {
         }
       )
     }
+
+    const updateProduct = (product)=>{
+      navigate(`/update`,{
+        state: product
+      });
+
+    }
   return (
     <div>
       {!userData.isConnected ? (
@@ -64,8 +71,8 @@ function ProductsManagment() {
                           <td>{item.description}</td>
                           <td>{item.price} Dhs</td>
                           <td>
-                            <button className="btn bg-primary btn-primary m-2">
-                              Edit
+                            <button className="btn bg-primary btn-primary m-2" onClick={()=>updateProduct(item)}>
+                              update
                             </button>
                             <button
                               className="btn bg-danger btn-danger"
