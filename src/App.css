@@ -46,8 +46,6 @@
 }
 
 .box_shadow_card{
-  box-shadow: 1px 5px 26px -8px rgba(0, 0, 0, 0.54);
-    -webkit-box-shadow: 1px 5px 26px -8px rgba(0, 0, 0, 0.54);
-    -moz-box-shadow: 1px 5px 26px -8px rgba(0, 0, 0, 0.54);
-    width: 32% !important;
+  box-shadow: 1px 5px 14px -8px rgb(0 0 0 / 54%);
+    width: 20% !important;
 }

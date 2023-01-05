@@ -3,6 +3,7 @@ import axios from "axios"
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setUserInfo} from "./reducers/UserReducer";
+import {useNavigate} from "react-router-dom";
 function Products() {
   const [products, setProducts] = useState([]);
   const [user, setUser] = useState({});
@@ -15,11 +16,16 @@ function Products() {
     });
   }, []);
 
+  const navigate = useNavigate()
+  // If the use not connected navigate to the sign in page 
+  const navigateToSignUp = ()=>{
+    navigate("/signIn");
+  }
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
       {!userData.isConnected ? (
-        <div className="p-2 m-0 row d-flex justify-content-between flex-wrap w-100">
+        <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (
               <div className="p-3 m-2 bg-light rounded-3 box_shadow_card ">
@@ -31,10 +37,16 @@ function Products() {
                       className="w-100 rounded-3"
                     />
                     <div className="p-1">
-                      <h6 className="p-0 m-0 ">{item.title}</h6>
-                      <p className="opacity-75 p-0 m-0">{item.description} </p>
-                      <span className="p-0 m-0">
-                        <i>{item.price}</i>
+                      <h6 className="p-0 mb-2 opacity-75">
+                        {
+                          // check if the title is very long 
+                          item.title.length>30? item.title.slice(0,30)+ "...":item.title 
+                        }
+                      </h6>
+                      <span className="mt-3">
+                        <h5>
+                          <i><b>{item.price} Dhs</b></i>
+                        </h5>
                       </span>
                     </div>
                     <div className="text-end">
@@ -51,7 +63,7 @@ function Products() {
           )}
         </div>
       ) : (
-        <div>sign up first</div>
+        <div>{navigateToSignUp()}</div>
       )}
     </div>
   );

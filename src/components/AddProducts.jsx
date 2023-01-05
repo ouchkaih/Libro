@@ -43,7 +43,7 @@ function AddProducts() {
     }
   return (
     <div>
-        <div className="p-3 bg-secondary">
+        <div className="p-3 bg-light">
             
             <form action="" className=" d-flex justify-content-center">
                 <div className="p-5 pt-4  w-50 border border-3 bg-light rounded-4">
