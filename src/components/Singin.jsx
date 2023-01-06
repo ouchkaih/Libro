@@ -3,7 +3,7 @@ import {useState} from 'react';
 import axios from "axios"
 import {useDispatch} from 'react-redux';
 import {setConnection, setSignin, setUserInfo} from './reducers/UserReducer';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 
 function Singin() {
   const [users , setUsers]= useState({})
@@ -50,7 +50,10 @@ function Singin() {
                 <input type="email" className="form-control" name='email' onChange={handlChange} placeholder='Ex: Jack@exmaple.com' />
                 <label htmlFor="" className='form-label mt-3'>Password: </label>
                 <input type="password" className="form-control" name='password' onChange={handlChange} placeholder='Enter at least 8 characters' />
-                <button className="btn btn-warning w-100 mt-4" onClick={signin}>Sign in</button>
+                <button className="btn btn-primary w-100 mt-4" onClick={signin}>Sign in</button>
+                <div className='text-center p-4'>
+                  you dont have account ?? 😱 go to <b><Link to="/signup">Sign UP</Link></b> Noooow!
+                </div>
             </form>
           </div>
 
