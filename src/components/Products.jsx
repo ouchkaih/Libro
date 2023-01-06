@@ -24,7 +24,7 @@ function Products() {
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
-      {!userData.isConnected ? (
+      {userData.isConnected ? (
         <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (
