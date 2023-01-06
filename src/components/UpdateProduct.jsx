@@ -31,20 +31,19 @@ function UpdateProduct() {
   return (
     <div>
         <div className="p-3 bg-light">
-            
             <form action="" className=" d-flex justify-content-center">
                 <div className="p-5 pt-4  w-50 border border-3 bg-light rounded-4">
                     <div className='pb-3'>
                         <h4 className='text-center text-primary'>Create New Product</h4>
                     </div>
                     <label htmlFor="" className="form-label">Image Url</label>
-                    <input type="text" className="form-control" onChange={handlChange} name="image_url" placeholder="https://...." />
+                    <input type="text" className="form-control" onChange={handlChange} defaultValue={state.image_url} name="image_url" placeholder="https://...." />
                     <label htmlFor="" className="form-label mt-3">Title </label>
-                    <input type="text" className="form-control" onChange={handlChange} name='title' Placeholder='Product title' />
+                    <input type="text" className="form-control" onChange={handlChange} name='title' defaultValue={state.title} Placeholder='Product title' />
                     <label htmlFor="" className="form-label mt-3">Description</label>
-                    <textarea name="description" id="" cols="30" rows="10"  Placeholder="" className="form-control" onChange={handlChange}></textarea>
+                    <textarea name="description" id="" cols="30" rows="10"  Placeholder="" className="form-control" defaultValue={state.description} onChange={handlChange}></textarea>
                     <label htmlFor="" className="form-label mt-3">Price</label>
-                    <input type="text" className="form-control" onChange={handlChange} name="price" placeholder='00.00 Dhs' />
+                    <input type="text" className="form-control" onChange={handlChange} name="price" defaultValue={state.price} placeholder='00.00 Dhs' />
                     <button className="btn btn-primary mt-4 w-100" onClick={Update}>Create product</button>
                 </div>
             </form>
