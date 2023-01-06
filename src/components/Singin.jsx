@@ -42,17 +42,17 @@ function Singin() {
   return (
     <div>
       <div className="d-flex justify-content-center align-items-center p-5">
-        <div className="w-50 border border-2  p-3 rounded-4">
-          <h5 className='text-center'>Welcome back </h5>
+        <div className="w-50 border border-2  p-3  rounded-4">
+          <h5 className='text-center'>Welcome back 😍</h5>
           <div>
-            <form action="" className='p-4'>
+            <form action="" className='p-4 pt-1'>
                 <label htmlFor="" className='form-label mt-3'>Email: </label>
                 <input type="email" className="form-control" name='email' onChange={handlChange} placeholder='Ex: Jack@exmaple.com' />
                 <label htmlFor="" className='form-label mt-3'>Password: </label>
                 <input type="password" className="form-control" name='password' onChange={handlChange} placeholder='Enter at least 8 characters' />
                 <button className="btn btn-primary w-100 mt-4" onClick={signin}>Sign in</button>
                 <div className='text-center p-4'>
-                  you dont have account ?? 😱 go to <b><Link to="/signup">Sign UP</Link></b> Noooow!
+                  You dont have account ?? 😱 go to <b><Link to="/signup">Sign UP</Link></b> Noooow!
                 </div>
             </form>
           </div>
