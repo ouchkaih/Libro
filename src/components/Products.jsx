@@ -54,7 +54,7 @@ function Products() {
                       </span>
                     </div>
                     <div className="text-end">
-                      <button className="w-100 btn btn-warning">
+                      <button className="w-100 btn btn-primary">
                         add to cart
                       </button>
                     </div>
