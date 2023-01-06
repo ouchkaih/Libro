@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useLocation, useParams} from 'react-router-dom'
+import axios from "axios"
 
 function UpdateProduct() {
     const { state } = useLocation();
@@ -11,6 +12,20 @@ function UpdateProduct() {
             ...oldValue,
             [e.target.name]:e.target.value
         }))
+    }
+
+    // send data to php update file 
+    const Update = ()=>{
+        const formdata = new FormData()
+        formdata.append("image_url", product.image_url);
+        formdata.append("title", product.title);
+        formdata.append("description", product.description);
+        formdata.append("price", product.price);
+        axios.post("",formdata).then(
+            (res)=>{
+
+            }
+        )
     }
 
   return (
@@ -29,8 +44,8 @@ function UpdateProduct() {
                     <label htmlFor="" className="form-label mt-3">Description</label>
                     <textarea name="description" id="" cols="30" rows="10"  Placeholder="" className="form-control" onChange={handlChange}></textarea>
                     <label htmlFor="" className="form-label mt-3">Price</label>
-                    <input type="text" className="form-control" onChange={handlChange} name="price" placeholder='00.00 $' />
-                    <button className="btn btn-primary mt-4 w-100" onClick={valider}>Create product</button>
+                    <input type="text" className="form-control" onChange={handlChange} name="price" placeholder='00.00 Dhs' />
+                    <button className="btn btn-primary mt-4 w-100" onClick={Update}>Create product</button>
                 </div>
             </form>
         </div>
