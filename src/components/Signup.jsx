@@ -7,6 +7,7 @@ import {setConnection, setUserInfo} from './reducers/UserReducer';
 
 function Signup() {
     const [user, setUser]= useState({userName:"", userEmail:"",userPassword:""})
+    const [error, setError] = useState("")
   const [users, setUsers]= useState([])
     const handlChange = (e)=>{
         setUser(oldData => (
@@ -20,6 +21,7 @@ function Signup() {
     let navigate = useNavigate()
     let dispatch = useDispatch()
 
+    // get all user from database
     useEffect(() => {
       axios.get("http://localhost/php/w3ista/").then(
         (res)=>{
@@ -27,9 +29,11 @@ function Signup() {
         }
       )
     }, []);
-    const createAccount = ()=>{
+
+
+    const createAccount = (e)=>{
+        e.preventDefault()
         if(user.userName !== "" &&user.userEmail !== "" &&user.userPassword !== ""  ){
-          console.log(users.filter(items =>items.email === user.userEmail).length);
             if(!users.filter(items=>items.email === user.userEmail).length){
               let formdata = new FormData();
               formdata.append("username", user.userName);
@@ -44,15 +48,20 @@ function Signup() {
               dispatch(setUserInfo(user));
               navigate("/products");
             }else{
-                alert("this email is already enregistred")
+              setError("Please fill out the form befor submited !");
             }
+        }else{
+          setError("Please fill out the form befor submited !")
         }
     }
   return (
     <div>
       <div className="d-flex justify-content-center align-items-center p-5">
         <div className="w-50 border border-2  p-3 rounded-4">
-          <h5 className='text-center'>Easy to create your account </h5>
+          <h5 className='text-center'>Easy to create your account 👌</h5>
+          <div className="p2 text-center text-danger">
+            {error}
+          </div>
           <div>
             <form action="" className='p-4'>
                 <label htmlFor="" className='form-label'>Username: </label>

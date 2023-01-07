@@ -38,8 +38,10 @@ function NavBar() {
           <div className="col-9">
             <ul className="nav">
               <li className="nav-item">
-                <Link to="" className="nav-link text-dark">
-                  <img src="icons/logo.png" alt="" width="30px" />
+                <Link to="/" className="nav-link ">
+                  <h5>
+                    <b>IOShop</b>
+                  </h5>
                 </Link>
               </li>
               <li className="nav-item">
