@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useEffect} from 'react'
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import {setConnection, setUserInfo} from './reducers/UserReducer';
 
 function Signup() {
@@ -61,7 +61,10 @@ function Signup() {
                 <input type="email" className="form-control" name='userEmail' onChange={handlChange} placeholder='Ex: Jack@exmaple.com' />
                 <label htmlFor="" className='form-label mt-3'>Password: </label>
                 <input type="password" className="form-control" name='userPassword' onChange={handlChange} placeholder='Enter at least 8 characters' />
-                <button className="btn btn-primaryjj w-100 mt-4" onClick={createAccount}>Create account</button>
+                <button className="btn btn-primary w-100 mt-4" onClick={createAccount}>Create account</button>
+                <div className="p-3 text-center">
+                  <span>Already have account 😍? <b><Link to="/Signin" >Sign In</Link></b> </span>
+                </div>
             </form>
           </div>
 
