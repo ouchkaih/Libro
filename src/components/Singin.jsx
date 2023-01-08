@@ -34,7 +34,7 @@ function Singin() {
           dispatch(setConnection(true))
           navigate("/products")
         }else{
-          alert ("user or password doesn't incorrect !")
+          alert ("Email or password doesn't incorrect !")
         }
       }
     }
