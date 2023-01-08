@@ -8,11 +8,17 @@ import {useNavigate, Link} from 'react-router-dom';
 function Singin() {
   const [users , setUsers]= useState({})
   const [user ,setUser]= useState({email:"", password:""})
+  const [userInfo , setUserInfos]=useState({})
    useEffect(() => {
      axios.get("http://localhost/php/w3ista/").then((res) => {
        setUsers(res.data);
      });
    }, []);
+   useEffect(()=>{
+    if(localStorage.getItem("userInfo") === "undefined"){
+      localStorage.setItem("userInfo",)
+    }
+   })
 
   const handlChange = (e) => {
     setUser((oldData) => ({
@@ -29,8 +35,9 @@ function Singin() {
       if(userCheck.length){
         console.log(userCheck[0]);
         if( userCheck[0].password === user.password){
+          
           dispatch(setSignin(userCheck[0]));
-          console.log("object");
+          setUserInfos()
           dispatch(setConnection(true))
           navigate("/products")
         }else{
