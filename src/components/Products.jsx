@@ -7,13 +7,17 @@ import {useNavigate} from "react-router-dom";
 function Products() {
   const [products, setProducts] = useState([]);
   const [user, setUser] = useState({});
+  // get user data from reducer 
   let userData = useSelector((state) => state.user);
 
+
   useEffect(() => {
-    axios.get("http://localhost/php/w3ista/getProducts.php").then((res) => {
-      setProducts(res.data);
-      console.log(res.data)
-    });
+    if(localStorage.getItem("userInfo") !== undefined ){
+
+    }else{
+      // create localStorage variable to store user Data
+      localStorage.setItem("userInfo", "[]");
+    }
   }, []);
 
   const navigate = useNavigate()
