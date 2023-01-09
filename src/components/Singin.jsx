@@ -9,16 +9,16 @@ function Singin() {
   const [users , setUsers]= useState({})
   const [user ,setUser]= useState({email:"", password:""})
   const [userInfo , setUserInfos]=useState({})
+  const [message, setMessage] = useState("")
+
+
    useEffect(() => {
      axios.get("http://localhost/php/w3ista/").then((res) => {
        setUsers(res.data);
      });
    }, []);
-   useEffect(()=>{
-    if(localStorage.getItem("userInfo") === "undefined"){
-      localStorage.setItem("userInfo",)
-    }
-   })
+
+   
 
   const handlChange = (e) => {
     setUser((oldData) => ({
@@ -31,19 +31,21 @@ function Singin() {
   const signin = (e)=>{
     e.preventDefault()
     if(user.email !== ""&& user.password !== ""){
-      let userCheck = users.filter(itmes=> itmes.email === user.email)
-      if(userCheck.length){
-        console.log(userCheck[0]);
-        if( userCheck[0].password === user.password){
-          
-          dispatch(setSignin(userCheck[0]));
-          setUserInfos()
-          dispatch(setConnection(true))
-          navigate("/products")
-        }else{
-          alert ("Email or password doesn't incorrect !")
+      let formData = new FormData()
+      formData.append("userEmaila",user.email)
+      formData.append("userPassword", user.password);
+      axios.post("http://localhost/php/w3ista/index.php",formData).then(
+        (res)=>{
+          if( res.data.status === "exist"){
+            dispatch(setSignin(user));
+            setUserInfos()
+            dispatch(setConnection(true))
+            navigate("/products")
+          }else{
+            setMessage(res.error)
+          }
         }
-      }
+      );
     }
   }
   return (
@@ -52,6 +54,9 @@ function Singin() {
         <div className="w-50 border border-2  p-3  rounded-4">
           <h5 className='text-center'>Welcome back 😍</h5>
           <div>
+            <div className="text-danger text-center">
+              {message}
+            </div>
             <form action="" className='p-4 pt-1'>
                 <label htmlFor="" className='form-label mt-3'>Email: </label>
                 <input type="email" className="form-control" name='email' onChange={handlChange} placeholder='Ex: Jack@exmaple.com' />
