@@ -6,19 +6,10 @@ import {setConnection, setSignin, setUserInfo} from './reducers/UserReducer';
 import {useNavigate, Link} from 'react-router-dom';
 
 function Singin() {
-  const [users , setUsers]= useState({})
   const [user ,setUser]= useState({email:"", password:""})
   const [userInfo , setUserInfos]=useState({})
   const [message, setMessage] = useState("")
 
-
-   useEffect(() => {
-     axios.get("http://localhost/php/w3ista/").then((res) => {
-       setUsers(res.data);
-     });
-   }, []);
-
-   
 
   const handlChange = (e) => {
     setUser((oldData) => ({
@@ -26,23 +17,29 @@ function Singin() {
       [e.target.name]: e.target.value,
     }));
   };
+
+
   let dispatch = useDispatch()
   let navigate = useNavigate()
   const signin = (e)=>{
     e.preventDefault()
+    console.log(user);
     if(user.email !== ""&& user.password !== ""){
       let formData = new FormData()
-      formData.append("userEmaila",user.email)
+      formData.append("userEmail",user.email)
       formData.append("userPassword", user.password);
-      axios.post("http://localhost/php/w3ista/index.php",formData).then(
+      axios.post("http://localhost/php/w3ista/signin.php",formData).then(
         (res)=>{
           if( res.data.status === "exist"){
+            console.log(res.data)
             dispatch(setSignin(user));
             setUserInfos()
             dispatch(setConnection(true))
             navigate("/products")
           }else{
-            setMessage(res.error)
+            setMessage(res.data.Error)
+            console.log(res.data);
+
           }
         }
       );
