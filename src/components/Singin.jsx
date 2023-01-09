@@ -2,12 +2,11 @@ import React,{useEffect} from 'react'
 import {useState} from 'react';
 import axios from "axios"
 import {useDispatch} from 'react-redux';
-import {setConnection, setSignin, setUserInfo} from './reducers/UserReducer';
+import {setConnection,  setUserId, setUserName} from './reducers/UserReducer';
 import {useNavigate, Link} from 'react-router-dom';
 
 function Singin() {
   const [user ,setUser]= useState({email:"", password:""})
-  const [userInfo , setUserInfos]=useState({})
   const [message, setMessage] = useState("")
 
 
@@ -23,23 +22,20 @@ function Singin() {
   let navigate = useNavigate()
   const signin = (e)=>{
     e.preventDefault()
-    console.log(user);
     if(user.email !== ""&& user.password !== ""){
       let formData = new FormData()
       formData.append("userEmail",user.email)
       formData.append("userPassword", user.password);
       axios.post("http://localhost/php/w3ista/signin.php",formData).then(
         (res)=>{
+          //if the email and the password is correct 
           if( res.data.status === "exist"){
-            console.log(res.data)
-            dispatch(setSignin(user));
-            setUserInfos()
+            dispatch(setUserName(res.data.userName));
+            dispatch(setUserId(res.data.userId));
             dispatch(setConnection(true))
             navigate("/products")
           }else{
             setMessage(res.data.Error)
-            console.log(res.data);
-
           }
         }
       );

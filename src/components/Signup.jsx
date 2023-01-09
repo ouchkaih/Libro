@@ -3,7 +3,7 @@ import React, {useEffect} from 'react'
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {useNavigate, Link} from 'react-router-dom';
-import {setConnection, setUserInfo} from './reducers/UserReducer';
+import {setConnection, setUserId, setUserInfo, setUserName} from './reducers/UserReducer';
 
 function Signup() {
     const [user, setUser]= useState({userName:"", userEmail:"",userPassword:""})
@@ -42,10 +42,10 @@ function Signup() {
               axios
                 .post("http://localhost/php/w3ista/", formdata)
                 .then((res) => {
-                  console.log("added");
                 });
               dispatch(setConnection(true));
-              dispatch(setUserInfo(user));
+              dispatch(setUserName(user.userName));
+              dispatch(setUserId(user.id));
               navigate("/products");
             }else{
               setError("Please fill out the form befor submited !");
