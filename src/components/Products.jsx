@@ -13,23 +13,21 @@ function Products() {
   const navigate = useNavigate();
   
   useEffect(()=>{
+    axios.get("http://localhost/php/w3ista/getProducts.php").then((res) => {
+      setProducts(res.data);
+    });
     if(localStorage.getItem("userInfo") === undefined){
       navigate("/signIn");
     }else{
       setUser(JSON.parse(localStorage.getItem("userInfo")));
-      console.log(JSON.parse(localStorage.getItem("userInfo")));
-      console.log(userData)
     }
   },[])
 
-  // If the use not connected navigate to the sign in page 
-  const navigateToSignUp = ()=>{
-    navigate("/signIn");
-  }
+ 
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
-      {userData.isConnected ? (
+      {user.signed ? (
         <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (
