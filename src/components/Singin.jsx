@@ -1,13 +1,14 @@
 import React,{useEffect} from 'react'
 import {useState} from 'react';
 import axios from "axios"
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {setConnection,  setUserId, setUserName} from './reducers/UserReducer';
 import {useNavigate, Link} from 'react-router-dom';
 
 function Singin() {
   const [user ,setUser]= useState({email:"", password:""})
   const [message, setMessage] = useState("")
+  let userData = useSelector((state) => state.user);
 
 
   const handlChange = (e) => {
@@ -29,11 +30,17 @@ function Singin() {
       axios.post("http://localhost/php/w3ista/signin.php",formData).then(
         (res)=>{
           //if the email and the password is correct 
-          if( res.data.status === "exist"){
+          if( res.data.signed === true ){
+            // Change userName using action setUserName
             dispatch(setUserName(res.data.userName));
+            // Change userId using action setUserId
             dispatch(setUserId(res.data.userId));
-            dispatch(setConnection(true))
-            navigate("/products")
+            // change Connection Status 
+            dispatch(setConnection(true));
+          
+            // create localStorage variable to store user Data userName, userId, connectionStatus
+            localStorage.setItem("userInfo", JSON.stringify(res.data));
+            navigate("/products");
           }else{
             setMessage(res.data.Error)
           }

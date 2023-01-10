@@ -28,6 +28,7 @@ function Signup() {
           setUsers(res.data)
         }
       )
+      
     }, []);
 
 
@@ -42,6 +43,11 @@ function Signup() {
               axios
                 .post("http://localhost/php/w3ista/", formdata)
                 .then((res) => {
+                  if (localStorage.getItem("userInfo") !== undefined) {
+                  } else {
+                    // create localStorage variable to store user Data
+                    localStorage.setItem("userInfo", JSON.stringify(user));
+                  }
                 });
               dispatch(setConnection(true));
               dispatch(setUserName(user.userName));

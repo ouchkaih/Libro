@@ -8,7 +8,7 @@ export const UserReducer = createSlice({
       state.isConnected = action.payload;
     },
     setUserName: (state, action) => {
-      state.userName = action.payload.userName;
+      state.userName = action.payload;
     },
     setUserId: (state, action) => {
       state.userId = action.payload;

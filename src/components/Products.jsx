@@ -10,9 +10,18 @@ function Products() {
   // get user data from reducer 
   let userData = useSelector((state) => state.user);
 
-
+  const navigate = useNavigate();
   
-  const navigate = useNavigate()
+  useEffect(()=>{
+    if(localStorage.getItem("userInfo") === undefined){
+      navigate("/signIn");
+    }else{
+      setUser(JSON.parse(localStorage.getItem("userInfo")));
+      console.log(JSON.parse(localStorage.getItem("userInfo")));
+      console.log(userData)
+    }
+  },[])
+
   // If the use not connected navigate to the sign in page 
   const navigateToSignUp = ()=>{
     navigate("/signIn");
@@ -63,7 +72,7 @@ function Products() {
           )}
         </div>
       ) : (
-        <div>{navigateToSignUp()}</div>
+        <div>goo to sign in</div>
       )}
     </div>
   );
