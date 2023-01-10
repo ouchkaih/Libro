@@ -23,11 +23,9 @@ function ProductsManagment() {
     // delete product using his Id 
     const deleteProducts=(product_id)=>{
       const format = new FormData()
-      console.log(product_id)
       format.append("productId",product_id)
       axios.post(`http://localhost/php/w3ista/deleteProduct.php` , format).then(
         (res)=>{
-          console.log(res)
           alert(res.data.productId);
         }
       )

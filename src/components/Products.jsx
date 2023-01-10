@@ -11,15 +11,7 @@ function Products() {
   let userData = useSelector((state) => state.user);
 
 
-  useEffect(() => {
-    if(localStorage.getItem("userInfo") !== undefined ){
-
-    }else{
-      // create localStorage variable to store user Data
-      localStorage.setItem("userInfo", "[]");
-    }
-  }, []);
-
+  
   const navigate = useNavigate()
   // If the use not connected navigate to the sign in page 
   const navigateToSignUp = ()=>{
