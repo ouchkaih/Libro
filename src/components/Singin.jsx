@@ -30,19 +30,19 @@ function Singin() {
       axios.post("http://localhost/php/w3ista/signin.php",formData).then(
         (res)=>{
           //if the email and the password is correct 
-          if( res.data.signed === true ){
+          if (res.data.connected === true) {
             // Change userName using action setUserName
             dispatch(setUserName(res.data.userName));
             // Change userId using action setUserId
             dispatch(setUserId(res.data.userId));
-            // change Connection Status 
+            // change Connection Status
             dispatch(setConnection(true));
-          
+
             // create localStorage variable to store user Data userName, userId, connectionStatus
             localStorage.setItem("userInfo", JSON.stringify(res.data));
             navigate("/products");
-          }else{
-            setMessage(res.data.Error)
+          } else {
+            setMessage(res.data.Error);
           }
         }
       );

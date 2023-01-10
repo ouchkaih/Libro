@@ -16,7 +16,7 @@ function Products() {
     axios.get("http://localhost/php/w3ista/getProducts.php").then((res) => {
       setProducts(res.data);
     });
-    if(localStorage.getItem("userInfo") === undefined){
+    if(localStorage.getItem("userInfo") === null){
       navigate("/signIn");
     }else{
       setUser(JSON.parse(localStorage.getItem("userInfo")));
@@ -27,7 +27,7 @@ function Products() {
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
-      {user.signed ? (
+      {user.connected ? (
         <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (
