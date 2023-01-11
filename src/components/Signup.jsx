@@ -26,6 +26,7 @@ function Signup() {
       axios.get("http://localhost/php/w3ista/").then(
         (res)=>{
           setUsers(res.data)
+          console.log(res.data)
         }
       )
       
@@ -43,18 +44,14 @@ function Signup() {
               axios
                 .post("http://localhost/php/w3ista/", formdata)
                 .then((res) => {
-                  if (localStorage.getItem("userInfo") !== undefined) {
-                  } else {
-                    // create localStorage variable to store user Data
-                    localStorage.setItem("userInfo", JSON.stringify(user));
-                  }
+                   console.log(res.data);
                 });
               dispatch(setConnection(true));
               dispatch(setUserName(user.userName));
               dispatch(setUserId(user.id));
               navigate("/products");
             }else{
-              setError("Please fill out the form befor submited !");
+              setError("This Email Already exist !");
             }
         }else{
           setError("Please fill out the form befor submited !")
