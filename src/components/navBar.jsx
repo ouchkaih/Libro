@@ -6,13 +6,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   const userData = useSelector(state => state.user)
-  const [user, setUser]= useState({connected:false})
-  useEffect(() => {
-    if(localStorage.getItem("userInfo") === null){
-      setUser(JSON.parse(localStorage.getItem("userInfo")))
-    }
-  }, []);
-  const navBar = user.connected ? (
+  const navBar = userData.isConnected ? (
     <>
       <div className="col">
         <span className="nav-link text-muted">Welcom {userData.userName}</span>

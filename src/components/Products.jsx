@@ -6,7 +6,6 @@ import {setUserInfo} from "./reducers/UserReducer";
 import {useNavigate} from "react-router-dom";
 function Products() {
   const [products, setProducts] = useState([]);
-  const [user, setUser] = useState({});
   // get user data from reducer 
   let userData = useSelector((state) => state.user);
 
@@ -16,18 +15,13 @@ function Products() {
     axios.get("http://localhost/php/w3ista/getProducts.php").then((res) => {
       setProducts(res.data);
     });
-    if(localStorage.getItem("userInfo") === null){
-      navigate("/signIn");
-    }else{
-      setUser(JSON.parse(localStorage.getItem("userInfo")));
-    }
   },[])
 
  
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
-      {user.connected ? (
+      {userData.isConnected ? (
         <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (

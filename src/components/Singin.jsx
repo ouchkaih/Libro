@@ -23,14 +23,14 @@ function Singin() {
   let navigate = useNavigate()
   const signin = (e)=>{
     e.preventDefault()
-    if(user.email !== ""&& user.password !== ""){
+    if(user.email !== "" && user.password !== ""){
       let formData = new FormData()
       formData.append("userEmail",user.email)
       formData.append("userPassword", user.password);
       axios.post("http://localhost/php/w3ista/signin.php",formData).then(
         (res)=>{
           //if the email and the password is correct 
-          if (res.data.connected === true) {
+          if (res.data.isConnected === true) {
             // Change userName using action setUserName
             dispatch(setUserName(res.data.userName));
             // Change userId using action setUserId
@@ -46,6 +46,8 @@ function Singin() {
           }
         }
       );
+    }else{
+      setMessage("please fill out all form before submited")
     }
   }
   return (

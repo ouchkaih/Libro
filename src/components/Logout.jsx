@@ -11,6 +11,10 @@ function Logout() {
       dispatch(setUserName({userName: ""}));
       dispatch(setUserId({userId: ""}));
       dispatch(setConnection(false));
+      localStorage.setItem(
+        "userInfo",
+        JSON.stringify({ userName: "", userId: "", isConnected: false })
+      );
 
       navigate("/products");
     }, []);

@@ -1,5 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-const initialState = { userName : "", userId:"", isConnected :false}
+if(localStorage.getItem("userInfo") == null){
+  localStorage.setItem(
+    "userInfo",
+    JSON.stringify({ userName: "", userId: "", isConnected: false })
+  );
+}
+const initialState = JSON.parse(localStorage.getItem("userInfo"))
 export const UserReducer = createSlice({
   name: "user",
   initialState,
