@@ -1,0 +1,167 @@
+[33mcommit f4876ccc82c1b862c3345abeb3c19fe98bfbb004[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 11 20:26:00 2023 +0100
+
+    edite SignUp
+
+[33mcommit 2b667712b215e04ac435cc6e32ae926d07ae7c6c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 11 19:43:01 2023 +0100
+
+    fixe the localStorage bug
+
+[33mcommit 6404df5929b4750f46a0aa9ad1f05d23d0a27cfa[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 21:00:18 2023 +0100
+
+    bug with localStorage
+
+[33mcommit 870e40e0feda59e3bb6ac419a086f5a09fd8dc16[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 20:29:53 2023 +0100
+
+    fixe a bug
+
+[33mcommit 9871708885c4763b7ebc8e4553e521210d421dde[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 20:24:32 2023 +0100
+
+    add localStorage to sign in page
+
+[33mcommit 8c44af72a1a18f5eaf67c76fb13d7ff8e1604e31[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 19:33:32 2023 +0100
+
+    remove localStorage from product component to add it in the signIn and Signup page
+
+[33mcommit 03ca679f7d8ef0bab68d25150d67d6f74b711d5e[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 21:29:02 2023 +0100
+
+    start adding localstorage in products page
+
+[33mcommit 5983ec613bfff18159865abc559d99fc6dab0ee8[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:54:34 2023 +0100
+
+    change redux action
+
+[33mcommit ec1d676a261147ee5689c63f71cdcc10d9abb028[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:43:08 2023 +0100
+
+    check if the use if already exist and the password is match with the email
+
+[33mcommit 14a9a8d2aed25f2c5445b3772b69afd343e5e4e6[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:12:54 2023 +0100
+
+    update signIn commponent
+
+[33mcommit 4779951427f4ae5e99bb8f957f2ffa79651a1462[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 8 21:01:38 2023 +0100
+
+    start adding local storage
+
+[33mcommit b9bf95d96e49b9ec39fd105ccbd3ccf2b2ab4fc5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 8 20:50:42 2023 +0100
+
+    nothing added
+
+[33mcommit 0bc2618df196ce68bef54fb94406cb9371513bc2[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 7 20:55:17 2023 +0100
+
+    add error message
+
+[33mcommit b83710bb9cabe1295d027f058b9f848cc1abb920[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 7 20:28:18 2023 +0100
+
+    add Sign in link in sign up component
+
+[33mcommit b1307ad00883f855115f667184acaa062983bfc7[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:31:58 2023 +0100
+
+    some modifications
+
+[33mcommit c2f7e78d781216120f82aab1f374e9f62223bbb3[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:26:50 2023 +0100
+
+    start editing signIn component
+
+[33mcommit c07c74794bbea5a701400940b0d0b99e4bfe7746[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:21:17 2023 +0100
+
+    make sign in obligate befor see the product
+
+[33mcommit 44a167cea645440661906ab5ebddcd1966c6d1b6[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:18:38 2023 +0100
+
+    just change the btn color
+
+[33mcommit 0ccb3b975322e855021f8b9e2ef6e961fd42a757[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:16:00 2023 +0100
+
+    update function work's
+
+[33mcommit 7920e176cef8095cb2b4ca6da6bc929c58400d54[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 17:38:22 2023 +0100
+
+    get the oldest values and show it in the input
+
+[33mcommit 40ce99c8b1135041209aca81cc68cc511832eed8[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 17:20:41 2023 +0100
+
+    initial update function
+
+[33mcommit 2d3a962266b27cd633c1886536de00d44473a2e2[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 18:36:27 2023 +0100
+
+    update product page
+
+[33mcommit 1f1f43550051195378e822c86634247ad07b0879[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 18:07:08 2023 +0100
+
+    just style
+
+[33mcommit 9603dcd213d6e4e940dda340c604b66f6c837a51[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 17:33:13 2023 +0100
+
+    another style
+
+[33mcommit 47ec2e77ee6ab9a485d3e3740f1f0c300e59abcb[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 17:06:40 2023 +0100
+
+     some style
+
+[33mcommit be9b1cbbe2b275791b441d489bdbfada4853a0d0[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 17:03:02 2023 +0100
+
+    add some style
+
+[33mcommit 173441dfa594e282d69f882e93930add3b04ab96[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 16:49:58 2023 +0100
+
+    add commants in the AddProducts.jsx file
+
+[33mcommit 7740e8273e42efebe3762edc61330f8961348605[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 16:41:58 2023 +0100
+
+    initial commit
