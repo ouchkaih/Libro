@@ -2,7 +2,9 @@ import React from 'react'
 
 function ShopingCart() {
   return (
-    <div>ShopingCart</div>
+    <div>
+        
+    </div>
   )
 }
 
