@@ -18,10 +18,15 @@ function Products() {
   },[])
 
  
+  const addToCart= (product)=>{
+    
+  }
+
+
   // create table products( product_id int AUTO_INCREMENT PRIMARY key , img_url varchar(50), title varchar(30) , description varchar(50))
   return (
     <div>
-      {userData.isConnected ? (
+      {!userData.isConnected ? (
         <div className="p-2 m-0 row d-flex  flex-wrap w-100">
           {products.length > 0 ? (
             products.map((item) => (
@@ -51,7 +56,7 @@ function Products() {
                       </span>
                     </div>
                     <div className="text-end">
-                      <button className="w-100 btn btn-primary">
+                      <button className="w-100 btn btn-primary" onClick={()=>{addToCart(item)}}>
                         add to cart
                       </button>
                     </div>
