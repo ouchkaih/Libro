@@ -43,18 +43,20 @@ function Signup() {
               axios
                 .post("http://localhost/php/w3ista/", formdata)
                 .then((res) => {
-                  if (localStorage.getItem("userInfo") !== undefined) {
-                  } else {
-                    // create localStorage variable to store user Data
-                    localStorage.setItem("userInfo", JSON.stringify(user));
+                  if(res.data.isConnected === true){
+                    alert("Your Account was Created successfuly 😊 lets sign-in ")
+                    navigate("/Signin");
+
+                  }else{
+                    setError("something wrongs please tray to signup leater !");
                   }
                 });
-              dispatch(setConnection(true));
-              dispatch(setUserName(user.userName));
-              dispatch(setUserId(user.id));
-              navigate("/products");
+              // dispatch(setConnection(true));
+              // dispatch(setUserName(user.userName));
+              // dispatch(setUserId(user.id));
+              // navigate("/products");
             }else{
-              setError("Please fill out the form befor submited !");
+              setError("this email already exist !");
             }
         }else{
           setError("Please fill out the form befor submited !")
