@@ -14,17 +14,21 @@ if ($con) {
     switch ($method) {
         case 'GET':
             $sql = 'select * from users';
+            $stmt = $conn -> prepare($sql);
             break;
         case 'POST':
             $usernameu = $_POST['username'];
             $email = $_POST['email'];
             $passwordu = $_POST['password'];
-            $sql = "insert into users( username , email , password ) values ('$usernameu', '$email', '$passwordu')";
-            $sql2 = "Select id from users where email='$userEmail'";
+            $sql =
+                'insert into users( username , email , password ) values (?, ?,?)';
+            $stmt = $conn -> prepare($sql);
+            $stmt -> bind_param("sis", $username, $email, $passwordu)
             break;
     }
 
-    $result = mysqli_query($con, $sql);
+    $stmt -> execute();
+
     $response = [];
     if ($result) {
         if ($method == 'GET') {
@@ -40,15 +44,8 @@ if ($con) {
 
             echo json_encode($response, JSON_PRETTY_PRINT);
         } elseif ($method == 'POST') {
-            $row = mysqli_fetch_assoc($result2);
-            $nom = $row['username'];
-            $id = $row['id'];
-            $reponseVersReact = [
-                'userName' => $nom,
-                'userId' => $id,
-                'isConnected' => true,
-            ];
-            echo json_encode($result);
+            $response = ['isConnected' => true];
+            echo json_encode($response);
         } else {
             echo mysqli_affected_rows($con);
         }
@@ -56,6 +53,7 @@ if ($con) {
         http_response_code(404);
         die(mysqli_error($con));
     }
+    $conn->close();
 }
 
 ?>
