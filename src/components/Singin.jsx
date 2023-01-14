@@ -24,28 +24,34 @@ function Singin() {
   const signin = (e)=>{
     e.preventDefault()
     if(user.email !== "" && user.password !== ""){
-      let formData = new FormData()
-      formData.append("userEmail",user.email)
-      formData.append("userPassword", user.password);
-      axios.post("http://localhost/php/w3ista/signin.php",formData).then(
-        (res)=>{
-          //if the email and the password is correct 
-          if (res.data.isConnected === true) {
-            // Change userName using action setUserName
-            dispatch(setUserName(res.data.userName));
-            // Change userId using action setUserId
-            dispatch(setUserId(res.data.userId));
-            // change Connection Status
-            dispatch(setConnection(true));
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if(re.test(user.userEmail)){
+        let formData = new FormData()
+        formData.append("userEmail",user.email)
+        formData.append("userPassword", user.password);
+        axios.post("http://localhost/php/w3ista/signin.php",formData).then(
+          (res)=>{
+            //if the email and the password is correct 
+            if (res.data.isConnected === true) {
+              // Change userName using action setUserName
+              dispatch(setUserName(res.data.userName));
+              // Change userId using action setUserId
+              dispatch(setUserId(res.data.userId));
+              // change Connection Status
+              dispatch(setConnection(true));
 
-            // create localStorage variable to store user Data userName, userId, connectionStatus
-            localStorage.setItem("userInfo", JSON.stringify(res.data));
-            navigate("/products");
-          } else {
-            setMessage(res.data.Error);
+              // create localStorage variable to store user Data userName, userId, connectionStatus
+              localStorage.setItem("userInfo", JSON.stringify(res.data));
+              navigate("/products");
+              
+            } else {
+              setMessage(res.data.Error);
+            }
           }
-        }
-      );
+        );
+      }else{
+        setMessage("this Email is not valide !")
+      }
     }else{
       setMessage("please fill out all form before submited")
     }

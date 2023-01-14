@@ -20,7 +20,6 @@ function Signup() {
     
     const [emailError, setEmailError] = useState("")
     let navigate = useNavigate()
-    let dispatch = useDispatch()
 
     // get all user from database
     useEffect(() => {
