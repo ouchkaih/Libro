@@ -9,40 +9,64 @@ import { AiOutlineUser } from "react-icons/ai";
 function NavBar() {
   const userData = useSelector(state => state.user)
 
-  const navBarTop = userData.isConnected ?(
+  const navBarTop = userData.isConnected ? (
     <div></div>
-  ):(
-   <div className="container row bg-light">
-      <div className="col ">
-       <div class="dropdown">
-        <Link type="button" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-          Sell in <b>LIBRO</b>
-        </Link>
-        <ul class="dropdown-menu">
-          <li className=''>
-            <Link class="dropdown-item" to="">
-              <AiOutlineUser size="20px"/>
-              <span className=' ms-2'>
-                Seller Login
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link class="dropdown-item" href="#">
-              <AiOutlineUserAdd size="20px"/>
-              <span className="ms-2">
-                Create Seller Account
-              </span>
-            </Link>
-          </li>
-        </ul>
+  ) : (
+    <div className="m-0 row bg-light p-2 w-100">
+      <div className="col d-flex">
+        <div class="dropdown secondary-color">
+          <Link
+            type="button"
+            class="dropdown-toggle nav-link"
+            data-bs-toggle="dropdown"
+          >
+            Sell in <b>LIBRO</b>
+          </Link>
+          <ul class="dropdown-menu">
+            <li className="">
+              <Link class="dropdown-item" to="">
+                <AiOutlineUser size="20px" />
+                <span className=" ms-2">Seller Login</span>
+              </Link>
+            </li>
+            <li>
+              <Link class="dropdown-item" href="#">
+                <AiOutlineUserAdd size="20px" />
+                <span className="ms-2">Create Seller Account</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown ms-5 secondary-color">
+          <Link
+            type="button"
+            class="dropdown-toggle nav-link"
+            data-bs-toggle="dropdown"
+          >
+            Help
+          </Link>
+          <ul class="dropdown-menu">
+            <li className="">
+              <Link class="dropdown-item" to="">
+                <span className=" ">Customer Services</span>
+              </Link>
+            </li>
+            <li>
+              <Link class="dropdown-item" href="#">
+                <span className="">Disputes & Reports</span>
+              </Link>
+            </li>
+            <li>
+              <Link class="dropdown-item" href="#">
+                <span className="">Report IPR infringement </span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      </div>
-      <div className="col text-end">
-
-      </div>
+      <div className="col text-end"></div>
     </div>
-  )
+  );
   const navBar = userData.isConnected ? (
     <>
       <div className="col">
