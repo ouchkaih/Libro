@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
+import {AiOutlineHeart} from "react-icons/ai";
+import {MdOutlineTranslate} from "react-icons/mi"
 
 function NavBar() {
   const userData = useSelector(state => state.user)
@@ -64,7 +66,16 @@ function NavBar() {
           </ul>
         </div>
       </div>
-      <div className="col text-end"></div>
+      <div className="col text-end secondary-color d-flex justify-content-end">
+        <Link className="nav-link ">
+          <AiOutlineHeart size="20px" />
+          <span className="ms-1">Wish list</span>
+        </Link>
+        <Link className="nav-link ms-3">
+          <MdOutlineTranslate size="20px" />
+          <span className="ms-1">Eng</span>
+        </Link>
+      </div>
     </div>
   );
   const navBar = userData.isConnected ? (
