@@ -1,11 +1,48 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import { AiOutlineUserAdd } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 function NavBar() {
   const userData = useSelector(state => state.user)
+
+  const navBarTop = userData.isConnected ?(
+    <div></div>
+  ):(
+   <div className="container row bg-light">
+      <div className="col ">
+       <div class="dropdown">
+        <Link type="button" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+          Sell in <b>LIBRO</b>
+        </Link>
+        <ul class="dropdown-menu">
+          <li className=''>
+            <Link class="dropdown-item" to="">
+              <AiOutlineUser size="20px"/>
+              <span className=' ms-2'>
+                Seller Login
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link class="dropdown-item" href="#">
+              <AiOutlineUserAdd size="20px"/>
+              <span className="ms-2">
+                Create Seller Account
+              </span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div className="col text-end">
+
+      </div>
+    </div>
+  )
   const navBar = userData.isConnected ? (
     <>
       <div className="col">
@@ -19,6 +56,9 @@ function NavBar() {
     </>
   ) : (
     <>
+    <div>
+
+    </div>
       <div className="col">
         <a className="btn btn-dark w-100" href="signUp">
           Sign Up
@@ -32,9 +72,11 @@ function NavBar() {
     </>
   );
   return (
-    <div>
-      <div className="p-3 bg-light">
-        <nav className="row">
+    <div className="">
+      <div className=".container w-100">
+        {AiOutlineUser}
+        {navBarTop}
+        <nav className="row w-100">
           <div className="col-9">
             <ul className="nav">
               <li className="nav-item">
