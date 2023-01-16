@@ -111,20 +111,21 @@ function NavBar() {
       <div className=".container w-100">
         {AiOutlineUser}
         {navBarTop}
-        <nav className="row w-100 p-3">
+        <nav className="row w-100 pt-4 pb-4 ps-3">
           <div className="col-9">
-            <ul className="nav d-flex align-items-center">
-              <li className="nav-item">
-                <Link to="/" className="nav-link " width="250px "  height={"90px"}>
+            <ul className="nav d-flex align-items-center row">
+              <li className="nav-item col-2">
+                <Link to="/" className=" " width="250px "  height={"90px"}>
                   <img src="images/logo/logo_orange.svg" alt="" width="100"height={"40px"} className='m-0 p-0'/>
                 </Link>
+              </li> 
+              <li className="nav-item col m-0 d-flex justify-content-center">
+                  <div class="group w-75">
+                      <img src="icons/search.svg" alt="" className='search_icon opacity-50 width-100'  />
+                      <input placeholder="Search" type="search" class="input"/>
+                    </div>
               </li>
-              <li className="nav-item">
-                <Link to="/" className="nav-link text-dark">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
+               {/*<li className="nav-item">
                 <Link to="products" className="nav-link text-dark">
                   Product
                 </Link>
@@ -138,7 +139,7 @@ function NavBar() {
                 <Link to="managment" className="nav-link text-dark">
                   Products Managment
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           {/* <div class="form-check form-switch col-2">
