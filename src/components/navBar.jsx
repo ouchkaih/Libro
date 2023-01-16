@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
-import {AiOutlineHeart} from "react-icons/ai";
-import {MdOutlineTranslate} from "react-icons/mi"
+import {FaRegHeart} from "react-icons/fa";
+import { MdOutlineTranslate } from "react-icons/md";
 
 function NavBar() {
   const userData = useSelector(state => state.user)
@@ -39,7 +39,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <div class="dropdown ms-5 secondary-color">
+        <div class="dropdown ms-4 secondary-color">
           <Link
             type="button"
             class="dropdown-toggle nav-link"
@@ -68,12 +68,12 @@ function NavBar() {
       </div>
       <div className="col text-end secondary-color d-flex justify-content-end">
         <Link className="nav-link ">
-          <AiOutlineHeart size="20px" />
+          <FaRegHeart size="20px" />
           <span className="ms-1">Wish list</span>
         </Link>
-        <Link className="nav-link ms-3">
+        <Link className="nav-link ms-4">
           <MdOutlineTranslate size="20px" />
-          <span className="ms-1">Eng</span>
+          <span className="ms-2">Eng</span>
         </Link>
       </div>
     </div>
@@ -111,14 +111,12 @@ function NavBar() {
       <div className=".container w-100">
         {AiOutlineUser}
         {navBarTop}
-        <nav className="row w-100">
+        <nav className="row w-100 p-3">
           <div className="col-9">
-            <ul className="nav">
+            <ul className="nav d-flex align-items-center">
               <li className="nav-item">
-                <Link to="/" className="nav-link ">
-                  <h5>
-                    <b>IOShop</b>
-                  </h5>
+                <Link to="/" className="nav-link " width="250px "  height={"90px"}>
+                  <img src="images/logo/logo_orange.svg" alt="" width="100"height={"40px"} className='m-0 p-0'/>
                 </Link>
               </li>
               <li className="nav-item">
