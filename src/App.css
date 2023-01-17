@@ -39,6 +39,9 @@
   color:white !important;
 }
 
+.primary_color{
+  color: var(--primary_color) !important;
+}
 .group {
   display: flex;
   line-height: 28px;

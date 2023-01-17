@@ -7,6 +7,7 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import {FaRegHeart} from "react-icons/fa";
 import { MdOutlineTranslate } from "react-icons/md";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function NavBar() {
   const userData = useSelector(state => state.user)
@@ -39,7 +40,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
-        <div class="dropdown ms-4 secondary-color">
+        <div class="dropdown ms-4 col secondary-color">
           <Link
             type="button"
             class="dropdown-toggle nav-link"
@@ -80,7 +81,7 @@ function NavBar() {
   );
   const navBar = userData.isConnected ? (
     <>
-      <div className="col">
+      <div className="col w-100">
         <span className="nav-link text-muted">Welcom {userData.userName}</span>
       </div>
       <div className="col">
@@ -91,33 +92,79 @@ function NavBar() {
     </>
   ) : (
     <>
-      
+      <div className="row d-flex align-items-center">
+        <div class="dropdown col-9 text-end ">
+          <Link
+            type="button"
+            class="dropdown-toggle nav-link text-dark"
+            data-bs-toggle="dropdown"
+          >
+            <b>Account</b>
+          </Link>
+          <ul class="dropdown-menu">
+            <li className="">
+              <Link class="dropdown-item" to="">
+                <AiOutlineUser size="20px" />
+                <span className=" ms-2">Join In</span>
+              </Link>
+            </li>
+            <li>
+              <Link class="dropdown-item" href="#">
+                <AiOutlineUserAdd size="20px" />
+                <span className="ms-2">Create Account</span>
+              </Link>
+            </li>
+            <li>
+              <Link class="dropdown-item" href="#">
+                <AiOutlineShoppingCart size="20px" />
+                <span className="ms-2">Sell in LIBRO</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="col text-end">
+          {<AiOutlineShoppingCart size={"28px"} className="primary_color " />}
+        </div>
+      </div>
     </>
   );
   return (
     <div className="">
       <div className=".container w-100">
-        {AiOutlineUser}
-        {navBarTop}
-        <nav className="row w-100 pt-4 pb-4 ps-3">
-          <div className="col-9">
-            <ul className="nav d-flex align-items-center row">
-              <li className="nav-item col-2">
-                <Link to="/" className=" " width="250px "  height={"90px"}>
-                  <img src="images/logo/logo_orange.svg" alt="" width="100"height={"40px"} className='m-0 p-0'/>
+        <nav className="row w-100  ps-3">
+          {navBarTop}
+
+          <div className="row p-0 m-0" >
+            <ul className="nav d-flex align-items-center row p-3 pe-0">
+              <li className="nav-item col-3">
+                <Link to="/" className=" " width="250px " height={"90px"}>
+                  <img
+                    src="images/logo/logo_orange.svg"
+                    alt=""
+                    width="100"
+                    height={"40px"}
+                    className="m-0 p-0"
+                  />
                 </Link>
-              </li> 
-              <li className="nav-item col m-0 d-flex justify-content-center">
-                  <div class="group w-75">
-                      <img src="icons/search.svg" alt="" className='search_icon opacity-50 width-100'  />
-                      <input placeholder="Search" type="search" class="input"/>
-                    </div>
-                    <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">Search</button>
               </li>
-               
+              <li className="nav-item col-6 m-0 d-flex justify-content-center ">
+                <div class="group w-75">
+                  <img
+                    src="icons/search.svg"
+                    alt=""
+                    className="search_icon opacity-50 width-100"
+                  />
+                  <input placeholder="Search" type="search" class="input" />
+                  <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">
+                  Search
+                </button>
+                </div>                
+              </li>
+              <li className="nav-item col-3 m-0">
+                <div className="p-0">{navBar}</div>
+              </li>
             </ul>
           </div>
-          <div className="col-3 row">{navBar}</div>
         </nav>
       </div>
     </div>
