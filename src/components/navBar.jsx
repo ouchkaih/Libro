@@ -91,19 +91,7 @@ function NavBar() {
     </>
   ) : (
     <>
-    <div>
-
-    </div>
-      <div className="col">
-        <a className="btn btn-dark w-100" href="signUp">
-          Sign Up
-        </a>
-      </div>
-      <div className="col">
-        <a className=" btn btn-light w-100" href="signIn">
-          Sing IN
-        </a>
-      </div>
+      
     </>
   );
   return (
@@ -124,30 +112,11 @@ function NavBar() {
                       <img src="icons/search.svg" alt="" className='search_icon opacity-50 width-100'  />
                       <input placeholder="Search" type="search" class="input"/>
                     </div>
+                    <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">Search</button>
               </li>
-               {/*<li className="nav-item">
-                <Link to="products" className="nav-link text-dark">
-                  Product
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="" className="nav-link text-dark">
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="managment" className="nav-link text-dark">
-                  Products Managment
-                </Link>
-              </li> */}
+               
             </ul>
           </div>
-          {/* <div class="form-check form-switch col-2">
-            <input type="checkbox" class="form-check-input" id="darkSwitch" />
-            <label class="custom-control-label" for="darkSwitch">
-              Dark Mode
-            </label>
-          </div> */}
           <div className="col-3 row">{navBar}</div>
         </nav>
       </div>
