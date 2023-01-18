@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 import { React } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/index/Home";
 import Logout from "./components/Logout";
 import NavBar from "./components/navBar";
 import Products from "./components/Products";

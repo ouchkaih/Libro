@@ -96,7 +96,7 @@ function NavBar() {
         <div class="dropdown col-9 text-end ">
           <Link
             type="button"
-            class="dropdown-toggle nav-link text-dark"
+            class="dropdown-toggle nav-link secondary-color"
             data-bs-toggle="dropdown"
           >
             <b>Account</b>
@@ -131,9 +131,8 @@ function NavBar() {
   return (
     <div className="">
       <div className=".container w-100">
-        <nav className="row w-100  ps-3">
+        <nav className="row w-100 m-0  ">
           {navBarTop}
-
           <div className="row p-0 m-0" >
             <ul className="nav d-flex align-items-center row p-3 pe-0">
               <li className="nav-item col-3">

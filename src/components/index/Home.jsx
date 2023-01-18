@@ -1,22 +1,34 @@
-import React from 'react'
-function Home() {
+import React, {useEffect, useState} from 'react'
+import {Link} from "react-router-dom"
+import axios from "axios"
+function Home() { 
+
+  // create a variable for storing ads images 
+  const [slideAds ,setSlideAds] = useState()
+  
+  // get images from database to use it in the slideshow 
+  useEffect(() => {
+    axios.get("http://localhost/php/w3ista/GetAdsSlide.php").then(
+      (res)=>{
+        setSlideAds(res.data)
+      }
+    );
+  }, []);
 
   
   return (
     <div>
       <div>
-        <div className="p-5 bg_image">
-          <div className="d-flex justify-content-center alighn-items-center pt-5 mt-5 ">
-            <h5 className="text-center w-50 m-5 pt-5 ">
-              <b className='p-5'>
-                Call a wrap on 2022 and celebrate with up to 70% off — use code
-                EXTRA10 for your best deal.
-              </b>
-            </h5>
+        <div className="p-5 bg_orange row">
+          <div className="col-3 text-end">-</div>
+          <div className="col-6">
+            <Link>
+              <div>
+                 <img src="/" alt="" width={"100%"} height="100%"/>
+              </div>
+            </Link>
           </div>
-          <div className="text-center p-4 mb-5 pb-5">
-            <button className="btn btn-light">shop the sell</button>
-          </div>
+          <div className="col-3">-</div>
         </div>
         <div className="row bg-light me-1">
           <div className="text-center p-4"></div>
