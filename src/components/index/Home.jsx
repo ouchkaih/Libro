@@ -1,34 +1,73 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from "react-router-dom"
 import axios from "axios"
+import { FiArrowLeftCircle } from "react-icons/fi";
+import { FiArrowRightCircle } from "react-icons/fi";
 function Home() { 
 
   // create a variable for storing ads images 
-  const [slideAds ,setSlideAds] = useState()
-  
+  const [slideImages, setSlideImages] = useState([
+    "https://images.unsplash.com/photo-1579273166152-d725a4e2b755?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60",
+    "https://images.unsplash.com/photo-1447710441604-5bdc41bc6517?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    
+  ]);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+
   // get images from database to use it in the slideshow 
   useEffect(() => {
     axios.get("http://localhost/php/w3ista/GetAdsSlide.php").then(
       (res)=>{
-        setSlideAds(res.data)
+        setSlideImages(res.data)
       }
     );
   }, []);
 
-  
+  // show the next image 
+  const nextSlide = (e)=>{
+    // check if the current image is the last image then go to the first image
+    if (slideIndex === slideImages.length - 1) {
+      setSlideIndex(0);
+    } else {
+      setSlideIndex(slideIndex + 1);
+    }
+  }
+
+  // show the previously image 
+  const previouslySlide = (e) => {
+    // check if the current image is the first image then go to the last image
+    if (slideIndex === 0) {
+      setSlideIndex(slideImages.length - 1);
+    } else {
+      setSlideIndex(slideIndex - 1);
+    }
+  };
+
+
+  setTimeout(()=>{nextSlide()},3000)
+
   return (
     <div>
       <div>
-        <div className="p-5 bg_orange row">
-          <div className="col-3 text-end">-</div>
-          <div className="col-6">
+        <div className="p-5 bg_orange row w-100 m-0" >
+          <div className="col-1 text-end d-flex justify-content-end align-items-center">
+              <button onClick={nextSlide}  className="bg-0 border-0 bg-transparent">
+                    <FiArrowLeftCircle size="30px" color='white'/>
+              </button>
+          </div>
+          <div className="col-10">
             <Link>
               <div>
-                 <img src="/" alt="" width={"100%"} height="100%"/>
+                 <img src={slideImages[slideIndex]} className="slideImage" alt="" width={"100%"} height="400px"/>
               </div>
             </Link>
           </div>
-          <div className="col-3">-</div>
+          <div className="col-1 d-flex align-items-center">
+            <button onClick={previouslySlide}  className="bg-0 border-0 bg-transparent">
+               <FiArrowRightCircle size="30px" color='white'/>
+              </button>
+          </div>
         </div>
         <div className="row bg-light me-1">
           <div className="text-center p-4"></div>
