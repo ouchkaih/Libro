@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 function Home() { 
 
   
-
+const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
   return (
     <div>
       <div>
@@ -35,8 +35,10 @@ function Home() {
             <b className="p-1">Popular Now</b>
           </h5>
           <div className="mt-4 ">
-            <div className="book_cart">
-              <div className="bock_cover bg_white">dfd</div>
+            <div className="ms-3 book p-4 bg_white">
+              <div className="book_cover" style={{backgroundImage: `url(${url_image})`}}>
+                sdfaklsdjfalskdj
+              </div>
             </div>
           </div>
         </div>
