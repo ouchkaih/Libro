@@ -1,6 +1,8 @@
 :root {
   --primary_color: #F66B0E;
   --secondary_color: #205375;
+  --gray_color : #F5F5F5;
+  --white_color: #fff;
 
 }
 
@@ -39,9 +41,19 @@
   color:white !important;
 }
 
+
+.bg_gray {
+  background-color: var(--gray_color) !important;
+}
+
+.bg_white{
+  background-color: var(--white_color);
+}
 .primary_color{
   color: var(--primary_color) !important;
 }
+
+
 .group {
   display: flex;
   line-height: 28px;
@@ -49,6 +61,17 @@
   position: relative;
   
 }
+
+.book_cart{
+  
+}
+
+
+.book_cart .bock_cover{
+  width: 230px;
+  height: 300px;
+}
+
 
 .input {
   width: 100%;

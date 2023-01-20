@@ -15,7 +15,7 @@ function NavBar() {
   const navBarTop = userData.isConnected ? (
     <div></div>
   ) : (
-    <div className="m-0 row bg-light p-2 w-100">
+    <div className="m-0 row bg_gray p-2 w-100">
       <div className="col d-flex">
         <div class="dropdown secondary-color">
           <Link
