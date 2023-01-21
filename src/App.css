@@ -3,6 +3,7 @@
   --secondary_color: #205375;
   --gray_color : #F5F5F5;
   --white_color: #fff;
+  --gray2_color:#7C7C7C;
 
 }
 
@@ -62,22 +63,69 @@
   
 }
 
-.book_cart{
-  
-}
-
 
 .book{
-  width: 230px;
-  height: 350px;
+  width: 170px;
+  padding: 13px;
+  margin-left: 13px;
 }
+
 
 .book .book_cover{
   width: 100%;
-  height: 75%;
+  height: 205px;
   background-size:contain; 
 }
 
+.book_title{
+  text-transform: capitalize !important;
+  font-weight: 600;
+  padding-top: 10px;
+  font-size: 16px;
+  margin: 0px;
+
+}
+
+.book_price{
+  margin-top: 4px;
+  font-size:18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.book_discount{
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: line-through;
+  color: var(--gray2_color) ;
+  display: inline;
+}
+
+.discount_percent{
+  margin-left: 4px;
+  background-color: #f66b0e3b;
+  color:var(--primary_color);
+  font-weight: bold;
+  padding: 4px 10px;
+}
+
+.rating{
+  font-size: 18px;
+}
+
+.shipping{
+  font-weight: 700;
+  color: var(--gray2_color);
+  padding-top: 4px;
+  text-transform: capitalize;
+}
+
+.btn_add_toCart{
+  background-color: var(--primary_color) !important;
+  width: 100%;
+  color: var(--white_color) !important;
+  font-weight: 800 !important;
+}
 .input {
   width: 100%;
   height: 40px;
@@ -118,20 +166,3 @@ input:hover {
   to {opacity: 100;}
 } */
 
-
-
-.slideImage{
-    animation: slideAnimation  1s ease 79ms 0 normal none;
-}
-@keyframes slideAnimation {
-0%,
-  50%,
-  100% {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
-  }
-}

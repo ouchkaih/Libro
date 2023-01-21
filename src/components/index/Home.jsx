@@ -17,9 +17,8 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
                 ></div>
                 <br />
                 <span className="" style={{ fontSize: "64px" }}>
-                  {" "}
                   New Book
-                </span>{" "}
+                </span>
                 <br />
                 <div
                   className="p-1 d-inline-block bg-light"
@@ -35,9 +34,27 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
             <b className="p-1">Popular Now</b>
           </h5>
           <div className="mt-4 ">
-            <div className="ms-3 book p-4 bg_white">
-              <div className="book_cover" style={{backgroundImage: `url(${url_image})`}}>
-                sdfaklsdjfalskdj
+            <div className="book bg_white">
+              <div
+                className="book_cover"
+                style={{ backgroundImage: `url(${url_image})` }}
+              ></div>
+              <div className="">
+                <p className="book_title ">book title </p>
+                <p className="book_price">
+                  <b>80 Dhs</b>
+                </p>
+                  <span className="book_discount">199 Dhs</span> <span className='discount_percent'>-20%</span>
+                  <div>
+                    <span className='rating'>4.5</span>
+                  </div>
+                  <div>
+                    <img src="images/logo/logo.svg" alt="" width="60px"/>
+                  </div>
+                  <p className='shipping'>
+                    free shipping
+                  </p>
+                  <button className="btn btn_add_toCart">Add To Cart </button>
               </div>
             </div>
           </div>
