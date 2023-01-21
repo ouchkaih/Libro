@@ -9,11 +9,7 @@
 
 
 
-.bg_image{
-  background-image: url("../public/icons/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 .box_shadow_card{
   box-shadow: 1px 5px 14px -8px rgb(0 0 0 / 54%);
@@ -55,6 +51,12 @@
 }
 
 
+.title{
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 13px;
+}
+
 .group {
   display: flex;
   line-height: 28px;
@@ -65,15 +67,15 @@
 
 
 .book{
-  width: 170px;
-  padding: 13px;
+  width: 180px;
+  padding: 14px;
   margin-left: 13px;
 }
 
 
 .book .book_cover{
   width: 100%;
-  height: 205px;
+  height: 200px;
   background-size:contain; 
 }
 
@@ -88,13 +90,13 @@
 
 .book_price{
   margin-top: 4px;
-  font-size:18px;
+  font-size:17px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 .book_discount{
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   text-decoration: line-through;
   color: var(--gray2_color) ;
@@ -110,7 +112,9 @@
 }
 
 .rating{
-  font-size: 18px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
 }
 
 .shipping{

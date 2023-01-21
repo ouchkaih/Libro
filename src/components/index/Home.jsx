@@ -29,11 +29,11 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
             </h1>
           </div>
         </div>
-        <div className="row bg_gray me-1 pt-4">
-          <h5 className="bg_white p-4 secondary-color">
-            <b className="p-1">Popular Now</b>
+        <div className="bg_gray">
+          <h5 className="bg_white title secondary-color">
+            <b className="">Popular Now</b>
           </h5>
-          <div className="mt-4 ">
+          <div className="">
             <div className="book bg_white">
               <div
                 className="book_cover"
@@ -46,7 +46,7 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
                 </p>
                   <span className="book_discount">199 Dhs</span> <span className='discount_percent'>-20%</span>
                   <div>
-                    <span className='rating'>4.5</span>
+                    <span className='rating '><img src="icons/star.svg" alt="" width="20px"/> &nbsp;&nbsp;<span>4.5</span></span>
                   </div>
                   <div>
                     <img src="images/logo/logo.svg" alt="" width="60px"/>
