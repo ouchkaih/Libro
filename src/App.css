@@ -3,7 +3,7 @@
   --secondary_color: #205375;
   --gray_color : #F5F5F5;
   --white_color: #fff;
-  --gray2_color:#7C7C7C;
+  --gray2_color:#b5b5b5;
 
 }
 
@@ -90,6 +90,11 @@
 
 }
 
+.book_author{
+  color: var(--gray2_color);
+  margin: 0;
+  font-size: 15px;
+}
 .book_price{
   margin-top: 4px;
   font-size:17px;

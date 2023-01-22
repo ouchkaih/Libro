@@ -42,22 +42,9 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
                 ></div>
                 <div className="">
                   <p className="book_title ">book title </p>
-                  <p className="book_price">
-                    <b>80 Dhs</b>
+                  <p className="book_author">
+                    <b>the author</b>
                   </p>
-                  <span className="book_discount">199 Dhs</span>
-                  <span className="discount_percent">-20%</span>
-                  <div>
-                    <span className="rating ">
-                      <img src="icons/star.svg" alt="" width="20px" />
-                      &nbsp;&nbsp;<span>4.5</span>
-                    </span>
-                  </div>
-                  <div>
-                    <img src="images/logo/logo.svg" alt="" width="60px" />
-                  </div>
-                  <p className="shipping">free shipping</p>
-                  <button className="btn btn_add_toCart">Add To Cart </button>
                 </div>
               </div>
             </div>
