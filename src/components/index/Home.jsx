@@ -35,18 +35,22 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
               <b className="">Popular Now</b>
             </h5>
             <div className="">
-              <div className="book bg_white">
-                <div
-                  className="book_cover"
-                  style={{ backgroundImage: `url(${url_image})` }}
-                ></div>
-                <div className="">
-                  <p className="book_title ">book title </p>
-                  <p className="book_author">
-                    <b>the author</b>
-                  </p>
+              
+                <div className="book bg_white">
+                  <a href="">
+                    <div
+                      className="book_cover"
+                      style={{ backgroundImage: `url(${url_image})` }}
+                    ></div>
+                    <div className="">
+                      <p className="book_title ">book title </p>
+                      <p className="book_author">
+                        <b>the author</b>
+                      </p>
+                    </div>
+                  </a>
                 </div>
-              </div>
+              
             </div>
           </div>
           <div>
@@ -74,7 +78,7 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
                     <input type="text" placeholder="All Category" />
                   </div>
                 </div>
-                <div className='books_container'>
+                <div className="books_container">
                   <div className="book bg_white">
                     <div
                       className="book_cover"
