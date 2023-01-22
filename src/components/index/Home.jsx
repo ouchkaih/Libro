@@ -30,31 +30,92 @@ const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?
           </div>
         </div>
         <div className="bg_gray">
-          <h5 className="bg_white title secondary-color">
-            <b className="">Popular Now</b>
-          </h5>
-          <div className="">
-            <div className="book bg_white">
-              <div
-                className="book_cover"
-                style={{ backgroundImage: `url(${url_image})` }}
-              ></div>
-              <div className="">
-                <p className="book_title ">book title </p>
-                <p className="book_price">
-                  <b>80 Dhs</b>
-                </p>
-                  <span className="book_discount">199 Dhs</span> <span className='discount_percent'>-20%</span>
-                  <div>
-                    <span className='rating '><img src="icons/star.svg" alt="" width="20px"/> &nbsp;&nbsp;<span>4.5</span></span>
-                  </div>
-                  <div>
-                    <img src="images/logo/logo.svg" alt="" width="60px"/>
-                  </div>
-                  <p className='shipping'>
-                    free shipping
+          <div className="popularBook">
+            <h5 className="bg_white title secondary-color">
+              <b className="">Popular Now</b>
+            </h5>
+            <div className="">
+              <div className="book bg_white">
+                <div
+                  className="book_cover"
+                  style={{ backgroundImage: `url(${url_image})` }}
+                ></div>
+                <div className="">
+                  <p className="book_title ">book title </p>
+                  <p className="book_price">
+                    <b>80 Dhs</b>
                   </p>
+                  <span className="book_discount">199 Dhs</span>
+                  <span className="discount_percent">-20%</span>
+                  <div>
+                    <span className="rating ">
+                      <img src="icons/star.svg" alt="" width="20px" />
+                      &nbsp;&nbsp;<span>4.5</span>
+                    </span>
+                  </div>
+                  <div>
+                    <img src="images/logo/logo.svg" alt="" width="60px" />
+                  </div>
+                  <p className="shipping">free shipping</p>
                   <button className="btn btn_add_toCart">Add To Cart </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h5 className="bg_white title secondary-color">
+              <b className="">All Book</b>
+            </h5>
+            <div className="book_container">
+              <div className="filter">
+                <h6>
+                  <b>Price</b>
+                </h6>
+              </div>
+              <div className="books_result">
+                <div className="sort_container">
+                  <div>
+                    <label htmlFor="">
+                      <b>Category</b>
+                    </label>
+                    <input type="text" placeholder="All Category" />
+                  </div>
+                  <div>
+                    <label htmlFor="">
+                      <b>Category</b>
+                    </label>
+                    <input type="text" placeholder="All Category" />
+                  </div>
+                </div>
+                <div className='books_container'>
+                  <div className="book bg_white">
+                    <div
+                      className="book_cover"
+                      style={{ backgroundImage: `url(${url_image})` }}
+                    ></div>
+                    <div className="">
+                      <p className="book_title ">book title </p>
+                      <p className="book_price">
+                        <b>80 Dhs</b>
+                      </p>
+                      <span className="book_discount">199 Dhs</span>
+                      <span className="discount_percent">-20%</span>
+                      <div>
+                        <span className="rating ">
+                          <img src="icons/star.svg" alt="" width="20px" />
+                          &nbsp;&nbsp;<span>4.5</span>
+                        </span>
+                      </div>
+                      <div>
+                        <img src="images/logo/logo.svg" alt="" width="60px" />
+                      </div>
+                      <p className="shipping">free shipping</p>
+                      <button className="btn btn_add_toCart">
+                        Add To Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
