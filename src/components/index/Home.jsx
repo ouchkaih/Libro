@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
 import PopularNow from './popular'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import {fetchData} from '../reducers/BookReducer'
 function Home() { 
   const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
   // variable to store all books 
   const [books, setBooks] = useState([])
 
-  const booksData = useSelector(state=> state.books)
+  const booksData = useSelector(state=> state.books.data)
   // get the books from database 
-  useEffect(() => {
-    
-  }, [])
+  const dispatch = useDispatch()
+  if(booksData.length === 0){
+    dispatch(fetchData());
+  }
+  
   return (
     <div>
       <div>

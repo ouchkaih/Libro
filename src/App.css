@@ -55,6 +55,11 @@
   padding-bottom: 40px;
 }
 
+.Popular_books_container{
+  display: flex;
+  
+}
+
 .popularBook .book{
   margin-left: 18px;
 }
