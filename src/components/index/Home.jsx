@@ -1,8 +1,20 @@
 import React, {useEffect, useState} from 'react'
+import axios from "axios"
 function Home() { 
+  const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
+  // variable to store all books 
+  const [books, setBooks] = useState([])
+  // get the books from database 
+  useEffect(()=>{
+    axios.get("http://localhost/php/libro/getBooks.php").then(
+      (res)=>{
+        // set the variable with books geted from databse
+        setBooks(res.data)
+      }
+    );
+  },[])
 
-  
-const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
+
   return (
     <div>
       <div>
