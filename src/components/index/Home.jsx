@@ -1,20 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios"
+import PopularNow from './popular'
+import {useSelector} from 'react-redux'
 function Home() { 
   const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
   // variable to store all books 
   const [books, setBooks] = useState([])
+
+  const booksData = useSelector(state=> state.books)
   // get the books from database 
-  useEffect(()=>{
-    axios.get("http://localhost/php/libro/getBooks.php").then(
-      (res)=>{
-        // set the variable with books geted from databse
-        setBooks(res.data)
-      }
-    );
-  },[])
-
-
+  useEffect(() => {
+    
+  }, [])
   return (
     <div>
       <div>
@@ -42,29 +39,7 @@ function Home() {
           </div>
         </div>
         <div className="bg_gray">
-          <div className="popularBook">
-            <h5 className="bg_white title secondary-color">
-              <b className="">Popular Now</b>
-            </h5>
-            <div className="">
-              
-                <div className="book bg_white">
-                  <a href="">
-                    <div
-                      className="book_cover"
-                      style={{ backgroundImage: `url(${url_image})` }}
-                    ></div>
-                    <div className="">
-                      <p className="book_title ">book title </p>
-                      <p className="book_author">
-                        <b>the author</b>
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              
-            </div>
-          </div>
+          <PopularNow/>
           <div>
             <h5 className="bg_white title secondary-color">
               <b className="">All Book</b>
