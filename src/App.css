@@ -52,17 +52,34 @@
 
 .popularBook{
   padding-top:13px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .Popular_books_container{
   display: flex;
+  overflow-x: scroll;
+  flex-shrink: unset;
+  padding-bottom: 20px;
   
 }
 
 .popularBook .book{
   margin-left: 18px;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(216, 216, 216, 0.451);
+  border-radius: 50px;
+  padding: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: rgb(216, 216, 216);}
+
 .book a {
   text-decoration: none;
 }
@@ -84,7 +101,10 @@
 .book{
   width: 200px;
   padding: 14px;
+  flex-shrink: 0;
 }
+
+
 
 .book .book_cover{
   width: 100%;
@@ -107,6 +127,8 @@
   margin: 0;
   font-size: 15px;
 }
+
+
 .book_price{
   margin-top: 4px;
   font-size:17px;
