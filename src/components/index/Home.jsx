@@ -3,10 +3,10 @@ import axios from "axios"
 import PopularNow from './popular'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchData} from '../reducers/BookReducer'
+import Books from './books'
 function Home() { 
-  const url_image = "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0"
-  // variable to store all books 
-  const [books, setBooks] = useState([])
+
+ 
 
   const booksData = useSelector(state=> state.books.data)
   // get the books from database 
@@ -68,35 +68,7 @@ function Home() {
                     <input type="text" placeholder="All Category" />
                   </div>
                 </div>
-                <div className="books_container">
-                  <div className="book bg_white">
-                    <div
-                      className="book_cover"
-                      style={{ backgroundImage: `url(${url_image})` }}
-                    ></div>
-                    <div className="">
-                      <p className="book_title ">book title </p>
-                      <p className="book_price">
-                        <b>80 Dhs</b>
-                      </p>
-                      <span className="book_discount">199 Dhs</span>
-                      <span className="discount_percent">-20%</span>
-                      <div>
-                        <span className="rating ">
-                          <img src="icons/star.svg" alt="" width="20px" />
-                          &nbsp;&nbsp;<span>4.5</span>
-                        </span>
-                      </div>
-                      <div>
-                        <img src="images/logo/logo.svg" alt="" width="60px" />
-                      </div>
-                      <p className="shipping">free shipping</p>
-                      <button className="btn btn_add_toCart">
-                        Add To Cart
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <Books/>
               </div>
             </div>
           </div>

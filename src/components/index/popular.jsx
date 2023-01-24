@@ -3,15 +3,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import {fetchData} from '../reducers/BookReducer';
 
 function PopularNow() {
-  const url_image =
-    "https://th.bing.com/th/id/R.738922b81be3dd06a937ea20ccc855ce?rik=HTRBKi6CYNx30A&pid=ImgRaw&r=0";
+  
     const booksData = useSelector((state) => state.books.data);
     // get the books from database
     const dispatch = useDispatch();
     if (booksData.length === 0) {
         dispatch(fetchData());
     }
-    console.log(booksData);
   return (
     <div className="">
       {booksData.length > 0 ? (

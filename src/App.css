@@ -204,7 +204,16 @@
 
 .books_container{
   padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
+
+.books_container .book{
+  margin: 0px 7px 10px 0px;
+}
+
 .input {
   width: 100%;
   height: 40px;
