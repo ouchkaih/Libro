@@ -28,6 +28,20 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
+.Home_container{
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
+  background-color: var(--gray_color);
+}
+
+.Home_container .containe_home{
+  max-width: 1300px;
+  min-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .secondary-color{
   color : var(--secondary_color) !important;
@@ -67,14 +81,14 @@
   margin-left: 18px;
 }
 
-::-webkit-scrollbar {
+.popularBook ::-webkit-scrollbar {
   width: 10px;
+  height: 17px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(216, 216, 216, 0.451);
   border-radius: 50px;
-  padding: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover{
@@ -83,6 +97,8 @@
 .book a {
   text-decoration: none;
 }
+
+
 .title{
   padding: 20px;
   width: 100%;
@@ -99,7 +115,7 @@
 
 
 .book{
-  width: 200px;
+  width: 220px;
   padding: 14px;
   flex-shrink: 0;
 }
@@ -108,9 +124,10 @@
 
 .book .book_cover{
   width: 100%;
-  height: 244px;
+  height: 254px;
   background-size:cover; 
 }
+
 
 .book_title{
   text-transform: capitalize !important;
@@ -161,6 +178,49 @@
   padding-bottom: 3px;
 }
 
+.select_label{
+  margin-right: 12px;
+}
+
+.select-container {
+  position: relative;
+  display: inline;
+  border:1.4px solid rgba(0, 0, 0, 0.185);
+  padding: 9px !important;
+}
+
+.icon {
+  position: absolute;
+  width: 100%;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+select {
+  font-size: 16px;
+  border: none;
+  width: 200px !important;
+  border-radius: 4px;
+  appearance: none;
+  display: inline;
+  padding: 8px !important;
+  background-color: none;
+  color: rgba(0, 0, 0, 0.568);
+}
+
+select:focus{
+  border: none;
+  outline: 0;
+}
+
+select:focus  .select-container {
+  border: 10px solid black;
+  outline: 0;
+  background-color: red;
+}
+
 .shipping{
   font-weight: 700;
   color: var(--gray2_color);
@@ -186,7 +246,7 @@
 
 .book_container{
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1.25fr 4.5fr;
   gap: 25px;
 
 }
@@ -206,12 +266,10 @@
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-
 }
 
 .books_container .book{
-  margin: 0px 7px 10px 0px;
+  margin: 0px 20px 27px 0px;
 }
 
 .input {

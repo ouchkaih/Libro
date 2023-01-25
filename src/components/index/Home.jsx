@@ -16,8 +16,8 @@ function Home() {
   }
   
   return (
-    <div>
-      <div>
+    <div className='Home_container'>
+      <div className='containe_home'>
         <div className="p-5 bg_orange row w-100 m-0">
           <div className="col-4 pt-5 pb-5 p-3">
             <h1 className="p-3 pt-5 pb-5 mb-5">
@@ -42,37 +42,9 @@ function Home() {
           </div>
         </div>
         <div className="bg_gray">
-          <PopularNow/>
-          <div>
-            <h5 className="bg_white title secondary-color">
-              <b className="">All Book</b>
-            </h5>
-            <div className="book_container">
-              <div className="filter">
-                <h6>
-                  <b>Price</b>
-                </h6>
-              </div>
-              <div className="books_result">
-                <div className="sort_container">
-                  <div>
-                    <label htmlFor="">
-                      <b>Category</b>
-                    </label>
-                    <input type="text" placeholder="All Category" />
-                  </div>
-                  <div>
-                    <label htmlFor="">
-                      <b>Category</b>
-                    </label>
-                    <input type="text" placeholder="All Category" />
-                  </div>
-                </div>
-                <Books/>
-              </div>
-            </div>
+          <PopularNow/>            
+            <Books/>
           </div>
-        </div>
       </div>
     </div>
   );
