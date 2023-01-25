@@ -182,11 +182,12 @@
   margin-right: 12px;
 }
 
-.select-container {
+.select-container_sort {
   position: relative;
   display: inline;
   border:1.4px solid rgba(0, 0, 0, 0.185);
   padding: 9px !important;
+  padding-right: 0px !important;
 }
 
 .icon {
@@ -198,27 +199,31 @@
   font-size: 20px;
 }
 
-select {
+.select-container_sort select {
   font-size: 16px;
   border: none;
-  width: 200px !important;
+  width: 150px !important;
   border-radius: 4px;
-  appearance: none;
   display: inline;
-  padding: 8px !important;
-  background-color: none;
+  padding: 8px ;
   color: rgba(0, 0, 0, 0.568);
 }
 
-select:focus{
+.select-container_sort select:focus{
   border: none;
   outline: 0;
 }
 
-select:focus  .select-container {
-  border: 10px solid black;
-  outline: 0;
-  background-color: red;
+
+.select_category{
+  padding: 8px !important;
+    border: 1.4px solid rgba(0, 0, 0, 0.185);
+      color: rgba(0, 0, 0, 0.568);
+}
+
+.select_category:focus{
+    border: 1.4px solid rgba(0, 0, 0, 0.185);
+    outline: 0;
 }
 
 .shipping{

@@ -23,7 +23,7 @@ function Books() {
                 <label htmlFor="" className="select_label">
                   <b>Category </b>
                 </label>
-                <select name="" id="">
+                <select name="" id="" className='select_category'>
                   <option value="All Category" className="sort_select">
                     All Category
                   </option>
@@ -36,8 +36,8 @@ function Books() {
                 <label htmlFor="" className="select_label">
                   <b>Sort by</b>
                 </label>
-                <div class="select-container">
-                  <img src="icons/star.svg" alt="" width="20px"/>
+                <div class="select-container_sort">
+                  <img src="icons/sort.svg" alt="" width="30px"/>
                   <select>
                     <option>Option 1</option>
                     <option>Option 2</option>
