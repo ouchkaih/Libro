@@ -1,15 +1,32 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
 
 function Books() {
+  // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
+    const [selectedOption, setSelectedOption] = useState("ALL CATEGORY");
+    const [filteredData, setFilteredData] = useState([]);
 
-    const byCategory = (e)=>{
-      if(e.target.value.toUpperCase() !== "ALL CATEGORY"){
+    // get all categorys of books there is in website 
+    const uniqueArray = [...new Set(allBooks.map((item) => item.category))];
 
-      }else{
+  // handleChange select input
+    const byCategory = (e) => {
+      setSelectedOption(e.target.value);
+    };
+
+
+    useEffect(() => {
+      if (selectedOption === "ALL CATEGORY") {
+        // in the first load and if the use want to see all books 
+        setFilteredData(allBooks);
+      } else {
+        // whene the use filtred using select 
+        setFilteredData(
+          allBooks.filter((item) => item.category === selectedOption)
+        );
       }
-    }
+    }, [selectedOption, allBooks]);
 
 
   return (
@@ -31,11 +48,11 @@ function Books() {
                   <b>Category </b>
                 </label>
                 <select name="" id="" className="select_category" onChange={byCategory}>
-                  <option value="All Category" className="sort_select">
+                  <option value="ALL CATEGORY" className="sort_select">
                     All Category
                   </option>
-                  {allBooks.map((item) => (
-                    <option value={item.category}>{item.category}</option>
+                  {uniqueArray.map((item) => (
+                    <option value={item}>{item}</option>
                   ))}
                 </select>
               </div>
@@ -54,9 +71,9 @@ function Books() {
                 </div>
               </div>
             </div>
-            {allBooks.length > 0 ? (
+            {filteredData.length > 0 ? (
               <div className="books_container">
-                {allBooks.map((item) => (
+                {filteredData.map((item) => (
                   <div className="book bg_white">
                     <div
                       className="book_cover"
