@@ -1,8 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useSelector} from 'react-redux';
 
 function Books() {
-    const allBooks = useSelector((state) => state.books.data);
+    let allBooks = useSelector((state) => state.books.data);
+
+    const byCategory = (e)=>{
+      if(e.target.value.toUpperCase() !== "ALL CATEGORY"){
+
+      }else{
+      }
+    }
 
 
   return (
@@ -23,7 +30,7 @@ function Books() {
                 <label htmlFor="" className="select_label">
                   <b>Category </b>
                 </label>
-                <select name="" id="" className="select_category">
+                <select name="" id="" className="select_category" onChange={byCategory}>
                   <option value="All Category" className="sort_select">
                     All Category
                   </option>
@@ -39,10 +46,10 @@ function Books() {
                 <div class="select-container_sort">
                   <img src="icons/sort.svg" alt="" width="30px" />
                   <select>
-                    <option>Publication date</option>
-                    <option>Alphabetically by title</option>
-                    <option>Alphabetically by author</option>
-                    <option>Most Population</option>
+                    <option value="Publication date">Publication date</option>
+                    <option value="Alphabetically by title">Alphabetically by title</option>
+                    <option value="Alphabetically by author">Alphabetically by author</option>
+                    <option value="Most Population">Most Population</option>
                   </select>
                 </div>
               </div>

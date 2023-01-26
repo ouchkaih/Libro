@@ -21,7 +21,6 @@ export const { getData } = BookReducer.actions;
 export const fetchData = ()=>async (dispatch) =>{
   const response = await axios.get("http://localhost/php/libro/getBooks.php");
   dispatch(getData(response.data))
-  console.log(response.data);
 }
 
 export default BookReducer.reducer

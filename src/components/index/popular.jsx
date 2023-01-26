@@ -4,7 +4,7 @@ import {fetchData} from '../reducers/BookReducer';
 
 function PopularNow() {
   
-    const booksData = useSelector((state) => state.books.data);
+    const booksData = useSelector((state) => state.books.data).filter(item=> item.rating > 4);
     // get the books from database
     const dispatch = useDispatch();
     if (booksData.length === 0) {

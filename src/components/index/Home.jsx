@@ -40,6 +40,7 @@ function Home() {
               </b>
             </h1>
           </div>
+          
         </div>
         <div className="bg_gray">
           <PopularNow/>            

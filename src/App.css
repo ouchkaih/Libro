@@ -271,10 +271,11 @@
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .books_container .book{
-  margin: 0px 20px 27px 0px;
+  margin: 0px 0 27px 0px;
 }
 
 .input {
