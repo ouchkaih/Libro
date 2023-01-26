@@ -91,7 +91,7 @@ function Books() {
                       <div>
                         <span className="rating ">
                           <img src="icons/star.svg" alt="" width="20px" />
-                          &nbsp;&nbsp;<span>4.5</span>
+                          &nbsp;&nbsp;<span>{item.rating}</span>
                         </span>
                       </div>
                       <div>
