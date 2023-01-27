@@ -28,7 +28,6 @@ function Books() {
       }
     }, [selectedOption, allBooks]);
 
-
   return (
     <>
       <div>

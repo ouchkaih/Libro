@@ -16,8 +16,8 @@ function Home() {
   }
   
   return (
-    <div className='Home_container'>
-      <div className='containe_home'>
+    <div className="Home_container">
+      <div className="containe_home">
         <div className="p-5 bg_orange row w-100 m-0">
           <div className="col-4 pt-5 pb-5 p-3">
             <h1 className="p-3 pt-5 pb-5 mb-5">
@@ -40,12 +40,16 @@ function Home() {
               </b>
             </h1>
           </div>
-          
+          <div className="col ">
+            <img src="test.png" alt="" className='card' width="200px" />
+            <img src="test.png"  alt="" className='card front' width="200px" />
+            <img src="test.png" alt="" className='card' width="200px" />
+          </div>
         </div>
         <div className="bg_gray">
-          <PopularNow/>            
-            <Books/>
-          </div>
+          <PopularNow />
+          <Books />
+        </div>
       </div>
     </div>
   );
