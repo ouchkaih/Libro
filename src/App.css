@@ -282,14 +282,71 @@
   width: 190px;
   height: 200px;
   display: inline-block !important;
+       scale: 0.9;
+    position: fixed;
+    top: 40px;
 }
 .front{
-  scale:1.5;
-  z-index: 1;
-  margin-top: 140px;
-  box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+  scale: 1.4;
+    z-index: 1;
+    top: 140px;
+    box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+  animation: 2s linear 0s 1 flipping;
+      transform: translateX(0);
+}
+
+
+@keyframes flipping {
+  from{
+    scale: 0.9;
+      z-index: 1;
+      top: 40px;
+      box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      transform: translateX(-211px);
+      
+  }to{
+    scale: 1.4;
+      z-index: 1;
+      top: 140px;
+      box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      transform: translateX(0);
+  }
+}
+
+.front:hover{
+  width: 190px;
+    height: 200px;
+    display: inline-block !important;
+    scale: 0.9;
+  animation: 1s linear 0s 1 flippingReverse;
+}
+
+
+@keyframes flippingReverse {
+  from {
+    scale: 1.4;
+    z-index: 1;
+    top: 140px;
+    box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+    transform: translateX(0);
+  }to{
+      scale: 0.9;
+      z-index: 1;
+      top: 0px;
+      box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -webkit-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 1px -1px 196px -28px rgba(0, 0, 0, 0.75);
+      transform: translateX(301px);
+  
+    }
 }
 
 
