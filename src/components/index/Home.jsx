@@ -40,7 +40,7 @@ function Home() {
               </b>
             </h1>
           </div>
-          <div className="col ">
+          <div className="col ms-5 ps-5">
             <img src="test.png" alt="" className='card' width="200px" />
             <img src="test.png"  alt="" className='card front' width="200px" />
             <img src="test.png" alt="" className='card' width="200px" />

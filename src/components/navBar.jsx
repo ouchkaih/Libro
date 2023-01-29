@@ -18,7 +18,7 @@ function NavBar() {
     <div className="m-0 row bg_gray p-2 w-100">
       <div className="col d-flex">
         <div class="dropdown secondary-color">
-          <Link
+          <Link to=""
             type="button"
             class="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
@@ -27,13 +27,13 @@ function NavBar() {
           </Link>
           <ul class="dropdown-menu">
             <li className="">
-              <Link class="dropdown-item" to="">
+              <Link to="" class="dropdown-item" >
                 <AiOutlineUser size="20px" />
                 <span className=" ms-2">Seller Login</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link to="" class="dropdown-item" href="#">
                 <AiOutlineUserAdd size="20px" />
                 <span className="ms-2">Create Seller Account</span>
               </Link>
@@ -41,7 +41,7 @@ function NavBar() {
           </ul>
         </div>
         <div class="dropdown ms-4 col secondary-color">
-          <Link
+          <Link to=""
             type="button"
             class="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
@@ -55,12 +55,12 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link class="dropdown-item" to="#">
                 <span className="">Disputes & Reports</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link class="dropdown-item" to="#">
                 <span className="">Report IPR infringement </span>
               </Link>
             </li>
@@ -68,11 +68,11 @@ function NavBar() {
         </div>
       </div>
       <div className="col text-end secondary-color d-flex justify-content-end">
-        <Link className="nav-link ">
+        <Link className="nav-link " to="">
           <FaRegHeart size="20px" />
           <span className="ms-1">Wish list</span>
         </Link>
-        <Link className="nav-link ms-4">
+        <Link className="nav-link ms-4" to="">
           <MdOutlineTranslate size="20px" />
           <span className="ms-2">Eng</span>
         </Link>
@@ -94,8 +94,8 @@ function NavBar() {
     <>
       <div className="row d-flex align-items-center">
         <div class="dropdown col-9 text-end ">
-          <Link
-            type="button"
+          <Link to=""
+             type="button"
             class="dropdown-toggle nav-link secondary-color"
             data-bs-toggle="dropdown"
           >
@@ -103,19 +103,19 @@ function NavBar() {
           </Link>
           <ul class="dropdown-menu">
             <li className="">
-              <Link class="dropdown-item" to="">
+              <Link  class="dropdown-item" to="">
                 <AiOutlineUser size="20px" />
                 <span className=" ms-2">Join In</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link class="dropdown-item" to="#">
                 <AiOutlineUserAdd size="20px" />
                 <span className="ms-2">Create Account</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" href="#">
+              <Link class="dropdown-item" to="#">
                 <AiOutlineShoppingCart size="20px" />
                 <span className="ms-2">Sell in LIBRO</span>
               </Link>

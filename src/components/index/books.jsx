@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
-
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
@@ -9,6 +8,8 @@ function Books() {
 
     // get all categorys of books there is in website 
     const uniqueArray = [...new Set(allBooks.map((item) => item.category))];
+
+    const [range, setRange] = useState({ min: 0, max: 100 });
 
   // handleChange select input
     const byCategory = (e) => {
@@ -39,6 +40,17 @@ function Books() {
             <h6>
               <b>Price</b>
             </h6>
+            <div className='priceContainer'> 
+              <div className='minPrice'>
+                  From <span><b>200</b></span> Dhs
+              </div>
+              <div className='maxPrice'>
+                  Up To <span><b>200</b></span> Dhs
+              </div>
+            </div>
+            <div className=''>
+              
+            </div>
           </div>
           <div className="books_result">
             <div className="sort_container">
