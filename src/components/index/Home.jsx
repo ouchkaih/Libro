@@ -5,17 +5,12 @@ import {useDispatch, useSelector} from 'react-redux'
 import {fetchData} from '../reducers/BookReducer'
 import Books from './books'
 function Home() { 
-  const [count , setCount] = useState(0)
   const booksData = useSelector(state=> state.books.data)
-  const [images, setImages] = useState(["test.png", "tes.png", "test.png"]);
   // get the books from database 
   const dispatch = useDispatch()
   if(booksData.length === 0){
     dispatch(fetchData());
   }
-  setInterval(()=>{
-    setImages([images[2], images[0], images[1]])
-  }, 10000)
   return (
     <div className="Home_container">
       <div className="containe_home">
@@ -43,9 +38,6 @@ function Home() {
           </div>
           <div className="col ms-5 ps-5">
 
-            <img src={images[0]} alt="" className='card to_left' width="200px " />
-            <img src={images[1]} alt="" className='card front' width="200px" />
-            <img src={images[2]} alt="" className='card back' width="200px" />
           </div>
         </div>
         <div className="bg_gray">
