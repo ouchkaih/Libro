@@ -37,7 +37,7 @@ function Home() {
             </h1>
           </div>
           <div className="col ms-5 ps-5">
-
+            <img src="images/logo/logo.png" alt="" />
           </div>
         </div>
         <div className="bg_gray">
