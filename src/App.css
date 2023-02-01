@@ -8,7 +8,9 @@
 }
 
 
-
+.gray2_color{
+  color: var(--gray2_color);
+}
 
 
 .box_shadow_card{
@@ -52,6 +54,12 @@
   color:white !important;
 }
 
+.home_background{
+  background-image: url("../public/images/logo/backgroundIm.png");
+}
+.containe_home{
+  
+}
 
 .bg_gray {
   background-color: var(--gray_color) !important;
@@ -215,13 +223,13 @@
 }
 
 
-.select_category{
+.select_style{
   padding: 8px !important;
     border: 1.4px solid rgba(0, 0, 0, 0.185);
       color: rgba(0, 0, 0, 0.568);
 }
 
-.select_category:focus{
+.select_style:focus{
     border: 1.4px solid rgba(0, 0, 0, 0.185);
     outline: 0;
 }
@@ -245,6 +253,7 @@
   background-color: var(--white_color);
   padding-top: 40px;
   padding-left: 30px;
+  padding-right:25px ;
 }
 
 
@@ -316,11 +325,12 @@ input:hover {
   display: flex;
   font-size: 13px;
   justify-content: space-between;
-  padding-right: 10px;
+  width:100%;
 }
 .priceContainer div{
   background-color: var(--gray_color);
-  padding:8px;
+  padding:14px 8px  ;
+
 }
 
 
@@ -329,6 +339,32 @@ input:hover {
 }
 
 
+.Languages_container{
+ margin-top: 60px;
+}
+
+.Languages_container select{
+  width: 100%;
+}
+
+
+.selectStar{
+  display: flex;
+  align-items:center;
+  margin-bottom: 18px;
+}
+
+.evaluationClients{
+  margin-top:60px;
+}
+
+.evaluationClients input[type="radio"]:after{
+  background-color: red !important;
+}
+
+.evaluationClients input:focus {
+  background-color: var(--primary_color);
+}
 /* 
 @keyframes slideAnimation {
   from {opacity:0;}

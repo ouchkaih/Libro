@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
+import {AiFillStar} from "react-icons/ai"
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
@@ -37,19 +38,87 @@ function Books() {
         </h5>
         <div className="book_container">
           <div className="filter">
-            <h6>
-              <b>Price</b>
-            </h6>
-            <div className='priceContainer'> 
-              <div className='minPrice'>
-                  From <span><b>200</b></span> Dhs
+            <div>
+              <h6>
+                <b>Price</b>
+              </h6>
+              <div className='priceContainer'> 
+                <div className='minPrice'>
+                    From <span><b>200</b></span> Dhs
+                </div>
+                <div className='maxPrice'>
+                    Up To <span><b>200</b></span> Dhs
+                </div>
               </div>
-              <div className='maxPrice'>
-                  Up To <span><b>200</b></span> Dhs
+              <div className='' >
+                <input type="range" name="" id="" />
               </div>
             </div>
-            <div className=''>
-              
+            <div className="Languages_container ">
+              <h6><b>Languages</b></h6>
+              <select name="" id="" className='select_style'>
+                <option value="">English</option>
+              </select>
+            </div>
+            <div className="evaluationClients">
+              <h6><b>Evaluation Clients</b></h6>
+              <div>
+                 <div className="selectStar">
+                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                 {/* stars icons  */}
+                    <label htmlFor="fiveStar">
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                    </label>
+                 </div>
+                 <div className="selectStar">
+                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                 {/* stars icons  */}
+                    <label htmlFor="fiveStar">
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                    </label>
+                 </div>
+                 <div className="selectStar">
+                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                 {/* stars icons  */}
+                    <label htmlFor="fiveStar">
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                    </label>
+                 </div>
+                 <div className="selectStar">
+                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                 {/* stars icons  */}
+                    <label htmlFor="fiveStar">
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                    </label>
+                 </div>
+                 <div className="selectStar">
+                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                 {/* stars icons  */}
+                    <label htmlFor="fiveStar">
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                      <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
+                    </label>
+                 </div>
+              </div>
             </div>
           </div>
           <div className="books_result">
@@ -58,7 +127,7 @@ function Books() {
                 <label htmlFor="" className="select_label">
                   <b>Category </b>
                 </label>
-                <select name="" id="" className="select_category" onChange={byCategory}>
+                <select name="" id="" className="select_style" onChange={byCategory}>
                   <option value="ALL CATEGORY" className="sort_select">
                     All Category
                   </option>
