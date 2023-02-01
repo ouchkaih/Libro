@@ -120,6 +120,53 @@ function Books() {
                  </div>
               </div>
             </div>
+            <div className="discount_Container">
+              <h6>
+                <b>Discount</b>
+              </h6>
+              <div>
+                <div className="selectDiscount">
+                  <input type="radio" name="star_number" id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                    <label htmlFor="fiveDiscount">
+                      <h6 className="gray2_color">
+                        <b>50% and more</b>
+                      </h6>
+                    </label>
+                 </div> 
+                 <div className="selectDiscount">
+                  <input type="radio" name="star_number" id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} />
+                    <label htmlFor="fourDiscount">
+                      <h6 className="gray2_color">
+                        <b>40% and more</b>
+                      </h6>
+                    </label>
+                 </div>   
+                 <div className="selectDiscount">
+                  <input type="radio" name="star_number" id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                    <label htmlFor="treeDiscount">
+                      <h6 className="gray2_color">
+                        <b>30% and more</b>
+                      </h6>
+                    </label>
+                 </div>   
+                 <div className="selectDiscount">
+                  <input type="radio" name="star_number" id="twoDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                    <label htmlFor="twoDiscount">
+                      <h6 className="gray2_color">
+                        <b>20% and more</b>
+                      </h6>
+                    </label>
+                 </div>   
+                 <div className="selectDiscount">
+                  <input type="radio" name="star_number" id="oneDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                    <label htmlFor="oneDiscount">
+                      <h6 className="gray2_color">
+                        <b>10% and more</b>
+                      </h6>
+                    </label>
+                 </div>                  
+              </div>
+            </div>
           </div>
           <div className="books_result">
             <div className="sort_container">
