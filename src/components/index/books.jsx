@@ -64,7 +64,7 @@ function Books() {
               <h6><b>Evaluation Clients</b></h6>
               <div>
                  <div className="selectStar">
-                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
                  {/* stars icons  */}
                     <label htmlFor="fiveStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
@@ -75,9 +75,9 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" id="fourStar" className='' style={{width:"18px" , height:"18px" }} />
                  {/* stars icons  */}
-                    <label htmlFor="fiveStar">
+                    <label htmlFor="fourStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
@@ -86,9 +86,9 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" id="treeStar" className='' style={{width:"18px" , height:"18px" }} />
                  {/* stars icons  */}
-                    <label htmlFor="fiveStar">
+                    <label htmlFor="treeStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
@@ -97,9 +97,9 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" id="twoStar" className='' style={{width:"18px" , height:"18px" }} />
                  {/* stars icons  */}
-                    <label htmlFor="fiveStar">
+                    <label htmlFor="twoStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color"/>
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
@@ -108,9 +108,9 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="" id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" id="oneStar" className='' style={{width:"18px" , height:"18px" }} />
                  {/* stars icons  */}
-                    <label htmlFor="fiveStar">
+                    <label htmlFor="oneStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="gray2_color"/>
