@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
 import {AiFillStar} from "react-icons/ai"
+import {all} from 'axios';
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
@@ -20,28 +21,36 @@ function Books() {
 
   // handleChange Language 
   const handlChangeLanguage = (e)=>{
-    setSelectLanguage(e.target.value)
+    setSelectLanguage(e.target.value.toUpperCase());
   }
+
+    useEffect(() => {
+      if (selectLanguage !== "ALL LANGUAGES") {
+        setFilteredData(
+          filteredData.filter(
+            (item) => item.language.toUpperCase() === selectLanguage
+          )
+        );
+      } else {
+        if(selectedOption !== "ALL CATEGORY"){
+          setFilteredData(filteredData);
+        }else{
+          setFilteredData(allBooks);
+
+        }
+      }
+    }, [selectLanguage]);
 
     useEffect(() => {
       if (selectedOption === "ALL CATEGORY") {
         // in the first load and if the use want to see all books 
-        if (selectLanguage !== "") {
-          setSelectLanguage(
-            allBooks.filter((item) => item.laguage === selectLanguage)
-          );
-        }else{
-          setFilteredData(allBooks);
-        }
-        
+        setFilteredData(allBooks)        
       } else {
         // whene the use filtred using select 
         setFilteredData(
           allBooks.filter((item) => item.category === selectedOption)
         );
-      }
-
-      
+      }      
     }, [selectedOption, allBooks]);
 
   return (
@@ -71,8 +80,10 @@ function Books() {
             <div className="Languages_container ">
               <h6><b>Languages</b></h6>
               <select name="" id="" onChange={handlChangeLanguage} className='select_style'>
-                <option value="">English</option>
-                <option value="">French</option>
+                <option value="ALL LANGUAGES">select Language</option>
+                <hr />
+                <option value="English">English</option>
+                <option value="French">French</option>
               </select>
             </div>
             <div className="evaluationClients">
