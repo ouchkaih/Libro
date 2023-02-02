@@ -7,27 +7,41 @@ function Books() {
     const [selectedOption, setSelectedOption] = useState("ALL CATEGORY");
     const [filteredData, setFilteredData] = useState([]);
 
-    // get all categorys of books there is in website 
+    // get all categorys of books there is in website without repeatition 
     const uniqueArray = [...new Set(allBooks.map((item) => item.category))];
 
     const [range, setRange] = useState({ min: 0, max: 100 });
+    const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
 
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
     };
 
+  // handleChange Language 
+  const handlChangeLanguage = (e)=>{
+    setSelectLanguage(e.target.value)
+  }
 
     useEffect(() => {
       if (selectedOption === "ALL CATEGORY") {
         // in the first load and if the use want to see all books 
-        setFilteredData(allBooks);
+        if (selectLanguage !== "") {
+          setSelectLanguage(
+            allBooks.filter((item) => item.laguage === selectLanguage)
+          );
+        }else{
+          setFilteredData(allBooks);
+        }
+        
       } else {
         // whene the use filtred using select 
         setFilteredData(
           allBooks.filter((item) => item.category === selectedOption)
         );
       }
+
+      
     }, [selectedOption, allBooks]);
 
   return (
@@ -56,8 +70,9 @@ function Books() {
             </div>
             <div className="Languages_container ">
               <h6><b>Languages</b></h6>
-              <select name="" id="" className='select_style'>
+              <select name="" id="" onChange={handlChangeLanguage} className='select_style'>
                 <option value="">English</option>
+                <option value="">French</option>
               </select>
             </div>
             <div className="evaluationClients">
