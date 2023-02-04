@@ -14,6 +14,7 @@ function Books() {
     const [range, setRange] = useState({ min: 0, max: 100 });
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
+    const [discount, setDiscount] = useState(0);
 
   // handleChange select input
     const byCategory = (e) => {
@@ -24,10 +25,14 @@ function Books() {
       setStarsNum(parseInt(e.target.value));
     }
 
-  // handleChange Language 
-  const handlChangeLanguage = (e)=>{
-    setSelectLanguage(e.target.value.toUpperCase());
-  }
+    // handleChange Language 
+    const handlChangeLanguage = (e)=>{
+      setSelectLanguage(e.target.value.toUpperCase());
+    }
+
+    const handlChangeDiscount = (e)=>{
+      setDiscount(parseInt(e.target.value))
+    }
 
     useEffect(() => {
       
@@ -37,42 +42,49 @@ function Books() {
       // if the user doesn't select the category of books we check if is language selected or not
       if (category === "ALL CATEGORY") {
         if (selectLanguage === "ALL LANGUAGES") {
-          // filter books with stars numbers 
+          // filter books with stars numbers and Discount percent
           setFilteredData(
             allBooks.filter(
-              (item) => item.rating >= starsNum
+              (item) => item.rating >= starsNum && item.discount >= discount
             )
           );
         } else {
-          // filter the books with language and rating stars number
+          // filter the books with language and rating stars number and Discount percent
           setFilteredData(
             allBooks.filter(
-              (item) => item.language.toUpperCase() === selectLanguage && item.rating >= starsNum
+              (item) =>
+                item.language.toUpperCase() === selectLanguage &&
+                item.rating >= starsNum &&
+                item.discount >= discount
             )
           );
         }
       } else {
         // whene the user choose the category of book we check if is language is selected too
         if (selectLanguage === "ALL LANGUAGES") {
-          
-          // filter books with stars numbers and the category 
+          // filter books with stars numbers and the category and Discount percent
           setFilteredData(
             allBooks.filter(
-              (item) => item.rating >= starsNum && item.category === category
+              (item) =>
+                item.rating >= starsNum &&
+                item.category === category &&
+                item.discount >= discount
             )
           );
         } else {
-          // selelct books with language, category and rating stars number 
+          // selelct books with language, category and rating stars number and Discount percent
           setFilteredData(
             allBooks.filter(
               (item) =>
                 item.language.toUpperCase() === selectLanguage &&
-                item.category === category && item.rating >= starsNum
+                item.category === category &&
+                item.rating >= starsNum &&
+                item.discount >= discount
             )
           );
         }
       }
-    }, [category, allBooks, selectLanguage, starsNum]);
+    }, [category, allBooks, selectLanguage, starsNum, discount]);
 
   return (
     <>
@@ -173,7 +185,7 @@ function Books() {
               </h6>
               <div>
                 <div className="selectDiscount">
-                  <input type="radio" name="star_number" id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={50} onChange={handlChangeDiscount} id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} />
                     <label htmlFor="fiveDiscount">
                       <h6 className="gray2_color">
                         <b>50% and more</b>
@@ -181,7 +193,7 @@ function Books() {
                     </label>
                  </div> 
                  <div className="selectDiscount">
-                  <input type="radio" name="star_number" id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={40} onChange={handlChangeDiscount} id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} />
                     <label htmlFor="fourDiscount">
                       <h6 className="gray2_color">
                         <b>40% and more</b>
@@ -189,7 +201,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="star_number" id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={30} onChange={handlChangeDiscount} id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} />
                     <label htmlFor="treeDiscount">
                       <h6 className="gray2_color">
                         <b>30% and more</b>
@@ -197,7 +209,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="star_number" id="twoDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" id="twoDiscount" value={20} onChange={handlChangeDiscount} className='' style={{width:"18px" , height:"18px" }} />
                     <label htmlFor="twoDiscount">
                       <h6 className="gray2_color">
                         <b>20% and more</b>
@@ -205,7 +217,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="star_number" id="oneDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" id="oneDiscount" value={10} onChange={handlChangeDiscount} className='' style={{width:"18px" , height:"18px" }} />
                     <label htmlFor="oneDiscount">
                       <h6 className="gray2_color">
                         <b>10% and more</b>
