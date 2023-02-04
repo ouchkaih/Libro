@@ -5,7 +5,7 @@ import {all} from 'axios';
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
-    const [selectedOption, setSelectedOption] = useState("ALL CATEGORY");
+    const [category, setSelectedOption] = useState("ALL CATEGORY");
     const [filteredData, setFilteredData] = useState([]);
 
     // get all categorys of books there is in website without repeatition 
@@ -25,33 +25,30 @@ function Books() {
   }
 
     useEffect(() => {
-      if (selectLanguage !== "ALL LANGUAGES") {
-        setFilteredData(
-          filteredData.filter(
-            (item) => item.language.toUpperCase() === selectLanguage
-          )
-        );
-      } else {
-        if(selectedOption !== "ALL CATEGORY"){
-          setFilteredData(filteredData);
-        }else{
-          setFilteredData(allBooks);
-
-        }
-      }
+      
     }, [selectLanguage]);
 
     useEffect(() => {
-      if (selectedOption === "ALL CATEGORY") {
-        // in the first load and if the use want to see all books 
-        setFilteredData(allBooks)        
+      if (category === "ALL CATEGORY") {
+        // in the first load and if the use want to see all books
+        if (selectLanguage === "ALL LANGUAGES") {
+          setFilteredData(allBooks);
+        } else {
+          setFilteredData(
+            allBooks.filter((item) => item.language.toUpperCase() === selectLanguage)
+          );
+        }
       } else {
-        // whene the use filtred using select 
-        setFilteredData(
-          allBooks.filter((item) => item.category === selectedOption)
-        );
-      }      
-    }, [selectedOption, allBooks]);
+        // whene the use filtred using select
+        if (selectLanguage === "ALL LANGUAGES") {
+          setFilteredData(allBooks.filter((item) => item.category ===category));
+        } else {
+          setFilteredData(
+            allBooks.filter((item) => item.language.toUpperCase() === selectLanguage && item.category === category)
+          );
+        }
+      }
+    }, [category, allBooks, selectLanguage]);
 
   return (
     <>
