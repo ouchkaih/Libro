@@ -35,10 +35,6 @@ function Books() {
     }
 
     useEffect(() => {
-      
-    }, [selectLanguage]);
-
-    useEffect(() => {
       // if the user doesn't select the category of books we check if is language selected or not
       if (category === "ALL CATEGORY") {
         if (selectLanguage === "ALL LANGUAGES") {
