@@ -15,6 +15,7 @@ function Books() {
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
     const [discount, setDiscount] = useState(0);
+    const [sort, setSort] = useState("most_population");
 
   // handleChange select input
     const byCategory = (e) => {
@@ -32,6 +33,10 @@ function Books() {
 
     const handlChangeDiscount = (e)=>{
       setDiscount(parseInt(e.target.value))
+    }
+
+    const sortBy =(e)=>{
+      setSort(e.target.value.toLowerCase())
     }
 
     useEffect(() => {
@@ -82,6 +87,14 @@ function Books() {
       }
     }, [category, allBooks, selectLanguage, starsNum, discount]);
 
+
+    useEffect (()=>{
+
+      while(false){
+
+      }
+    },[sort])
+ 
   return (
     <>
       <div>
@@ -244,11 +257,11 @@ function Books() {
                 </label>
                 <div class="select-container_sort">
                   <img src="icons/sort.svg" alt="" width="30px" />
-                  <select>
-                    <option value="Publication date">Publication date</option>
-                    <option value="Alphabetically by title">Alphabetically by title</option>
-                    <option value="Alphabetically by author">Alphabetically by author</option>
-                    <option value="Most Population">Most Population</option>
+                  <select onChange={sortBy}>
+                    <option value="Most_population">Most Population</option>
+                    <option value="publication_date">Publication date</option>
+                    <option value="Alphabetically_title">Alphabetically by title</option>
+                    <option value="Alphabetically_author">Alphabetically by author</option>
                   </select>
                 </div>
               </div>
