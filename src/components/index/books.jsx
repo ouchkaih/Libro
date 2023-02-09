@@ -89,6 +89,7 @@ function Books() {
 
     useEffect (()=>{
       let is_tried = false;
+      setFilteredData(allBooks)
       // eslint-disable-next-line default-case
       switch (sort) {
         case "PUBLICATION DATE":
@@ -104,11 +105,12 @@ function Books() {
             }
           }
           break;
-        case "ALPHABETICALLY BY AUTHOR":
+        case "ALPHABETICALLY AUTHOR":
+          console.log("im here")
           while (is_tried === false) {
             is_tried = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
-              if (filteredData[i].author < filteredData[i + 1].author) {
+              if (filteredData[i].author.toUpperCase() > filteredData[i + 1].author.toUpperCase()) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
@@ -117,11 +119,11 @@ function Books() {
             }
           }
           break;
-        case "ALPHABETICALLY BY TITLE":
+        case "ALPHABETICALLY TITLE":
           while (is_tried === false) {
             is_tried = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
-              if (filteredData[i].title < filteredData[i + 1].title) {
+              if (filteredData[i].title.toUpperCase() > filteredData[i + 1].title.toUpperCase()) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
