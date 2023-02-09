@@ -15,7 +15,7 @@ function Books() {
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
     const [discount, setDiscount] = useState(0);
-    const [sort, setSort] = useState("Most Popular");
+    const [sort, setSort] = useState("MOST POPULAR");
 
   // handleChange select input
     const byCategory = (e) => {
@@ -89,27 +89,13 @@ function Books() {
 
     useEffect (()=>{
       let is_tried = false;
-
       // eslint-disable-next-line default-case
       switch (sort) {
-        case "MOST POPULAR":
-          while (is_tried === false) {
-            is_tried = true;
-            for (let i = 0; i < filteredData.length - 1; i++) {
-              if (filteredData[i].rating > filteredData[i + 1].rating) {
-                let firstObj = filteredData[i];
-                filteredData.splice(i, 1, filteredData[i + 1]);
-                filteredData.splice(i + 1, 1, firstObj);
-                is_tried = false;
-              }
-            }
-          }
-          break;
         case "PUBLICATION DATE":
           while (is_tried === false) {
             is_tried = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
-              if (filteredData[i].rating > filteredData[i + 1].rating) {
+              if (filteredData[i].date_addition < filteredData[i + 1].date_addition) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
@@ -119,12 +105,49 @@ function Books() {
           }
           break;
         case "ALPHABETICALLY BY AUTHOR":
+          while (is_tried === false) {
+            is_tried = true;
+            for (let i = 0; i < filteredData.length - 1; i++) {
+              if (filteredData[i].author < filteredData[i + 1].author) {
+                let firstObj = filteredData[i];
+                filteredData.splice(i, 1, filteredData[i + 1]);
+                filteredData.splice(i + 1, 1, firstObj);
+                is_tried = false;
+              }
+            }
+          }
           break;
         case "ALPHABETICALLY BY TITLE":
+          while (is_tried === false) {
+            is_tried = true;
+            for (let i = 0; i < filteredData.length - 1; i++) {
+              if (filteredData[i].title < filteredData[i + 1].title) {
+                let firstObj = filteredData[i];
+                filteredData.splice(i, 1, filteredData[i + 1]);
+                filteredData.splice(i + 1, 1, firstObj);
+                is_tried = false;
+              }
+            }
+          }
           break;
         default:
-          console.log("default");
+          while (is_tried === false) {
+            is_tried = true;
+            for (let i = 0; i < filteredData.length - 1; i++) {
+              if (filteredData[i].rating < filteredData[i + 1].rating) {
+                let firstObj = filteredData[i];
+                filteredData.splice(i, 1, filteredData[i + 1]);
+                filteredData.splice(i + 1, 1, firstObj);
+                is_tried = false;
+              }
+            }
+          }
+          break;
+          
       }
+      
+      setFilteredData(filteredData);
+
     },[sort, filteredData])
  
   return (
@@ -291,15 +314,17 @@ function Books() {
                   <img src="icons/sort.svg" alt="" width="30px" />
                   <select onChange={sortBy}>
                     <option value="Most Popular">Most Popular</option>
-                    <option value="publication_date">Publication date</option>
-                    <option value="Alphabetically_title">Alphabetically by title</option>
-                    <option value="Alphabetically_author">Alphabetically by author</option>
+                    <option value="publication date">Publication date</option>
+                    <option value="Alphabetically title">Alphabetically by title</option>
+                    <option value="Alphabetically author">Alphabetically by author</option>
                   </select>
                 </div>
               </div>
             </div>
             {filteredData.length > 0 ? (
               <div className="books_container">
+                {console.log("filteredData")}
+                {console.log(filteredData)}
                 {filteredData.map((item) => (
                   <div className="book bg_white">
                     <div
