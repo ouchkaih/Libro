@@ -15,7 +15,7 @@ function Books() {
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
     const [discount, setDiscount] = useState(0);
-    const [sort, setSort] = useState("most_population");
+    const [sort, setSort] = useState("Most Popular");
 
   // handleChange select input
     const byCategory = (e) => {
@@ -36,7 +36,7 @@ function Books() {
     }
 
     const sortBy =(e)=>{
-      setSort(e.target.value.toLowerCase())
+      setSort(e.target.value.toUpperCase());
     }
 
     useEffect(() => {
@@ -87,15 +87,45 @@ function Books() {
       }
     }, [category, allBooks, selectLanguage, starsNum, discount]);
 
-
     useEffect (()=>{
-      let trie = false
-      while(trie){
-        trie = true
-        for 
+      let is_tried = false;
 
+      // eslint-disable-next-line default-case
+      switch (sort) {
+        case "MOST POPULAR":
+          while (is_tried === false) {
+            is_tried = true;
+            for (let i = 0; i < filteredData.length - 1; i++) {
+              if (filteredData[i].rating > filteredData[i + 1].rating) {
+                let firstObj = filteredData[i];
+                filteredData.splice(i, 1, filteredData[i + 1]);
+                filteredData.splice(i + 1, 1, firstObj);
+                is_tried = false;
+              }
+            }
+          }
+          break;
+        case "PUBLICATION DATE":
+          while (is_tried === false) {
+            is_tried = true;
+            for (let i = 0; i < filteredData.length - 1; i++) {
+              if (filteredData[i].rating > filteredData[i + 1].rating) {
+                let firstObj = filteredData[i];
+                filteredData.splice(i, 1, filteredData[i + 1]);
+                filteredData.splice(i + 1, 1, firstObj);
+                is_tried = false;
+              }
+            }
+          }
+          break;
+        case "ALPHABETICALLY BY AUTHOR":
+          break;
+        case "ALPHABETICALLY BY TITLE":
+          break;
+        default:
+          console.log("default");
       }
-    },[sort])
+    },[sort, filteredData])
  
   return (
     <>
@@ -260,7 +290,7 @@ function Books() {
                 <div class="select-container_sort">
                   <img src="icons/sort.svg" alt="" width="30px" />
                   <select onChange={sortBy}>
-                    <option value="Most_population">Most Population</option>
+                    <option value="Most Popular">Most Popular</option>
                     <option value="publication_date">Publication date</option>
                     <option value="Alphabetically_title">Alphabetically by title</option>
                     <option value="Alphabetically_author">Alphabetically by author</option>
