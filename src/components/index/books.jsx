@@ -16,7 +16,7 @@ function Books() {
     const [starsNum , setStarsNum ] = useState(0)
     const [discount, setDiscount] = useState(0);
     const [sort, setSort] = useState("MOST POPULAR");
-
+const [sortFilterApplied, setSortFilterApplied] = useState(false);
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
@@ -147,7 +147,8 @@ function Books() {
           break;
           
       }
-      
+             setSortFilterApplied(!sortFilterApplied);
+
       setFilteredData(filteredData);
 
     },[sort, filteredData])
@@ -325,8 +326,6 @@ function Books() {
             </div>
             {filteredData.length > 0 ? (
               <div className="books_container">
-                {console.log("filteredData")}
-                {console.log(filteredData)}
                 {filteredData.map((item) => (
                   <div className="book bg_white">
                     <div
