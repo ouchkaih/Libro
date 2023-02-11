@@ -45,9 +45,9 @@ function Books() {
     }
 
     // handling the descount input radio 
-    const handlChangeDiscount = (e, name)=>{
+    const handlChangeDiscount = (value, name)=>{
       SetDiscount_selected_input((oldValue) => ({
-        discount: e.target.value,
+        discount:value,
         [name]: true,
       }));
     }
@@ -60,6 +60,14 @@ function Books() {
     const Clear_Filter = (e)=>{
       setSelectLanguage("ALL LANGUAGES");
       setStarsNum(0);
+      SetDiscount_selected_input({
+        first: false,
+        second: false,
+        third: false,
+        fourth: false,
+        fifth: false,
+        discount: 0,
+      });
     }
 
 
@@ -304,7 +312,7 @@ function Books() {
               </h6>
               <div>
                 <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={50} onChange={handlChangeDiscount("first")} id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.first}/>
+                  <input type="radio" name="discount_number" onChange={()=>{handlChangeDiscount(50,"first")}} id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} checked={discount_selected_input.first}/>
                     <label htmlFor="fiveDiscount">
                       <h6 className="gray2_color">
                         <b>50% and more</b>
@@ -312,7 +320,7 @@ function Books() {
                     </label>
                  </div> 
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={40} onChange={handlChangeDiscount("second")} id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.second}/>
+                  <input type="radio" name="discount_number"  onChange={()=>{handlChangeDiscount(40,"second")}} id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} checked={discount_selected_input.second}/>
                     <label htmlFor="fourDiscount">
                       <h6 className="gray2_color">
                         <b>40% and more</b>
@@ -320,7 +328,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={30} onChange={handlChangeDiscount("third")} id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.third}/>
+                  <input type="radio" name="discount_number"  onChange={()=>{handlChangeDiscount(30,"third")}} id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} checked={discount_selected_input.third}/>
                     <label htmlFor="treeDiscount">
                       <h6 className="gray2_color">
                         <b>30% and more</b>
@@ -328,7 +336,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" id="twoDiscount" value={20} onChange={handlChangeDiscount("fourth")} className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.fourth}/>
+                  <input type="radio" name="discount_number" id="twoDiscount"  onChange={()=>{handlChangeDiscount(20,"fourth")}} className='' style={{width:"18px" , height:"18px" }} checked={discount_selected_input.fourth}/>
                     <label htmlFor="twoDiscount">
                       <h6 className="gray2_color">
                         <b>20% and more</b>
@@ -336,7 +344,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" id="oneDiscount" value={10} onChange={handlChangeDiscount("fifth")} className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.fifth}/>
+                  <input type="radio" name="discount_number" id="oneDiscount" value={10} onChange={()=>{handlChangeDiscount(10,"fifth")}} className='' style={{width:"18px" , height:"18px" }} checked={discount_selected_input.fifth}/>
                     <label htmlFor="oneDiscount">
                       <h6 className="gray2_color">
                         <b>10% and more</b>
