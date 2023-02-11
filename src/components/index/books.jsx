@@ -49,6 +49,11 @@ function Books() {
       setSort(e.target.value.toUpperCase());
     }
 
+    const Clear_Filter = (e)=>{
+      
+    }
+
+
     useEffect(() => {
       // if the user doesn't select the category of books we check if is language selected or not
       if (category === "ALL CATEGORY") {
@@ -322,6 +327,9 @@ function Books() {
                     </label>
                  </div>                  
               </div>
+            </div>
+            <div className='clear_btn_container'>
+              <button className='clear_filter_btn' onClick={Clear_Filter}>Clear Filter</button>
             </div>
           </div>
           <div className="books_result">

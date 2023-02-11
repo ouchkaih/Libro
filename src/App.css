@@ -7,12 +7,38 @@
 
 }
 
+* {
+  font-family: 'Inter', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
 
 .gray2_color{
   color: var(--gray2_color);
 }
 
+.bg_gray {
+  background-color: var(--gray_color) !important;
+}
 
+.bg_white {
+  background-color: var(--white_color);
+}
+
+.primary_color {
+  color: var(--primary_color) !important;
+}
+
+.secondary-color {
+  color: var(--secondary_color) !important;
+}
+
+.bg_orange {
+  background-color: var(--primary_color) !important;
+  color: white !important;
+}
+
+
+/* this applied on book card  */
 .box_shadow_card{
   box-shadow: 1px 5px 14px -8px rgb(0 0 0 / 54%);
     width: 20% !important;
@@ -23,11 +49,8 @@
   width: 90px;
 }
 
-
-
-*{
-  font-family: 'Inter', sans-serif;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+.home_background {
+  background-image: url("../public/images/logo/backgroundIm.png");
 }
 
 .Home_container{
@@ -42,32 +65,6 @@
   min-width: 1260px;
   margin-left: auto;
   margin-right: auto;
-}
-
-
-.secondary-color{
-  color : var(--secondary_color) !important;
-}
-
-.bg_orange{
-  background-color:var(--primary_color) !important;
-  color:white !important;
-}
-
-.home_background{
-  background-image: url("../public/images/logo/backgroundIm.png");
-}
-
-
-.bg_gray {
-  background-color: var(--gray_color) !important;
-}
-
-.bg_white{
-  background-color: var(--white_color);
-}
-.primary_color{
-  color: var(--primary_color) !important;
 }
 
 .popularBook{
@@ -119,14 +116,11 @@
   
 }
 
-
 .book{
   width: 220px;
   padding: 14px;
   flex-shrink: 0;
 }
-
-
 
 .book .book_cover{
   width: 100%;
@@ -223,8 +217,8 @@
 
 .select_style{
   padding: 8px !important;
-    border: 1.4px solid rgba(0, 0, 0, 0.185);
-      color: rgba(0, 0, 0, 0.568);
+  border: 1.4px solid rgba(0, 0, 0, 0.185);
+  color: rgba(0, 0, 0, 0.568);
 }
 
 .select_style:focus{
@@ -255,13 +249,13 @@
 }
 
 
-
 .book_container{
   display: grid;
   grid-template-columns: 1.25fr 4.5fr;
   gap: 25px;
 
 }
+
 .sort_container{
   display: flex;
   background-color: var(--white_color);
@@ -284,6 +278,9 @@
   margin: 0px 16px 27px 0px;
 }
 
+
+
+/* style for search input that is in the home page  */
 .search_home_input {
   width: 100%;
   height: 40px;
@@ -318,7 +315,7 @@ search_home_input:hover {
 }
 
 
-
+/* filter container style  */
 .priceContainer{
   display: flex;
   font-size: 13px;
@@ -328,14 +325,14 @@ search_home_input:hover {
 .priceContainer div{
   background-color: var(--gray_color);
   padding:14px 8px  ;
+  width: 49%;
+  text-align:center;
 
 }
-
 
 .priceInputs {
   display: flex;
 }
-
 
 .Languages_container{
  margin-top: 60px;
@@ -345,17 +342,14 @@ search_home_input:hover {
   width: 100%;
 }
 
-
 .selectStar{
   display: flex;
   align-items:center;
   margin-bottom: 18px;
 }
-
 .evaluationClients{
   margin-top:60px;
 }
-
 .evaluationClients input[type="radio"]:after{
   background-color: red !important;
 }
@@ -367,7 +361,6 @@ search_home_input:hover {
 .discount_Container{
   margin-top: 60px;
 }
-
 
 .selectDiscount label{
   margin-left: 8px;
@@ -383,14 +376,8 @@ input[type=radio]:focus{
   border-color: red !important;
   border: 4px solid red;
 }
-/* 
-@keyframes slideAnimation {
-  from {opacity:0;}
-  to {opacity: 100;}
-} */
 
-
-
+/* this style for range input  */
 .range-input {
   display: flex;
   align-items: center;
@@ -403,9 +390,8 @@ input[type=radio]:focus{
   -webkit-appearance: none;
   width: 100%;
   height: 10px;
-  background: orange;
+  background: var(--primary_color);
   outline: none;
-  opacity: 0.7;
   transition: opacity .2s;
 }
 
@@ -414,7 +400,7 @@ input[type=radio]:focus{
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: blue;
+  background: var(--primary_color);
   cursor: pointer;
 }
 
@@ -424,4 +410,28 @@ input[type=radio]:focus{
   border-radius: 50%;
   background: blue;
   cursor: pointer;
+}
+
+
+
+.clear_filter_btn{
+  background-color: var(--white_color);
+  color: var(--secondary_color);
+  border:1.4px solid var(--secondary_color);
+  outline: none;
+  border-radius: 8px;
+  box-shadow: none;
+  padding:3px 12px;
+}
+
+.clear_filter_btn:hover{
+  transition: 300ms ease;
+  color: var(--white_color);
+  background-color: var(--secondary_color);
+}
+
+.clear_btn_container{
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
