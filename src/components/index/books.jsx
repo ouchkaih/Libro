@@ -13,10 +13,12 @@ function Books() {
 
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
-    const [discount, setDiscount] = useState(0);
     const [sort, setSort] = useState("MOST POPULAR");
     const [sortFilterApplied, setSortFilterApplied] = useState(false);
 
+    // create variable to remove the selcted input anfter the user click the button clear filter 
+    const [discount_selected_input, SetDiscount_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, discount:0 });
+    
     const [value, setValue] = useState({ min: 0, max: 100 });
 
     const handleChange = (event) => {
@@ -24,14 +26,15 @@ function Books() {
         ...value,
         [event.target.name]: event.target.value,
       });
-    };
 
+    };
 
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
     };
 
+    // this function to know the number of rating starts user select 
     const SelectRantingStars = (e)=>{
       setStarsNum(parseInt(e.target.value));
     }
@@ -41,19 +44,26 @@ function Books() {
       setSelectLanguage(e.target.value.toUpperCase());
     }
 
-    const handlChangeDiscount = (e)=>{
-      setDiscount(parseInt(e.target.value))
+    // handling the descount input radio 
+    const handlChangeDiscount = (e, name)=>{
+      SetDiscount_selected_input((oldValue) => ({
+        discount: e.target.value,
+        [name]: true,
+      }));
     }
 
+    // sorting the responese 
     const sortBy =(e)=>{
       setSort(e.target.value.toUpperCase());
     }
 
     const Clear_Filter = (e)=>{
-      
+      setSelectLanguage("ALL LANGUAGES");
+      setStarsNum(0);
     }
 
 
+    // Note: I use this syntax because the user can select multip option for example can filter with ranting stars number with choose the language and the range price 
     useEffect(() => {
       // if the user doesn't select the category of books we check if is language selected or not
       if (category === "ALL CATEGORY") {
@@ -61,7 +71,9 @@ function Books() {
           // filter books with stars numbers and Discount percent
           setFilteredData(
             allBooks.filter(
-              (item) => item.rating >= starsNum && item.discount >= discount
+              (item) =>
+                item.rating >= starsNum &&
+                item.discount >= discount_selected_input.discount
             )
           );
         } else {
@@ -71,7 +83,7 @@ function Books() {
               (item) =>
                 item.language.toUpperCase() === selectLanguage &&
                 item.rating >= starsNum &&
-                item.discount >= discount
+                item.discount >= discount_selected_input.discount
             )
           );
         }
@@ -84,7 +96,7 @@ function Books() {
               (item) =>
                 item.rating >= starsNum &&
                 item.category === category &&
-                item.discount >= discount
+                item.discount >= discount_selected_input.discount
             )
           );
         } else {
@@ -95,67 +107,73 @@ function Books() {
                 item.language.toUpperCase() === selectLanguage &&
                 item.category === category &&
                 item.rating >= starsNum &&
-                item.discount >= discount
+                item.discount >= discount_selected_input.discount
             )
           );
         }
       }
-    }, [category, allBooks, selectLanguage, starsNum, discount]);
+    }, [category, allBooks, selectLanguage, starsNum, discount_selected_input]);
 
+
+    // this to handling the sorting selected I didn't use any build-in function in this part 
     useEffect (()=>{
-      let is_tried = false;
+      // first we consider that the table is note sorted as user wanted
+      let is_sorted = false;
       setFilteredData(allBooks)
-      // eslint-disable-next-line default-case
       switch (sort) {
         case "PUBLICATION DATE":
-          while (is_tried === false) {
-            is_tried = true;
+          // note: samme logic used in such case 
+          while (is_sorted === false) {
+            /*after we consider that the table is sored to make sur finish the boocle while but if there is just two values not sorted we 
+            change the value of the variable is_sorted to check if there is another values not sorted, and we repeat that untile we the hole talbe
+            sort */
+            is_sorted = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
               if (filteredData[i].date_addition < filteredData[i + 1].date_addition) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
-                is_tried = false;
+                is_sorted = false;
               }
             }
           }
           break;
         case "ALPHABETICALLY AUTHOR":
           console.log("im here")
-          while (is_tried === false) {
-            is_tried = true;
+          while (is_sorted === false) {
+            is_sorted = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
               if (filteredData[i].author.toUpperCase() > filteredData[i + 1].author.toUpperCase()) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
-                is_tried = false;
+                is_sorted = false;
               }
             }
           }
           break;
         case "ALPHABETICALLY TITLE":
-          while (is_tried === false) {
-            is_tried = true;
+          while (is_sorted === false) {
+            is_sorted = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
               if (filteredData[i].title.toUpperCase() > filteredData[i + 1].title.toUpperCase()) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
-                is_tried = false;
+                is_sorted = false;
               }
             }
           }
           break;
         default:
-          while (is_tried === false) {
-            is_tried = true;
+          while (is_sorted === false) {
+            is_sorted = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
               if (filteredData[i].rating < filteredData[i + 1].rating) {
                 let firstObj = filteredData[i];
                 filteredData.splice(i, 1, filteredData[i + 1]);
                 filteredData.splice(i + 1, 1, firstObj);
-                is_tried = false;
+                is_sorted = false;
               }
             }
           }
@@ -190,7 +208,6 @@ function Books() {
               </div>
               <div className='' >
                 <div className="range-input">
-                  
                   <input
                     type="range"
                     name="min"
@@ -214,7 +231,7 @@ function Books() {
             </div>
             <div className="Languages_container ">
               <h6><b>Languages</b></h6>
-              <select name="" id="" onChange={handlChangeLanguage} className='select_style'>
+              <select name="" id="" onChange={handlChangeLanguage} className='select_style' value={selectLanguage}>
                 <option value="ALL LANGUAGES">select Language</option>
                 <hr />
                 <option value="English">English</option>
@@ -287,7 +304,7 @@ function Books() {
               </h6>
               <div>
                 <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={50} onChange={handlChangeDiscount} id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={50} onChange={handlChangeDiscount("first")} id="fiveDiscount" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.first}/>
                     <label htmlFor="fiveDiscount">
                       <h6 className="gray2_color">
                         <b>50% and more</b>
@@ -295,7 +312,7 @@ function Books() {
                     </label>
                  </div> 
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={40} onChange={handlChangeDiscount} id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={40} onChange={handlChangeDiscount("second")} id="foufourDiscountrStar" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.second}/>
                     <label htmlFor="fourDiscount">
                       <h6 className="gray2_color">
                         <b>40% and more</b>
@@ -303,7 +320,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" value={30} onChange={handlChangeDiscount} id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" value={30} onChange={handlChangeDiscount("third")} id="treeDiscount" className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.third}/>
                     <label htmlFor="treeDiscount">
                       <h6 className="gray2_color">
                         <b>30% and more</b>
@@ -311,7 +328,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" id="twoDiscount" value={20} onChange={handlChangeDiscount} className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" id="twoDiscount" value={20} onChange={handlChangeDiscount("fourth")} className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.fourth}/>
                     <label htmlFor="twoDiscount">
                       <h6 className="gray2_color">
                         <b>20% and more</b>
@@ -319,7 +336,7 @@ function Books() {
                     </label>
                  </div>   
                  <div className="selectDiscount">
-                  <input type="radio" name="discount_number" id="oneDiscount" value={10} onChange={handlChangeDiscount} className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="discount_number" id="oneDiscount" value={10} onChange={handlChangeDiscount("fifth")} className='' style={{width:"18px" , height:"18px" }} check={discount_selected_input.fifth}/>
                     <label htmlFor="oneDiscount">
                       <h6 className="gray2_color">
                         <b>10% and more</b>
