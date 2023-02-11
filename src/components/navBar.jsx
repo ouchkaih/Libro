@@ -153,7 +153,7 @@ function NavBar() {
                     alt=""
                     className="search_icon opacity-50 width-100"
                   />
-                  <input placeholder="Search" type="search" class="input" />
+                  <input placeholder="Search" type="search" class="search_home_input" />
                   <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">
                   Search
                 </button>

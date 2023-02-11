@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react'
-import axios from "axios"
+import React from 'react'
 import PopularNow from './popular'
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchData} from '../reducers/BookReducer'

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
 import {AiFillStar} from "react-icons/ai"
-import {all} from 'axios';
+
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
@@ -11,12 +11,22 @@ function Books() {
     // get all categorys of books there is in website without repeatition 
     const uniqueArray = [...new Set(allBooks.map((item) => item.category))];
 
-    const [range, setRange] = useState({ min: 0, max: 100 });
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [starsNum , setStarsNum ] = useState(0)
     const [discount, setDiscount] = useState(0);
     const [sort, setSort] = useState("MOST POPULAR");
-const [sortFilterApplied, setSortFilterApplied] = useState(false);
+    const [sortFilterApplied, setSortFilterApplied] = useState(false);
+
+    const [value, setValue] = useState({ min: 0, max: 100 });
+
+    const handleChange = (event) => {
+      setValue({
+        ...value,
+        [event.target.name]: event.target.value,
+      });
+    };
+
+
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
@@ -147,7 +157,7 @@ const [sortFilterApplied, setSortFilterApplied] = useState(false);
           break;
           
       }
-             setSortFilterApplied(!sortFilterApplied);
+      setSortFilterApplied(!sortFilterApplied);
 
       setFilteredData(filteredData);
 
@@ -167,14 +177,34 @@ const [sortFilterApplied, setSortFilterApplied] = useState(false);
               </h6>
               <div className='priceContainer'> 
                 <div className='minPrice'>
-                    From <span><b>200</b></span> Dhs
+                    From <span><b>{value.min}</b></span> Dhs
                 </div>
                 <div className='maxPrice'>
-                    Up To <span><b>200</b></span> Dhs
+                    Up To <span><b> {value.max}</b></span> Dhs
                 </div>
               </div>
               <div className='' >
-                <input type="range" name="" id="" />
+                <div className="range-input">
+                  
+                  <input
+                    type="range"
+                    name="min"
+                    min={0}
+                    max={100}
+                    value={value.min}
+                    onChange={handleChange}
+                    className="range-input__slider"
+                  />
+                  <input
+                    type="range"
+                    name="max"
+                    min={0}
+                    max={100}
+                    value={value.max}
+                    onChange={handleChange}
+                    className="range-input__slider"
+                  />
+                </div>
               </div>
             </div>
             <div className="Languages_container ">
