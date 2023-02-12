@@ -14,6 +14,7 @@ function Books() {
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
     const [sort, setSort] = useState("MOST POPULAR");
     const [sortFilterApplied, setSortFilterApplied] = useState(false);
+    const [select_no_language, setselect_no_language]= useState(true)
 
     // create variable to remove the selcted input anfter the user click the button clear filter 
     const [discount_selected_input, SetDiscount_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, discount:0 });
@@ -47,6 +48,7 @@ function Books() {
     // handleChange Language 
     const handlChangeLanguage = (e)=>{
       setSelectLanguage(e.target.value.toUpperCase());
+      setselect_no_language(false)
     }
 
     // handling the descount input radio 
@@ -64,6 +66,7 @@ function Books() {
 
     const Clear_Filter = (e)=>{
       setSelectLanguage("ALL LANGUAGES");
+      setselect_no_language(true)
       SetStars_selected_input({
         first: false,
         second: false,
@@ -82,9 +85,24 @@ function Books() {
       });
     }
 
+    useEffect(()=>{
+      if (selectLanguage === "ALL LANGUAGES") {
+          // filter books with stars numbers and Discount percent
+          if(discount_selected_input.discount === 0 && stars_selected_input.starsNum === 0 ){
+            setFilteredData(
+            allBooks.filter(
+              (item) =>
+                item.rating >= stars_selected_input.starsNum &&
+                item.discount >= discount_selected_input.discount
+            )
+          );
+          }
+        }
+      },
+    [allBooks, discount_selected_input.discount, selectLanguage, stars_selected_input.starsNum])
 
     // Note: I use this syntax because the user can select multip option for example can filter with ranting stars number with choose the language and the range price 
-    useEffect(() => {
+    function apply_Filter() {
       // if the user doesn't select the category of books we check if is language selected or not
       if (category === "ALL CATEGORY") {
         if (selectLanguage === "ALL LANGUAGES") {
@@ -132,7 +150,8 @@ function Books() {
           );
         }
       }
-    }, [category, allBooks, selectLanguage, stars_selected_input.starsNum, discount_selected_input]);
+    }
+  
 
 
     // this to handling the sorting selected I didn't use any build-in function in this part 
@@ -251,8 +270,8 @@ function Books() {
             </div>
             <div className="Languages_container ">
               <h6><b>Languages</b></h6>
-              <select name="" id="" onChange={handlChangeLanguage} className='select_style' value={selectLanguage}>
-                <option value="ALL LANGUAGES">select Language</option>
+              <select name="" id="" onChange={handlChangeLanguage} className="select_style">
+                <option value="ALL LANGUAGES" selected={select_no_language}>select Language</option>
                 <hr />
                 <option value="English">English</option>
                 <option value="French">French</option>
@@ -365,8 +384,10 @@ function Books() {
                  </div>                  
               </div>
             </div>
-            <div className='clear_btn_container'>
+            <div className='clear_btn_container'> 
+              <button className='apply_filter_btn' onClick={apply_Filter}>Apply Filter</button>
               <button className='clear_filter_btn' onClick={Clear_Filter}>Clear Filter</button>
+             
             </div>
           </div>
           <div className="books_result">

@@ -421,17 +421,30 @@ input[type=radio]:focus{
   outline: none;
   border-radius: 8px;
   box-shadow: none;
-  padding:3px 12px;
+  padding:3px 8px;
+  width: 100%;
 }
 
 .clear_filter_btn:hover{
   transition: 300ms ease;
-  color: var(--white_color);
-  background-color: var(--secondary_color);
+  background-color: var(--);
 }
 
 .clear_btn_container{
   text-align: center;
   padding-top: 100px;
   padding-bottom: 20px;
+}
+
+.apply_filter_btn{
+  color: var(--white_color);
+  background-color: var(--secondary_color);
+  border: 1.4px solid var(--secondary_color);
+  border: 1.4px solid var(--secondary_color);
+  outline: none;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 3px 8px;
+  width: 100%;
+  margin-bottom: 9px;
 }
