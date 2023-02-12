@@ -12,12 +12,12 @@ function Books() {
     const uniqueArray = [...new Set(allBooks.map((item) => item.category))];
 
     const [selectLanguage, setSelectLanguage] = useState("ALL LANGUAGES")
-    const [starsNum , setStarsNum ] = useState(0)
     const [sort, setSort] = useState("MOST POPULAR");
     const [sortFilterApplied, setSortFilterApplied] = useState(false);
 
     // create variable to remove the selcted input anfter the user click the button clear filter 
     const [discount_selected_input, SetDiscount_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, discount:0 });
+    const [stars_selected_input, SetStars_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, starsNum:0 });
     
     const [value, setValue] = useState({ min: 0, max: 100 });
 
@@ -35,8 +35,13 @@ function Books() {
     };
 
     // this function to know the number of rating starts user select 
-    const SelectRantingStars = (e)=>{
-      setStarsNum(parseInt(e.target.value));
+    function SelectRantingStars (value , name){
+      SetStars_selected_input(() => ({
+        starsNum: value,
+        [name]: true,
+      }));
+      console.log(stars_selected_input
+        )
     }
 
     // handleChange Language 
@@ -46,7 +51,7 @@ function Books() {
 
     // handling the descount input radio 
     const handlChangeDiscount = (value, name)=>{
-      SetDiscount_selected_input((oldValue) => ({
+      SetDiscount_selected_input(() => ({
         discount:value,
         [name]: true,
       }));
@@ -59,7 +64,14 @@ function Books() {
 
     const Clear_Filter = (e)=>{
       setSelectLanguage("ALL LANGUAGES");
-      setStarsNum(0);
+      SetStars_selected_input({
+        first: false,
+        second: false,
+        third: false,
+        fourth: false,
+        fifth: false,
+        starsNum: 0,
+      });
       SetDiscount_selected_input({
         first: false,
         second: false,
@@ -80,7 +92,7 @@ function Books() {
           setFilteredData(
             allBooks.filter(
               (item) =>
-                item.rating >= starsNum &&
+                item.rating >= stars_selected_input.starsNum &&
                 item.discount >= discount_selected_input.discount
             )
           );
@@ -90,7 +102,7 @@ function Books() {
             allBooks.filter(
               (item) =>
                 item.language.toUpperCase() === selectLanguage &&
-                item.rating >= starsNum &&
+                item.rating >= stars_selected_input.starsNum &&
                 item.discount >= discount_selected_input.discount
             )
           );
@@ -102,7 +114,7 @@ function Books() {
           setFilteredData(
             allBooks.filter(
               (item) =>
-                item.rating >= starsNum &&
+                item.rating >= stars_selected_input.starsNum &&
                 item.category === category &&
                 item.discount >= discount_selected_input.discount
             )
@@ -114,13 +126,13 @@ function Books() {
               (item) =>
                 item.language.toUpperCase() === selectLanguage &&
                 item.category === category &&
-                item.rating >= starsNum &&
+                item.rating >= stars_selected_input.starsNum &&
                 item.discount >= discount_selected_input.discount
             )
           );
         }
       }
-    }, [category, allBooks, selectLanguage, starsNum, discount_selected_input]);
+    }, [category, allBooks, selectLanguage, stars_selected_input.starsNum, discount_selected_input]);
 
 
     // this to handling the sorting selected I didn't use any build-in function in this part 
@@ -250,7 +262,7 @@ function Books() {
               <h6><b>Evaluation Clients</b></h6>
               <div>
                  <div className="selectStar">
-                  <input type="radio" name="star_number" value={5} onChange={SelectRantingStars} id="fiveStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" onChange={()=>{SelectRantingStars(5, "first")}} id="fiveStar" className='' style={{width:"18px" , height:"18px" }} checked={stars_selected_input.first} />
                  {/* stars icons  */}
                     <label htmlFor="fiveStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
@@ -261,7 +273,7 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="star_number" value={4} onChange={SelectRantingStars} id="fourStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" onChange={()=>{SelectRantingStars(4,"second")}} id="fourStar" className='' style={{width:"18px" , height:"18px" }} checked={stars_selected_input.second} />
                  {/* stars icons  */}
                     <label htmlFor="fourStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
@@ -272,7 +284,7 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="star_number" value={3} onChange={SelectRantingStars} id="treeStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" onChange={()=>{SelectRantingStars(3, "third")}} id="treeStar" className='' style={{width:"18px" , height:"18px" }} checked={stars_selected_input.third} />
                  {/* stars icons  */}
                     <label htmlFor="treeStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
@@ -283,7 +295,7 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="star_number" value={2} onChange={SelectRantingStars} id="twoStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" onChange={()=>{SelectRantingStars(2, "fourth")}} id="twoStar" className='' style={{width:"18px" , height:"18px" }} checked={stars_selected_input.fourth} />
                  {/* stars icons  */}
                     <label htmlFor="twoStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
@@ -294,7 +306,7 @@ function Books() {
                     </label>
                  </div>
                  <div className="selectStar">
-                  <input type="radio" name="star_number" value={1} onChange={SelectRantingStars} id="oneStar" className='' style={{width:"18px" , height:"18px" }} />
+                  <input type="radio" name="star_number" onChange={()=>{SelectRantingStars(1, "fifth")}} id="oneStar" className='' style={{width:"18px" , height:"18px" }} checked={stars_selected_input.fifth} />
                  {/* stars icons  */}
                     <label htmlFor="oneStar">
                       <AiFillStar style={{width:"25px" , height:"25px" , marginLeft:"8px"}} className="primary_color" />
