@@ -314,7 +314,16 @@ search_home_input:hover {
   height: 1rem;
 }
 
+/* category_container style */
+.category_container{
+  margin-bottom:60px ;
+  
+}
 
+.result_number{
+  display: flex;
+  align-items: center;
+}
 /* filter container style  */
 .priceContainer{
   display: flex;
@@ -439,7 +448,6 @@ input[type=radio]:focus{
 .apply_filter_btn{
   color: var(--white_color);
   background-color: var(--secondary_color);
-  border: 1.4px solid var(--secondary_color);
   border: 1.4px solid var(--secondary_color);
   outline: none;
   border-radius: 8px;

@@ -33,6 +33,8 @@ function Books() {
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
+      apply_Filter();      
+
     };
 
     // this function to know the number of rating starts user select 
@@ -220,9 +222,7 @@ function Books() {
           
       }
       setSortFilterApplied(!sortFilterApplied);
-
       setFilteredData(filteredData);
-
     },[sort, filteredData])
  
   return (
@@ -234,6 +234,19 @@ function Books() {
         <div className="book_container">
           <div className="filter">
             <div>
+              <div className="category_container">
+                <h6 htmlFor="" >
+                  <b>Category </b>
+                </h6>
+                <select nlabelame="" id="" className="select_style" onChange={byCategory}>
+                  <option value="ALL CATEGORY" className="sort_select">
+                    All Category
+                  </option>
+                  {uniqueArray.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
+              </div>
               <h6>
                 <b>Price</b>
               </h6>
@@ -387,24 +400,15 @@ function Books() {
             <div className='clear_btn_container'> 
               <button className='apply_filter_btn' onClick={apply_Filter}>Apply Filter</button>
               <button className='clear_filter_btn' onClick={Clear_Filter}>Clear Filter</button>
-             
             </div>
           </div>
           <div className="books_result">
             <div className="sort_container">
-              <div>
-                <label htmlFor="" className="select_label">
-                  <b>Category </b>
-                </label>
-                <select name="" id="" className="select_style" onChange={byCategory}>
-                  <option value="ALL CATEGORY" className="sort_select">
-                    All Category
-                  </option>
-                  {uniqueArray.map((item) => (
-                    <option value={item}>{item}</option>
-                  ))}
-                </select>
-              </div>
+              <span className='result_number'>
+                <b>
+                  {filteredData.length} Results
+                </b>
+              </span>
               <div>
                 <label htmlFor="" className="select_label">
                   <b>Sort by</b>
