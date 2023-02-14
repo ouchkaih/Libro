@@ -17,50 +17,50 @@ function NavBar() {
   ) : (
     <div className="m-0 row bg_gray p-2 w-100">
       <div className="col d-flex">
-        <div class="dropdown secondary-color">
+        <div className="dropdown secondary-color">
           <Link to=""
             type="button"
-            class="dropdown-toggle nav-link"
+            className="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
           >
             Sell in <b>LIBRO</b>
           </Link>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li className="">
-              <Link to="" class="dropdown-item" >
+              <Link to="" className="dropdown-item" >
                 <AiOutlineUser size="20px" />
                 <span className=" ms-2">Seller Login</span>
               </Link>
             </li>
             <li>
-              <Link to="" class="dropdown-item" href="#">
+              <Link to="" className="dropdown-item" href="#">
                 <AiOutlineUserAdd size="20px" />
                 <span className="ms-2">Create Seller Account</span>
               </Link>
             </li>
           </ul>
         </div>
-        <div class="dropdown ms-4 col secondary-color">
+        <div className="dropdown ms-4 col secondary-color">
           <Link to=""
             type="button"
-            class="dropdown-toggle nav-link"
+            className="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
           >
             Help
           </Link>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li className="">
-              <Link class="dropdown-item" to="">
+              <Link className="dropdown-item" to="">
                 <span className=" ">Customer Services</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" to="#">
+              <Link className="dropdown-item" to="#">
                 <span className="">Disputes & Reports</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" to="#">
+              <Link className="dropdown-item" to="#">
                 <span className="">Report IPR infringement </span>
               </Link>
             </li>
@@ -93,29 +93,29 @@ function NavBar() {
   ) : (
     <>
       <div className="row d-flex align-items-center">
-        <div class="dropdown col-9 text-end ">
+        <div className="dropdown col-9 text-end ">
           <Link to=""
              type="button"
-            class="dropdown-toggle nav-link secondary-color"
+            className="dropdown-toggle nav-link secondary-color"
             data-bs-toggle="dropdown"
           >
             <b>Account</b>
           </Link>
-          <ul class="dropdown-menu">
+          <ul className="dropdown-menu">
             <li className="">
-              <Link  class="dropdown-item" to="">
+              <Link  className="dropdown-item" to="">
                 <AiOutlineUser size="20px" />
                 <span className=" ms-2">Join In</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" to="#">
+              <Link className="dropdown-item" to="#">
                 <AiOutlineUserAdd size="20px" />
                 <span className="ms-2">Create Account</span>
               </Link>
             </li>
             <li>
-              <Link class="dropdown-item" to="#">
+              <Link className="dropdown-item" to="#">
                 <AiOutlineShoppingCart size="20px" />
                 <span className="ms-2">Sell in LIBRO</span>
               </Link>
@@ -147,13 +147,13 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item col-6 m-0 d-flex justify-content-center ">
-                <div class="group w-75">
+                <div className="group w-75">
                   <img
                     src="icons/search.svg"
                     alt=""
                     className="search_icon opacity-50 width-100"
                   />
-                  <input placeholder="Search" type="search" class="search_home_input" />
+                  <input placeholder="Search" type="search" className="search_home_input" />
                   <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">
                   Search
                 </button>

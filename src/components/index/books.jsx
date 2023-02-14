@@ -416,7 +416,7 @@ function Books() {
                 <label htmlFor="" className="select_label">
                   <b>Sort by</b>
                 </label>
-                <div class="select-container_sort">
+                <div className="select-container_sort">
                   <img src="icons/sort.svg" alt="" width="30px" />
                   <select onChange={sortBy}>
                     <option value="Most Popular">Most Popular</option>
@@ -430,7 +430,7 @@ function Books() {
             {filteredData.length > 0 ? (
               <div className="books_container">
                 {filteredData.map((item) => (
-                  <div className="book bg_white">
+                  <div className="book bg_white" key={item.id}>
                     <div
                       className="book_cover"
                       style={{ backgroundImage: `url(${item.image})` }}
