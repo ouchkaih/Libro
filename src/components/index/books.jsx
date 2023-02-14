@@ -33,8 +33,6 @@ function Books() {
   // handleChange select input
     const byCategory = (e) => {
       setSelectedOption(e.target.value);
-      apply_Filter();      
-
     };
 
     // this function to know the number of rating starts user select 
@@ -66,29 +64,10 @@ function Books() {
       setSort(e.target.value.toUpperCase());
     }
 
-    const Clear_Filter = (e)=>{
-      setSelectLanguage("ALL LANGUAGES");
-      setselect_no_language(true)
-      SetStars_selected_input({
-        first: false,
-        second: false,
-        third: false,
-        fourth: false,
-        fifth: false,
-        starsNum: 0,
-      });
-      SetDiscount_selected_input({
-        first: false,
-        second: false,
-        third: false,
-        fourth: false,
-        fifth: false,
-        discount: 0,
-      });
-    }
+
 
     useEffect(()=>{
-      if (selectLanguage === "ALL LANGUAGES") {
+      if (selectLanguage === "ALL LANGUAGES" && category== "ALL CATEGORY") {
           // filter books with stars numbers and Discount percent
           if(discount_selected_input.discount === 0 && stars_selected_input.starsNum === 0 ){
             setFilteredData(
@@ -101,7 +80,7 @@ function Books() {
           }
         }
       },
-    [allBooks, discount_selected_input.discount, selectLanguage, stars_selected_input.starsNum])
+    [allBooks, discount_selected_input.discount, selectLanguage, stars_selected_input.starsNum, category])
 
     // Note: I use this syntax because the user can select multip option for example can filter with ranting stars number with choose the language and the range price 
     function apply_Filter() {
@@ -154,6 +133,30 @@ function Books() {
       }
     }
   
+    
+    // this function removing the filler if it applyed 
+    const Clear_Filter = (e)=>{
+      // affter we change to values of this states we call a useEffect that re-rende the page and initiale the table 
+      setSelectLanguage("ALL LANGUAGES");
+      setselect_no_language(true)
+      SetStars_selected_input({
+        first: false,
+        second: false,
+        third: false,
+        fourth: false,
+        fifth: false,
+        starsNum: 0,
+      });
+      SetDiscount_selected_input({
+        first: false,
+        second: false,
+        third: false,
+        fourth: false,
+        fifth: false,
+        discount: 0,
+      });
+      setSelectedOption("ALL CATEGORY")
+    }
 
 
     // this to handling the sorting selected I didn't use any build-in function in this part 
