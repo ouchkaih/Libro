@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import "./App.css";
 import { React } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/index/Home";
 import Logout from "./components/Logout";
 import NavBar from "./components/navBar";
 import Products from "./components/Products";
@@ -11,14 +10,23 @@ import Signup from "./components/Signup";
 import Singin from "./components/Singin";
 import AddProducts from "./components/AddProducts";
 import UpdateProduct from "./components/UpdateProduct";
+import MyFallbackComponent from "./components/index/MyFallbackComponent";
 const LazyAbout = lazy(() => import("./components/Products"));
+const LazyHomepage = lazy(() => import("./components/index/Home"));
 
 function App() {
   return (
     <div className="app ">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<MyFallbackComponent />}>
+              <LazyHomepage />
+            </Suspense>
+          }
+        />
         <Route path="/signIn" element={<Singin />} />
         <Route path="/signUp" element={<Signup />} />
         <Route

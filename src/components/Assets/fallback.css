@@ -1,0 +1,40 @@
+
+.loader_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+
+
+
+.loader {
+    --dim: 6rem;
+    background-color: #F66B0E;
+    width: var(--dim);
+    height: var(--dim);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    animation: spin_412 5s infinite;
+}
+
+.loader .loader-svg {
+    transform: translateY(-2px) scale(.7);
+}
+
+@keyframes spin_412 {
+    0% {
+        transform: rotate(0) scale(1);
+    }
+
+    50% {
+        transform: rotate(720deg) scale(1.3);
+    }
+
+    100% {
+        transform: rotate(0) scale(1);
+    }
+}

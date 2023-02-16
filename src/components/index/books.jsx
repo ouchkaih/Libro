@@ -67,7 +67,7 @@ function Books() {
 
 
     useEffect(()=>{
-      if (selectLanguage === "ALL LANGUAGES" && category== "ALL CATEGORY") {
+      if (selectLanguage === "ALL LANGUAGES" && category=== "ALL CATEGORY") {
           // filter books with stars numbers and Discount percent
           if(discount_selected_input.discount === 0 && stars_selected_input.starsNum === 0 ){
             setFilteredData(
@@ -288,7 +288,6 @@ function Books() {
               <h6><b>Languages</b></h6>
               <select name="" id="" onChange={handlChangeLanguage} className="select_style">
                 <option value="ALL LANGUAGES" selected={select_no_language}>select Language</option>
-                <hr />
                 <option value="English">English</option>
                 <option value="French">French</option>
               </select>
@@ -430,7 +429,7 @@ function Books() {
             {filteredData.length > 0 ? (
               <div className="books_container">
                 {filteredData.map((item) => (
-                  <div className="book bg_white" key={item.id}>
+                  <div className="book bg_white" key={item.book_id}>
                     <div
                       className="book_cover"
                       style={{ backgroundImage: `url(${item.image})` }}

@@ -19,7 +19,7 @@ function PopularNow() {
           </h5>
           <div className="Popular_books_container">
             {booksData.map((item) => (
-              <div className="book bg_white">
+              <div className="book bg_white" key={item.book_id}>
                 <a href="">
                   <div
                     className="book_cover"
