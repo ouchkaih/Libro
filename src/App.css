@@ -279,14 +279,17 @@
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between ;
+  /* justify-content: space-between ; */
 }
 
 .books_container .book{
-  margin: 0px 16px 27px 0px;
+  margin: 0px 3% 27px 0px;
 }
 
-
+.book:nth-of-type(4n){
+  /* margin-right: 0;
+  margin-left: 27px; */
+}
 
 /* style for search input that is in the home page  */
 .search_home_input {

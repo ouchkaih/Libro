@@ -232,7 +232,7 @@ function Books() {
     <>
       <div>
         <h5 className="bg_white title secondary-color">
-          <b className="">All Book</b>
+          <b className="">All Bookss</b>
         </h5>
         <div className="book_container">
           <div className="filter">
