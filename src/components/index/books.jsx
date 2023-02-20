@@ -19,6 +19,19 @@ function Books() {
     // create variable to remove the selcted input anfter the user click the button clear filter 
     const [discount_selected_input, SetDiscount_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, discount:0 });
     const [stars_selected_input, SetStars_selected_input] = useState({first:false, second:false , third:false, fourth:false,fifth:false, starsNum:0 });
+
+    // table for slicing the premary to display number of products 
+    const [tableSliced, setTableSliced ] = useState([]);
+    const [current_index , setCurrent_index ] = useState(0)
+    const [indexing , setIndexing] = useState([])
+
+    useEffect(() => {
+      setIndexing([])
+       // loop to generate values for indexinng
+       for (let i = 0; i < Math.ceil(filteredData.length / 10); i++) {
+         indexing.push(i + 1);
+       }
+     }, [filteredData]);
     
     const [value, setValue] = useState({ min: 0, max: 100 });
 
@@ -41,8 +54,6 @@ function Books() {
         starsNum: value,
         [name]: true,
       }));
-      console.log(stars_selected_input
-        )
     }
 
     // handleChange Language 
@@ -79,7 +90,9 @@ function Books() {
           );
           }
         }
+        setTableSliced(filteredData.slice(current_index, 10)); 
       },
+     
     [allBooks, discount_selected_input.discount, selectLanguage, stars_selected_input.starsNum, category])
 
     // Note: I use this syntax because the user can select multip option for example can filter with ranting stars number with choose the language and the range price 
@@ -226,6 +239,9 @@ function Books() {
       }
       setSortFilterApplied(!sortFilterApplied);
       setFilteredData(filteredData);
+      setTableSliced(filteredData.slice(0, 10)); 
+
+
     },[sort, filteredData])
  
   return (
@@ -426,9 +442,9 @@ function Books() {
                 </div>
               </div>
             </div>
-            {filteredData.length > 0 ? (
+            {tableSliced.length > 0 ? (
               <div className="books_container">
-                {filteredData.map((item) => (
+                {tableSliced.map((item) => (
                   <div className="book bg_white" key={item.book_id}>
                     <div
                       className="book_cover"
@@ -459,6 +475,15 @@ function Books() {
                     </div>
                   </div>
                 ))}
+                <div>
+                  {console.log(indexing)}
+                  {
+
+                    indexing.map(item=>(
+                      <div>{item}</div>
+                    ))
+                  }
+                </div>
               </div>
             ) : (
               <div>No item added</div>

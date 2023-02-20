@@ -1,0 +1,565 @@
+[33mcommit 58538c67023ce17f0516f04294bd432e45a7f1fa[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 18 19:58:57 2023 +0100
+
+    add some style
+
+[33mcommit 937573410807125758923578da8283df5d7acd38[m[33m ([m[1;32mpagination[m[33m)[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Feb 16 21:03:24 2023 +0100
+
+    add some style
+
+[33mcommit 27717a7b2d3fc002072e348477214d92bc922e6f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Feb 16 20:46:47 2023 +0100
+
+    add lazy page to the home page
+
+[33mcommit a37af8adf393f2b6c23fdc4687e63815ee500ab7[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Feb 15 18:54:46 2023 +0100
+
+    add some style
+
+[33mcommit d75639c3322a6b52a40ec336478316424eee8e0b[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Feb 14 23:30:29 2023 +0100
+
+    fixed bug
+
+[33mcommit 6cacc95981ff0ac30cd58c68bc13d1b90ca23bbc[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Feb 14 19:55:14 2023 +0100
+
+    fixed a bug of re-rendring at first change
+
+[33mcommit d00ccc8c6050502e2f48ddb8c8eae12d1da43f71[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Feb 14 19:34:39 2023 +0100
+
+    change select input place
+
+[33mcommit 3910fd3bf246dfe69dbb5f95fff373c860b19eee[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Feb 13 00:33:55 2023 +0100
+
+    fixed bug
+
+[33mcommit 2712f7eac677cadb8173ad32ef922f1f449defd5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Feb 12 23:50:32 2023 +0100
+
+    add clear filter function
+
+[33mcommit cd448009e9aa468e25c9940b3442bac3a25ee390[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Feb 12 00:13:09 2023 +0100
+
+    fixed a bug
+
+[33mcommit add50328faa257f0dc2095b6c994e0c226d55525[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 11 23:57:53 2023 +0100
+
+    bug of change select input
+
+[33mcommit c32ce8d8756302dc395bb02ceaf0129edbf1c0cf[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 11 22:56:11 2023 +0100
+
+    start adding clear filter btn
+
+[33mcommit 7a2f05a769d529d86314f3ce4778879cbecf53b9[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 11 22:13:55 2023 +0100
+
+    fixed bug
+
+[33mcommit 997d7622cd1364b41eae28348328db50d3352bda[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Feb 10 21:49:23 2023 +0100
+
+    debuging the issue of page re-rendre after in first time whene change the sort variable
+
+[33mcommit 378c58bf63b88610b7cc328a6194f6bffaf2da33[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Feb 10 00:15:14 2023 +0100
+
+    finish sorting function
+
+[33mcommit 9d21442b1725cf0f5a0622879571a2862db700cd[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Feb 9 23:56:35 2023 +0100
+
+    edite sort by
+
+[33mcommit 27877fb3930c25f44650b2e6dff50edf67625ad6[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Feb 9 22:56:52 2023 +0100
+
+    sorting by most pupular
+
+[33mcommit 263e2812392dc5b81f25e813ca0ec7e42971427f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Feb 7 23:56:30 2023 +0100
+
+    nothing added
+
+[33mcommit 87575106db51a5d938d4ce5df537b0bc3f23addf[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Feb 6 23:47:17 2023 +0100
+
+    start editing sort bu
+
+[33mcommit 26acc334bf3bc5c3a5616d15827653f1e7f6f6b9[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Feb 5 23:42:42 2023 +0100
+
+    some changes
+
+[33mcommit 6f57140bbe63944bf8831c3f431c987cf3d72c4f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 4 23:45:34 2023 +0100
+
+    add filtering with discount
+
+[33mcommit ace07a83a8a29489b34a4212f66d5be2d22906b5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 4 23:26:46 2023 +0100
+
+    add filtering with evaluation Clients
+
+[33mcommit 102b03027605ec358d6bbff79e3a795dbd04c79a[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Feb 4 23:05:15 2023 +0100
+
+    add filter by category and language
+
+[33mcommit cf11910f5400a52b55fb7d858087df937444f9d5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Feb 3 00:23:14 2023 +0100
+
+    some changes
+
+[33mcommit 324dcdb542559d5f2ea2604cd345a8ea5ca8a420[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Feb 2 23:47:47 2023 +0100
+
+    edite sommething
+
+[33mcommit 6f9ab30ab52dfbd80d1f0ed7436622d1b2c39efe[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Feb 1 22:41:56 2023 +0100
+
+    add discount
+
+[33mcommit 5f173be10736fe91f56456197d0d4203c58f8fd5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Feb 1 22:29:54 2023 +0100
+
+    add id to radio input
+
+[33mcommit 476d78029262e90a1b48fcb4a51c83820d9d235f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Feb 1 22:27:29 2023 +0100
+
+    edite filter
+
+[33mcommit 1136eaefa45e0798165dcec03b253ad4a2b74207[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 31 23:49:51 2023 +0100
+
+    some changes
+
+[33mcommit 4812c95f7df24b1e814cded2dd94d6612e3bf982[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 30 22:20:50 2023 +0100
+
+    remove book animation from home page
+
+[33mcommit a2f16555d7351c750a76c2e0be004b4fb98e5701[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 30 22:03:15 2023 +0100
+
+    fuck
+
+[33mcommit e7178b4c0027b02cd253a263eaeaaf264e6f526f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 30 21:20:04 2023 +0100
+
+    finish animation
+
+[33mcommit cd10a390e1c3a642f26d9c1f796f0c296e3da5d2[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 29 01:27:25 2023 +0100
+
+    fuck Im done
+
+[33mcommit bcc538d665b4ec42f9343fd974df0c35334351c7[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 27 21:53:33 2023 +0100
+
+    add some style
+
+[33mcommit 2a9efb84228a7458eed7824dc44e488bc07df29b[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 27 21:22:13 2023 +0100
+
+    starting editing the flip card
+
+[33mcommit 983275e089f3980d08b9ce7850e4f485125990bf[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 26 22:31:43 2023 +0100
+
+    something edited
+
+[33mcommit 6ef2aee720a78b8d8d5bd6f4319b56f78b8f3e36[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 26 22:28:16 2023 +0100
+
+    edite filter using category
+
+[33mcommit 00d0cd213bfc45c3745cc8870e6104d5c67eec62[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 26 21:52:23 2023 +0100
+
+    starting editing filter
+
+[33mcommit 2bd3bcc4fe9f3977385b64e876e23206256a910b[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 25 22:00:53 2023 +0100
+
+    finish select input design
+
+[33mcommit a5c3c3aa994355bd09d98dbab017b5a1a2e955ff[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 25 21:55:50 2023 +0100
+
+    edit select inputs
+
+[33mcommit d56018e48693efedebaa0ed4c5498f34e64b93d4[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 25 21:43:32 2023 +0100
+
+    edite books design
+
+[33mcommit 46d9233fa79d26ad8936f50fa03cc09f946c27dd[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 24 21:41:48 2023 +0100
+
+    git books from db
+
+[33mcommit 97d89027f1ee2685a8618ce5f8d117b589ddf006[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 24 21:01:49 2023 +0100
+
+    add scrollbar
+
+[33mcommit 213ca54ac4f3777edbf7065fe3781aaf2d92abe8[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 23 23:20:11 2023 +0100
+
+    edite popular books
+
+[33mcommit f149b86088d4538f4688b5c5f1d4a7d231ab7b1c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 23 22:14:41 2023 +0100
+
+    something edited
+
+[33mcommit 75ff4ada3ce8d36b8bbddcfe388a725a868fe336[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 23 21:43:10 2023 +0100
+
+    add axios function to get books from database
+
+[33mcommit 93df939ef387775f0a10648543bfd40473a70225[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 22 22:53:01 2023 +0100
+
+    something added
+
+[33mcommit 5e7658e8687e0e928b13509c1c0591e835eadec3[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 22 22:27:49 2023 +0100
+
+    add something
+
+[33mcommit 9b00b398fb23194b69df435d988f7810dd9ccee5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 22 21:46:29 2023 +0100
+
+    add some changes
+
+[33mcommit 31e45adbb21537c51f22fce8e0048a6d3c45440b[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 21 23:10:41 2023 +0100
+
+    finish book design
+
+[33mcommit c9679e83e2caea1832587ee9eb36525d5cf2b0f3[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 21 22:43:25 2023 +0100
+
+    create book design
+
+[33mcommit 0f91fa2dd7a149df9024a4dbcf307b9dd63d408e[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 20 01:19:57 2023 +0100
+
+    start creating book design
+
+[33mcommit d07bfccd5cc7f3b4647a6a16b42bdcebcc3efbcd[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 20 01:04:58 2023 +0100
+
+    edite something
+
+[33mcommit 1d35686bca3f89727f12e963486a9f6a12d7bc88[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 20 00:27:31 2023 +0100
+
+    add title to home page
+
+[33mcommit b30fc283640d8681fd5b3709bea90386037138a9[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 20 00:02:18 2023 +0100
+
+    remove slideshow
+
+[33mcommit 5c4a2cc42feab25ed1948bf62cccccfd308819a5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 19 01:20:20 2023 +0100
+
+    edite slideShow
+
+[33mcommit a6791de7121f62d3d60361457c4295c26af344e5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 19 00:13:12 2023 +0100
+
+    start adding slideshow in the home page
+
+[33mcommit 30779329596c162247506db6b4f52186f6cf614e[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 18 00:15:28 2023 +0100
+
+    finish navBarDesign
+
+[33mcommit e174567674917505b5eabb973434718a049a2134[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 17 22:56:28 2023 +0100
+
+    add some style
+
+[33mcommit a354df6377e7f5e078e463df6068fa062f2bb457[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 16 18:54:54 2023 +0100
+
+    edit the navBar
+
+[33mcommit d6d51a91cc818bcd02f9cdb1c29c988b6e8fb71c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 16 18:10:00 2023 +0100
+
+    add logo to navBar
+
+[33mcommit f3fdb4be6b939dfdd75389170eab2642526eb7ed[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 15 20:26:24 2023 +0100
+
+    add top navBar
+
+[33mcommit 76ab2d6feb798e55a51e06acb90a83bd0cc75d85[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 15 20:00:27 2023 +0100
+
+    add the secondary color
+
+[33mcommit 4e678da0883a63eaaea3b15a61968323b2590157[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 15 19:44:35 2023 +0100
+
+    change to font
+
+[33mcommit 550836007071a99c04d7b242059eb08c61eacd1c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 15 19:31:29 2023 +0100
+
+    start editing home page
+
+[33mcommit cd2837d71fc88c800c954c6d5c32508b2bf7c66f[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 14 21:55:56 2023 +0100
+
+    check email format
+
+[33mcommit 4e62b4075b16dc1c9e60841646d8dfa41b63fd89[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 13 21:16:56 2023 +0100
+
+    add email format validation
+
+[33mcommit fe80e0f97ea13bd3bf5ce6f54f080ff6468f6acc[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 13 20:44:22 2023 +0100
+
+    go to sign in after creating account instead of product pae
+
+[33mcommit 5e1cc626238e8e792d0410cd4c7d1a569d06170c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 13 20:29:44 2023 +0100
+
+    somme changes
+
+[33mcommit 177d07962963b3fa60a7b081aa93a0e00c33317a[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 12 21:56:58 2023 +0100
+
+    some changes
+
+[33mcommit 6344891b5c0ac69460a74139885e9623c91fc3cf[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 12 21:40:03 2023 +0100
+
+    create shoping cart component
+
+[33mcommit cc56c1794908e65d6a931d117b10d07b34be1dad[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 12 21:27:22 2023 +0100
+
+    Revert "edite SignUp"
+    
+    This reverts commit f4876ccc82c1b862c3345abeb3c19fe98bfbb004.
+
+[33mcommit f4876ccc82c1b862c3345abeb3c19fe98bfbb004[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 11 20:26:00 2023 +0100
+
+    edite SignUp
+
+[33mcommit 2b667712b215e04ac435cc6e32ae926d07ae7c6c[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Wed Jan 11 19:43:01 2023 +0100
+
+    fixe the localStorage bug
+
+[33mcommit 6404df5929b4750f46a0aa9ad1f05d23d0a27cfa[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 21:00:18 2023 +0100
+
+    bug with localStorage
+
+[33mcommit 870e40e0feda59e3bb6ac419a086f5a09fd8dc16[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 20:29:53 2023 +0100
+
+    fixe a bug
+
+[33mcommit 9871708885c4763b7ebc8e4553e521210d421dde[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 20:24:32 2023 +0100
+
+    add localStorage to sign in page
+
+[33mcommit 8c44af72a1a18f5eaf67c76fb13d7ff8e1604e31[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Tue Jan 10 19:33:32 2023 +0100
+
+    remove localStorage from product component to add it in the signIn and Signup page
+
+[33mcommit 03ca679f7d8ef0bab68d25150d67d6f74b711d5e[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 21:29:02 2023 +0100
+
+    start adding localstorage in products page
+
+[33mcommit 5983ec613bfff18159865abc559d99fc6dab0ee8[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:54:34 2023 +0100
+
+    change redux action
+
+[33mcommit ec1d676a261147ee5689c63f71cdcc10d9abb028[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:43:08 2023 +0100
+
+    check if the use if already exist and the password is match with the email
+
+[33mcommit 14a9a8d2aed25f2c5445b3772b69afd343e5e4e6[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Mon Jan 9 20:12:54 2023 +0100
+
+    update signIn commponent
+
+[33mcommit 4779951427f4ae5e99bb8f957f2ffa79651a1462[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 8 21:01:38 2023 +0100
+
+    start adding local storage
+
+[33mcommit b9bf95d96e49b9ec39fd105ccbd3ccf2b2ab4fc5[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sun Jan 8 20:50:42 2023 +0100
+
+    nothing added
+
+[33mcommit 0bc2618df196ce68bef54fb94406cb9371513bc2[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 7 20:55:17 2023 +0100
+
+    add error message
+
+[33mcommit b83710bb9cabe1295d027f058b9f848cc1abb920[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Sat Jan 7 20:28:18 2023 +0100
+
+    add Sign in link in sign up component
+
+[33mcommit b1307ad00883f855115f667184acaa062983bfc7[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:31:58 2023 +0100
+
+    some modifications
+
+[33mcommit c2f7e78d781216120f82aab1f374e9f62223bbb3[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:26:50 2023 +0100
+
+    start editing signIn component
+
+[33mcommit c07c74794bbea5a701400940b0d0b99e4bfe7746[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:21:17 2023 +0100
+
+    make sign in obligate befor see the product
+
+[33mcommit 44a167cea645440661906ab5ebddcd1966c6d1b6[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:18:38 2023 +0100
+
+    just change the btn color
+
+[33mcommit 0ccb3b975322e855021f8b9e2ef6e961fd42a757[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 18:16:00 2023 +0100
+
+    update function work's
+
+[33mcommit 7920e176cef8095cb2b4ca6da6bc929c58400d54[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 17:38:22 2023 +0100
+
+    get the oldest values and show it in the input
+
+[33mcommit 40ce99c8b1135041209aca81cc68cc511832eed8[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Fri Jan 6 17:20:41 2023 +0100
+
+    initial update function
+
+[33mcommit 2d3a962266b27cd633c1886536de00d44473a2e2[m
+Author: ouchkaih smail <ouchkaihsmail@gmail.com>
+Date:   Thu Jan 5 18:36:27 2023 +0100
+
+    update product page

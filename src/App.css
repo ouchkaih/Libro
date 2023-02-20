@@ -117,7 +117,7 @@
 }
 
 .book{
-  width: 220px;
+  width: 213px;
   padding: 14px;
   flex-shrink: 0;
 }
@@ -283,7 +283,7 @@
 }
 
 .books_container .book{
-  margin: 0px 3% 27px 0px;
+  margin: 0px 3.93% 27px 0px;
 }
 
 .book:nth-of-type(4n){
