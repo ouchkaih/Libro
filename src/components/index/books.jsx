@@ -24,7 +24,7 @@ function Books() {
     const [tableSliced, setTableSliced ] = useState([]);
     const [current_index , setCurrent_index ] = useState(1)
     const [indexing , setIndexing] = useState([])
-    const [numberPerPage, setNumberPerPage] = useState(7)
+    const [numberPerPage, setNumberPerPage] = useState(4)
 
     
     
@@ -241,17 +241,22 @@ function Books() {
         t.push(i + 1);
       }
       setIndexing(t);
+      
+
     },[sort, filteredData, current_index])
 
     //handle the CurrentIndex of paggination 
     const handleCurrentIndex = (index)=>{
+      const content=document.getElementById("content");
+      content.scrollIntoView({behavior:'smooth'})
+
       setCurrent_index(index)
     }
  
   return (
     <>
       <div>
-        <h5 className="bg_white title secondary-color">
+        <h5 className="bg_white title secondary-color"  id='content'>
           <b className="">All Bookss</b>
         </h5>
         <div className="book_container">
@@ -485,7 +490,7 @@ function Books() {
                   {
 
                     indexing.map(item=>(
-                      <button onClick={()=> handleCurrentIndex(item)}>{item}</button>
+                      <button className={ current_index===item? "active" : ""} onClick={()=> handleCurrentIndex(item)}>{item}</button>
                     ))
                   }
                 </div>
