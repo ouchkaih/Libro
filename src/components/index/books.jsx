@@ -22,16 +22,11 @@ function Books() {
 
     // table for slicing the premary to display number of products 
     const [tableSliced, setTableSliced ] = useState([]);
-    const [current_index , setCurrent_index ] = useState(0)
+    const [current_index , setCurrent_index ] = useState(1)
     const [indexing , setIndexing] = useState([])
+    const [numberPerPage, setNumberPerPage] = useState(7)
 
-    useEffect(() => {
-      setIndexing([])
-       // loop to generate values for indexinng
-       for (let i = 0; i < Math.ceil(filteredData.length / 10); i++) {
-         indexing.push(i + 1);
-       }
-     }, [filteredData]);
+    
     
     const [value, setValue] = useState({ min: 0, max: 100 });
 
@@ -55,7 +50,7 @@ function Books() {
         [name]: true,
       }));
     }
-
+ 
     // handleChange Language 
     const handlChangeLanguage = (e)=>{
       setSelectLanguage(e.target.value.toUpperCase());
@@ -91,6 +86,7 @@ function Books() {
           }
         }
         setTableSliced(filteredData.slice(current_index, 10)); 
+       
       },
      
     [allBooks, discount_selected_input.discount, selectLanguage, stars_selected_input.starsNum, category])
@@ -239,10 +235,23 @@ function Books() {
       }
       setSortFilterApplied(!sortFilterApplied);
       setFilteredData(filteredData);
-      setTableSliced(filteredData.slice(0, 10)); 
+      setTableSliced(filteredData.slice(current_index*numberPerPage -numberPerPage, current_index * numberPerPage)); 
+      let t = [];
+      // loop to generate values for indexinng
+      for (let i = 0; i < Math.ceil(filteredData.length / numberPerPage); i++) {
+        t.push(i + 1);
+      }
+      setIndexing(t);
+      console.log()
+      console.log(filteredData.slice(current_index*numberPerPage, (current_index+1) * numberPerPage))
 
+    },[sort, filteredData, current_index])
 
-    },[sort, filteredData])
+    //handle the CurrentIndex of paggination 
+    const handleCurrentIndex = (index)=>{
+      setCurrent_index(index)
+      console.log(tableSliced)
+    }
  
   return (
     <>
@@ -443,6 +452,7 @@ function Books() {
               </div>
             </div>
             {tableSliced.length > 0 ? (
+              <div>
               <div className="books_container">
                 {tableSliced.map((item) => (
                   <div className="book bg_white" key={item.book_id}>
@@ -474,13 +484,13 @@ function Books() {
                       </button>
                     </div>
                   </div>
-                ))}
-                <div>
-                  {console.log(indexing)}
+                ))} 
+                </div>
+                <div className='pagination_component'>
                   {
 
                     indexing.map(item=>(
-                      <div>{item}</div>
+                      <button onClick={()=> handleCurrentIndex(item)}>{item}</button>
                     ))
                   }
                 </div>

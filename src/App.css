@@ -462,3 +462,19 @@ search_home_input:hover {
   width: 100%;
   margin-bottom: 9px;
 }
+
+
+
+.pagination_component{
+  display: flex;
+  justify-content: center;
+
+}
+
+.pagination_component button{
+  border: solid 1.7px var(--primary_color);
+  background-color: var(--white_color);
+  color: var(--primary_color);
+  outline: none;
+  margin: 1%;
+}
