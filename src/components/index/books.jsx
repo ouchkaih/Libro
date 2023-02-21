@@ -192,7 +192,6 @@ function Books() {
           }
           break;
         case "ALPHABETICALLY AUTHOR":
-          console.log("im here")
           while (is_sorted === false) {
             is_sorted = true;
             for (let i = 0; i < filteredData.length - 1; i++) {
@@ -242,15 +241,11 @@ function Books() {
         t.push(i + 1);
       }
       setIndexing(t);
-      console.log()
-      console.log(filteredData.slice(current_index*numberPerPage, (current_index+1) * numberPerPage))
-
     },[sort, filteredData, current_index])
 
     //handle the CurrentIndex of paggination 
     const handleCurrentIndex = (index)=>{
       setCurrent_index(index)
-      console.log(tableSliced)
     }
  
   return (
@@ -461,7 +456,7 @@ function Books() {
                       style={{ backgroundImage: `url(${item.image})` }}
                     ></div>
                     <div className="">
-                      <p className="book_title ">{item.title} </p>
+                      <p className="book_title ">{item.title.length>21 ? item.title.slice(0 ,21)+"..." : item.title} </p>
                       <p className="book_price">
                         <b>{item.price} Dhs</b>
                       </p>
