@@ -3,8 +3,8 @@ import "./../Assets/fallback.css"
 function MyFallbackComponent() {
   return (
     <div className="loader_container">
-      <div class="loader">
-        <img class="loader-svg" src="icons/star.png" alt="" id="Capa_1" />
+      <div className="loader">
+        <img className="loader-svg" src="icons/star.png" alt="" id="Capa_1" />
       </div>
     </div>
   );

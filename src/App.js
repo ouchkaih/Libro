@@ -11,6 +11,7 @@ import Singin from "./components/Singin";
 import AddProducts from "./components/AddProducts";
 import UpdateProduct from "./components/UpdateProduct";
 import MyFallbackComponent from "./components/index/MyFallbackComponent";
+import Product_details from "./components/index/product_dtatils";
 const LazyAbout = lazy(() => import("./components/Products"));
 const LazyHomepage = lazy(() => import("./components/index/Home"));
 
@@ -27,7 +28,8 @@ function App() {
             </Suspense>
           }
         />
-        <Route path="/signIn" element={<Singin />} />
+        <Route path="/product/:prdId" element={<Product_details />} />
+        {/* <Route path="/signIn" element={<Singin />} />
         <Route path="/signUp" element={<Signup />} />
         <Route
           path="/products"
@@ -41,7 +43,7 @@ function App() {
         <Route path="/managment" element={<ProductsManagment />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/addproduct" element={<AddProducts />} />
-        <Route path="/update" element={<UpdateProduct />} />
+        <Route path="/update" element={<UpdateProduct />} /> */}
       </Routes>
     </div>
   );

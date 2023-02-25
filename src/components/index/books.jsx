@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux';
 import {AiFillStar} from "react-icons/ai"
+import {useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Books() {
   // this page is for see all books 
@@ -24,7 +26,7 @@ function Books() {
     const [tableSliced, setTableSliced ] = useState([]);
     const [current_index , setCurrent_index ] = useState(1)
     const [indexing , setIndexing] = useState([])
-    const [numberPerPage, setNumberPerPage] = useState(4)
+    const [numberPerPage, setNumberPerPage] = useState(12)
 
     
     
@@ -253,6 +255,11 @@ function Books() {
       setCurrent_index(index)
     }
  
+    const navigate = useNavigate()
+
+    const productDetails = (pdId)=>{
+      navigate(`/product/${pdId}`)
+    }
   return (
     <>
       <div>
@@ -455,7 +462,9 @@ function Books() {
               <div>
               <div className="books_container">
                 {tableSliced.map((item) => (
+                  
                   <div className="book bg_white" key={item.book_id}>
+                    <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >
                     <div
                       className="book_cover"
                       style={{ backgroundImage: `url(${item.image})` }}
@@ -482,15 +491,15 @@ function Books() {
                       <button className="btn btn_add_toCart">
                         Add To Cart
                       </button>
-                    </div>
+                    </div> 
+                    </Link>
                   </div>
                 ))} 
                 </div>
                 <div className='pagination_component'>
                   {
-
                     indexing.map(item=>(
-                      <button className={ current_index===item? "active" : ""} onClick={()=> handleCurrentIndex(item)}>{item}</button>
+                      <button key={item} className={ current_index===item? "active" : ""} onClick={()=> handleCurrentIndex(item)}>{item}</button>
                     ))
                   }
                 </div>
@@ -505,4 +514,4 @@ function Books() {
   );
 }
 
-export default Books
+export default React.memo(Books)

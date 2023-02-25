@@ -20,7 +20,7 @@ function PopularNow() {
           <div className="Popular_books_container">
             {booksData.map((item) => (
               <div className="book bg_white" key={item.book_id}>
-                <a href="">
+                <a href="" className='book_link'>
                   <div
                     className="book_cover"
                     style={{ backgroundImage: `url(${item.image})` }}

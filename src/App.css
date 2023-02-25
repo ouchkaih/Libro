@@ -97,8 +97,13 @@
 ::-webkit-scrollbar-thumb:hover{
   background: rgb(216, 216, 216);}
 
-.book a {
+.book_link {
   text-decoration: none;
+  color: #0d0c22;
+}
+
+.book_link:hover{
+  color: #0d0c22;
 }
 
 
