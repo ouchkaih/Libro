@@ -10,12 +10,7 @@ function Books() {
     let allBooks = useSelector((state) => state.books.data);
        
     const dispatch = useDispatch()
-    useEffect(() => {
-      if(allBooks.length === 0){
-        dispatch(fetchData());
-      }
-    }, [allBooks, dispatch]);
-    console.log(allBooks)
+    
     
     const [category, setSelectedOption] = useState("ALL CATEGORY");
     const [filteredData, setFilteredData] = useState([]);
@@ -82,7 +77,13 @@ function Books() {
       setSort(e.target.value.toUpperCase());
     }
 
-
+    // I add this to re-render page after changing the page because, whithout this when I went to book details and I comme back the books doesn't dispayed 
+    useEffect(() => {
+      if(tableSliced.length === 0){
+        setFilteredData(allBooks)
+      }
+    });
+    
 
     useEffect(()=>{
       if (selectLanguage === "ALL LANGUAGES" && category=== "ALL CATEGORY") {
@@ -471,8 +472,7 @@ function Books() {
             {tableSliced.length > 0 ? (
               <div>
               <div className="books_container">
-                {tableSliced.map((item) => (
-                  
+                {tableSliced.map((item) => (                  
                   <div className="book bg_white" key={item.book_id}>
                     <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >
                     <div
@@ -518,7 +518,8 @@ function Books() {
               <div>No item added {
                 
               }</div>
-            )}
+            )
+          }
           </div>
         </div>
       </div>
