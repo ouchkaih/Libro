@@ -1,12 +1,22 @@
 import React, {useState,useEffect} from 'react'
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {AiFillStar} from "react-icons/ai"
 import {useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import {fetchData} from '../reducers/BookReducer';
 
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
+       
+    const dispatch = useDispatch()
+    useEffect(() => {
+      if(allBooks.length === 0){
+        dispatch(fetchData());
+      }
+    }, [allBooks, dispatch]);
+    console.log(allBooks)
+    
     const [category, setSelectedOption] = useState("ALL CATEGORY");
     const [filteredData, setFilteredData] = useState([]);
 
@@ -505,7 +515,9 @@ function Books() {
                 </div>
               </div>
             ) : (
-              <div>No item added</div>
+              <div>No item added {
+                
+              }</div>
             )}
           </div>
         </div>

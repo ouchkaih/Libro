@@ -138,7 +138,7 @@ function NavBar() {
               <li className="nav-item col-3">
                 <Link to="/" className=" " width="250px " height={"90px"}>
                   <img
-                    src="images/logo/logo_orange.svg"
+                    src="/images/logo/logo_orange.svg"
                     alt=""
                     width="100"
                     height={"40px"}
@@ -149,9 +149,9 @@ function NavBar() {
               <li className="nav-item col-6 m-0 d-flex justify-content-center ">
                 <div className="group w-75">
                   <img
-                    src="icons/search.svg"
+                    src="/icons/search.svg"
                     alt=""
-                    className="search_icon opacity-50 width-100"
+                    className="search_icon opacity-75 width-100"
                   />
                   <input placeholder="Search" type="search" className="search_home_input" />
                   <button type="button" className="btn bg_orange ms-2 ps-4 pe-4">

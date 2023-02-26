@@ -1,18 +1,17 @@
 import { lazy, Suspense } from "react";
 import "./App.css";
 import { React } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Logout from "./components/Logout";
+import { Routes, Route } from "react-router-dom";
+// import Logout from "./components/Logout";
 import NavBar from "./components/navBar";
-import Products from "./components/Products";
-import ProductsManagment from "./components/ProductsManagment";
-import Signup from "./components/Signup";
-import Singin from "./components/Singin";
-import AddProducts from "./components/AddProducts";
-import UpdateProduct from "./components/UpdateProduct";
+// import Products from "./components/Products";
+// import ProductsManagment from "./components/ProductsManagment";
+// import Signup from "./components/Signup";
+// import Singin from "./components/Singin";
+// import AddProducts from "./components/AddProducts";
+// import UpdateProduct from "./components/UpdateProduct";
 import MyFallbackComponent from "./components/index/MyFallbackComponent";
 import Product_details from "./components/index/product_dtatils";
-const LazyAbout = lazy(() => import("./components/Products"));
 const LazyHomepage = lazy(() => import("./components/index/Home"));
 
 function App() {

@@ -265,7 +265,7 @@
   display: grid;
   grid-template-columns: 1.25fr 4.5fr;
   gap: 25px;
-
+  
 }
 
 .sort_container{
@@ -284,6 +284,8 @@
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  height: 1767px !important;
+
   /* justify-content: space-between ; */
 }
 
