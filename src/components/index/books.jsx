@@ -3,13 +3,12 @@ import {useDispatch, useSelector} from 'react-redux';
 import {AiFillStar} from "react-icons/ai"
 import {useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import {fetchData} from '../reducers/BookReducer';
+// import {fetchData} from '../reducers/BookReducer';
 
 function Books() {
   // this page is for see all books 
     let allBooks = useSelector((state) => state.books.data);
        
-    const dispatch = useDispatch()
     
     
     const [category, setSelectedOption] = useState("ALL CATEGORY");
