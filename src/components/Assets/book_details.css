@@ -1,0 +1,43 @@
+.book_details{
+    height: 100% !important;
+}
+
+.book_details .book_cover{
+    height: 363px !important;
+    
+}
+
+
+.book_details_container{
+    max-width: 1300px;
+    min-width: 1230px;
+    
+}
+
+
+.another_books{
+    width: 150px;
+    height: 200px;
+}
+
+.another_books .book{
+    height: 187px !important;
+}
+
+
+.another_books .book_cover{
+    height: 187px !important;
+}
+
+.shipping_info{
+    font-weight: 600;
+}
+
+hr {
+    background-color: red;
+    color: var(--gray2_color);
+}
+
+.btn_background_gradient{
+    background-image: linear-gradient(to right, #F66B0E, #f6ad0e) !important;
+}

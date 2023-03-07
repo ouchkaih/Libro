@@ -4,6 +4,7 @@
   --gray_color : #F5F5F5;
   --white_color: #fff;
   --gray2_color:#b5b5b5;
+  --gray3_color:#c7c7c7;
 
 }
 
@@ -16,6 +17,9 @@
   color: var(--gray2_color);
 }
 
+.gray_color{
+  color: var(--gray3_color);
+}
 .bg_gray {
   background-color: var(--gray_color) !important;
 }
@@ -36,6 +40,7 @@
   background-color: var(--primary_color) !important;
   color: white !important;
 }
+
 
 
 /* this applied on book card  */
@@ -121,6 +126,10 @@
   
 }
 
+.books_container .book{
+  height: 535px;
+}
+
 .book{
   width: 213px;
   padding: 14px;
@@ -138,6 +147,7 @@
   width: 100%;
   height: 254px;
   background-size:cover; 
+  border: 1px solid silver;
 }
 
 
@@ -264,8 +274,7 @@
 .book_container{
   display: grid;
   grid-template-columns: 1.25fr 4.5fr;
-  gap: 25px;
-  
+  gap: 25px;  
 }
 
 .sort_container{
@@ -284,13 +293,15 @@
   padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  height: 1767px !important;
-
   /* justify-content: space-between ; */
 }
 
 .books_container .book{
   margin: 0px 3.93% 27px 0px;
+}
+
+.nj_height{
+  height: 1767px !important;
 }
 
 .book:nth-of-type(4n){

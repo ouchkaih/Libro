@@ -469,41 +469,46 @@ function Books() {
               </div>
             </div>
             {tableSliced.length > 0 ? (
-              <div>
-              <div className="books_container">
-                {tableSliced.map((item) => (                  
-                  <div className="book bg_white" key={item.book_id}>
-                    <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >
-                    <div
-                      className="book_cover"
-                      style={{ backgroundImage: `url(${item.image})` }}
-                    ></div>
-                    <div className="">
-                      <p className="book_title ">{item.title.length>21 ? item.title.slice(0 ,21)+"..." : item.title} </p>
-                      <p className="book_price">
-                        <b>{item.price} Dhs</b>
-                      </p>
-                      <span className="book_discount">{item.discount}Dhs</span>
-                      <span className="discount_percent">
-                        -{item.discount}%
-                      </span>
-                      <div>
-                        <span className="rating ">
-                          <img src="icons/star.svg" alt="" width="20px" />
-                          &nbsp;&nbsp;<span>{item.rating}</span>
-                        </span>
+              <div >
+                <div className='nj_height' >
+                  <div className="books_container">
+                    {tableSliced.map((item) => (                  
+                      <div className="book bg_white" key={item.book_id}>
+                        <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >
+                        <div
+                          className="book_cover"
+                          style={{ backgroundImage: `url(${item.image})` }}
+                        ></div>
+                        <div className="">
+                          <p className="book_title ">{item.title.length>21 ? item.title.slice(0 ,21)+"..." : item.title} </p>
+                          <p className="book_price">
+                            <b>{item.price} Dhs</b>
+                          </p>
+                          <span className="book_discount">{item.discount}Dhs</span>
+                          <span className="discount_percent">
+                            -{item.discount}%
+                          </span>
+                          <div>
+                            <span className="rating ">
+                              <img src="icons/star.svg" alt="" width="20px" />
+                              &nbsp;&nbsp;<span>{item.rating}</span>
+                            </span>
+                          </div>
+                          <div>
+                            <img src="images/logo/logo.svg" alt="" width="60px" />
+                          </div>
+                          <p className="shipping">free shipping</p>
+                          <button className="btn btn_add_toCart">
+                            Add To Cart
+                          </button>
+                          <div>
+                            
+                          </div>
+                        </div> 
+                        </Link>
                       </div>
-                      <div>
-                        <img src="images/logo/logo.svg" alt="" width="60px" />
-                      </div>
-                      <p className="shipping">free shipping</p>
-                      <button className="btn btn_add_toCart">
-                        Add To Cart
-                      </button>
-                    </div> 
-                    </Link>
+                    ))} 
                   </div>
-                ))} 
                 </div>
                 <div className='pagination_component'>
                   {

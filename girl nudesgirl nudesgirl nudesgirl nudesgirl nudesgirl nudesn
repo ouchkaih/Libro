@@ -1,0 +1,328 @@
+[1mdiff --git a/src/App.css b/src/App.css[m
+[1mindex 8825020..e0e0993 100644[m
+[1m--- a/src/App.css[m
+[1m+++ b/src/App.css[m
+[36m@@ -4,6 +4,7 @@[m
+   --gray_color : #F5F5F5;[m
+   --white_color: #fff;[m
+   --gray2_color:#b5b5b5;[m
+[32m+[m[32m  --gray3_color:#c7c7c7;[m
+ [m
+ }[m
+ [m
+[36m@@ -16,6 +17,9 @@[m
+   color: var(--gray2_color);[m
+ }[m
+ [m
+[32m+[m[32m.gray_color{[m
+[32m+[m[32m  color: var(--gray3_color);[m
+[32m+[m[32m}[m
+ .bg_gray {[m
+   background-color: var(--gray_color) !important;[m
+ }[m
+[36m@@ -38,6 +42,7 @@[m
+ }[m
+ [m
+ [m
+[32m+[m
+ /* this applied on book card  */[m
+ .box_shadow_card{[m
+   box-shadow: 1px 5px 14px -8px rgb(0 0 0 / 54%);[m
+[36m@@ -121,6 +126,10 @@[m
+   [m
+ }[m
+ [m
+[32m+[m[32m.books_container .book{[m
+[32m+[m[32m  height: 535px;[m
+[32m+[m[32m}[m
+[32m+[m
+ .book{[m
+   width: 213px;[m
+   padding: 14px;[m
+[36m@@ -138,6 +147,7 @@[m
+   width: 100%;[m
+   height: 254px;[m
+   background-size:cover; [m
+[32m+[m[32m  border: 1px solid silver;[m
+ }[m
+ [m
+ [m
+[36m@@ -264,8 +274,7 @@[m
+ .book_container{[m
+   display: grid;[m
+   grid-template-columns: 1.25fr 4.5fr;[m
+[31m-  gap: 25px;[m
+[31m-  [m
+[32m+[m[32m  gap: 25px;[m[41m  [m
+ }[m
+ [m
+ .sort_container{[m
+[36m@@ -284,8 +293,6 @@[m
+   padding-top: 20px;[m
+   display: flex;[m
+   flex-wrap: wrap;[m
+[31m-  height: 1767px !important;[m
+[31m-[m
+   /* justify-content: space-between ; */[m
+ }[m
+ [m
+[36m@@ -293,6 +300,10 @@[m
+   margin: 0px 3.93% 27px 0px;[m
+ }[m
+ [m
+[32m+[m[32m.nj_height{[m
+[32m+[m[32m  height: 1767px !important;[m
+[32m+[m[32m}[m
+[32m+[m
+ .book:nth-of-type(4n){[m
+   /* margin-right: 0;[m
+   margin-left: 27px; */[m
+[1mdiff --git a/src/components/index/books.jsx b/src/components/index/books.jsx[m
+[1mindex 85cd9b0..57962d7 100644[m
+[1m--- a/src/components/index/books.jsx[m
+[1m+++ b/src/components/index/books.jsx[m
+[36m@@ -469,41 +469,46 @@[m [mfunction Books() {[m
+               </div>[m
+             </div>[m
+             {tableSliced.length > 0 ? ([m
+[31m-              <div>[m
+[31m-              <div className="books_container">[m
+[31m-                {tableSliced.map((item) => (                  [m
+[31m-                  <div className="book bg_white" key={item.book_id}>[m
+[31m-                    <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >[m
+[31m-                    <div[m
+[31m-                      className="book_cover"[m
+[31m-                      style={{ backgroundImage: `url(${item.image})` }}[m
+[31m-                    ></div>[m
+[31m-                    <div className="">[m
+[31m-                      <p className="book_title ">{item.title.length>21 ? item.title.slice(0 ,21)+"..." : item.title} </p>[m
+[31m-                      <p className="book_price">[m
+[31m-                        <b>{item.price} Dhs</b>[m
+[31m-                      </p>[m
+[31m-                      <span className="book_discount">{item.discount}Dhs</span>[m
+[31m-                      <span className="discount_percent">[m
+[31m-                        -{item.discount}%[m
+[31m-                      </span>[m
+[31m-                      <div>[m
+[31m-                        <span className="rating ">[m
+[31m-                          <img src="icons/star.svg" alt="" width="20px" />[m
+[31m-                          &nbsp;&nbsp;<span>{item.rating}</span>[m
+[31m-                        </span>[m
+[31m-                      </div>[m
+[31m-                      <div>[m
+[31m-                        <img src="images/logo/logo.svg" alt="" width="60px" />[m
+[32m+[m[32m              <div >[m
+[32m+[m[32m                <div className='nj_height' >[m
+[32m+[m[32m                  <div className="books_container">[m
+[32m+[m[32m                    {tableSliced.map((item) => ([m[41m                  [m
+[32m+[m[32m                      <div className="book bg_white" key={item.book_id}>[m
+[32m+[m[32m                        <Link to={"/product/"+item.book_id} className='book_link' onClick={()=>productDetails(item.book_id)} >[m
+[32m+[m[32m                        <div[m
+[32m+[m[32m                          className="book_cover"[m
+[32m+[m[32m                          style={{ backgroundImage: `url(${item.image})` }}[m
+[32m+[m[32m                        ></div>[m
+[32m+[m[32m                        <div className="">[m
+[32m+[m[32m                          <p className="book_title ">{item.title.length>21 ? item.title.slice(0 ,21)+"..." : item.title} </p>[m
+[32m+[m[32m                          <p className="book_price">[m
+[32m+[m[32m                            <b>{item.price} Dhs</b>[m
+[32m+[m[32m                          </p>[m
+[32m+[m[32m                          <span className="book_discount">{item.discount}Dhs</span>[m
+[32m+[m[32m                          <span className="discount_percent">[m
+[32m+[m[32m                            -{item.discount}%[m
+[32m+[m[32m                          </span>[m
+[32m+[m[32m                          <div>[m
+[32m+[m[32m                            <span className="rating ">[m
+[32m+[m[32m                              <img src="icons/star.svg" alt="" width="20px" />[m
+[32m+[m[32m                              &nbsp;&nbsp;<span>{item.rating}</span>[m
+[32m+[m[32m                            </span>[m
+[32m+[m[32m                          </div>[m
+[32m+[m[32m                          <div>[m
+[32m+[m[32m                            <img src="images/logo/logo.svg" alt="" width="60px" />[m
+[32m+[m[32m                          </div>[m
+[32m+[m[32m                          <p className="shipping">free shipping</p>[m
+[32m+[m[32m                          <button className="btn btn_add_toCart">[m
+[32m+[m[32m                            Add To Cart[m
+[32m+[m[32m                          </button>[m
+[32m+[m[32m                          <div>[m
+[32m+[m[41m                            [m
+[32m+[m[32m                          </div>[m
+[32m+[m[32m                        </div>[m[41m [m
+[32m+[m[32m                        </Link>[m
+                       </div>[m
+[31m-                      <p className="shipping">free shipping</p>[m
+[31m-                      <button className="btn btn_add_toCart">[m
+[31m-                        Add To Cart[m
+[31m-                      </button>[m
+[31m-                    </div> [m
+[31m-                    </Link>[m
+[32m+[m[32m                    ))}[m[41m [m
+                   </div>[m
+[31m-                ))} [m
+                 </div>[m
+                 <div className='pagination_component'>[m
+                   {[m
+[1mdiff --git a/src/components/index/product_dtatils.jsx b/src/components/index/product_dtatils.jsx[m
+[1mindex e8d79d4..6eea5ae 100644[m
+[1m--- a/src/components/index/product_dtatils.jsx[m
+[1m+++ b/src/components/index/product_dtatils.jsx[m
+[36m@@ -3,6 +3,10 @@[m [mimport { useSelector } from 'react-redux'[m
+ import { useParams } from 'react-router-dom'[m
+ import { useDispatch } from 'react-redux'[m
+ import { fetchData } from '../reducers/BookReducer'[m
+[32m+[m[32mimport "../Assets/book_details.css"[m
+[32m+[m[32mimport { MdOutlineLocationOn } from "react-icons/md";[m
+[32m+[m[32mimport { AiOutlineHeart } from "react-icons/ai";[m
+[32m+[m[32mimport { MdSecurity } from "react-icons/md";[m
+ [m
+ function Product_details() {[m
+   //get all books from reducer[m
+[36m@@ -21,20 +25,18 @@[m [mfunction Product_details() {[m
+       dispatch(fetchData())[m
+     } else {[m
+       setBook(bookSelected[0])[m
+[31m-      console.log('im here')[m
+     }[m
+   }, [allBooks, dispatch])[m
+[31m-  console.log('hello')[m
+[32m+[m
+ [m
+   // setBook(bookSelected)[m
+   return ([m
+[31m-    <div className="container">[m
+[31m-      <div className=".container">[m
+[32m+[m[32m    <div className="book_details_fullcontainer bg_gray d-flex justify-content-center p-3">[m
+[32m+[m[32m      <div className="book_details_container bg_white pt-3 pb-5 p-5 ">[m
+         {book.book_id !== undefined ? ([m
+           <div className="row pt-5">[m
+[31m-            <div className="col-3 d-flex align-items-center">[m
+[31m-              <div className="book bg_white d-flex ">[m
+[31m-                [m
+[32m+[m[32m            <div className="col-3 d-flex align-items-center ">[m
+[32m+[m[32m              <div className="book bg_white d-flex w-100 h-100 book_details justify-content-center align-items-center">[m
+                   <div[m
+                     className="book_cover"[m
+                     style={{ backgroundImage: `url(${book.image})` }}[m
+[36m@@ -45,46 +47,99 @@[m [mfunction Product_details() {[m
+               <div className="">[m
+                 <p className="book_title secondary-color ">[m
+                   <h3>[m
+[31m-                   <b>{book.title}  </b>[m
+[32m+[m[32m                   <b>{book.title}</b>[m
+                   </h3>                [m
+                 </p>[m
+[31m-                <p>[m
+[32m+[m[32m                <p className='mb-2'>[m
+                   <b>[m
+                     by <span className='secondary-color'>{book.author}</span> [m
+                   </b>[m
+                 </p>[m
+[31m-                <p>[m
+[32m+[m[32m                <p className='mb-2'>[m
+                   <b>[m
+[31m-                    Language <span className='secondary-color'>{book.language}</span> [m
+[32m+[m[32m                    Language: <span className='secondary-color'>{book.language}</span>[m[41m [m
+                   </b>[m
+                 </p>[m
+[31m-                <div>[m
+[32m+[m[32m                <div className='mb-1'>[m
+                   <span className="rating p-0">[m
+                     <img src="/icons/star.svg" alt="" width="20px" />[m
+                     &nbsp;&nbsp;<span>{parseFloat(book.rating)}</span>[m
+                   </span>[m
+                 </div>[m
+[31m-                <hr />[m
+[31m-                <p className="book_price">[m
+[31m-                  <b>{book.price} Dhs</b>[m
+[31m-                <span className="book_discount ms-4">{book.discount}Dhs</span>[m
+[31m-                <span className="discount_percent ms-4">-{book.discount}%</span>[m
+[32m+[m[32m                <hr className='m-2'/>[m
+[32m+[m[32m                <div className='d-flex'>[m[41m               [m
+[32m+[m[32m                <p className="book_price d-flex p-0">[m
+[32m+[m[32m                  <h4 className='d-flex align-items-center'><b>{book.price} Dhs</b></h4>[m
+[32m+[m[32m                  <span className="book_discount ms-4 d-flex align-items-center">{book.discount}Dhs</span>[m
+[32m+[m[32m                  <span className="discount_percent ms-4 d-flex align-items-center">[m
+[32m+[m[32m                    -{book.discount}%[m
+[32m+[m[32m                </span>[m
+                 </p>[m
+[31m-                <hr />[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <hr className='m-2'/>[m
+[32m+[m[32m                <p><b>Quantity: </b></p>[m
+[32m+[m[32m                <div className='d-flex align-items-center'>[m
+[32m+[m[32m                  <div className=''>[m
+[32m+[m[32m                    <button className='rounded-5 border-0 me-3'>-</button>1<button className='rounded-5 border-0 ms-3'>+</button>[m
+[32m+[m[32m                  </div>[m
+[32m+[m[32m                  <div className='d-flex align-items-center ms-3'>[m
+[32m+[m[32m                    <div >[m
+[32m+[m[32m                    <p className='m-0 gray_color shipping_info'>Additional 1% off (5 Pieces or more) <br/>880 Pieces available</p>[m
+[32m+[m[32m                   </div></div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div className='mt-2 d-flex align-items-bottom'>[m[41m [m
+[32m+[m[32m                  <div className='m-0  p-0 d-flex align-items-bottom me-2'>[m
+[32m+[m[32m                    <b className='p-0'>Ships to</b>[m
+[32m+[m[32m                  </div >[m
+[32m+[m[32m                  <MdOutlineLocationOn style={{width:"22px", height:"22px"} }></MdOutlineLocationOn>[m[41m [m
+[32m+[m[32m                  <a href="https://www.google.com/maps/?%20Morocco" className='ms-2 secondary-color opacity-75 '>[m
+[32m+[m[32m                    <b>Morocco</b>[m
+[32m+[m[32m                  </a>[m
+[32m+[m[32m                </div>[m
+                 <div>[m
+[32m+[m[32m                  <h4 className='mt-3 '>[m
+[32m+[m[32m                    <b>[m
+[32m+[m[32m                      shipping : {book.shipping_price}[m
+[32m+[m[32m                    </b>[m
+[32m+[m[32m                  </h4>[m
+[32m+[m[32m                  <span className='gray_color shipping_info'>[m
+[32m+[m[32m                  From Casablanca to all Morocco countres via Seller's[m[41m [m
+[32m+[m[32m                  Shipping Method .[m
+[32m+[m[32m                  Estimated delivery on Oct 23[m[41m [m
+[32m+[m[32m                  </span>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                {/* <div>[m
+                   <img src="/images/logo/logo.svg" alt="" width="60px" />[m
+[32m+[m[32m                </div> */}[m
+[32m+[m[32m                <div className='mt-4 d-flex'>[m
+[32m+[m[32m                  <button className="btn btn_add_toCart w-25 rounded-1">Buy Now</button>[m
+[32m+[m[32m                  <button className="btn btn_add_toCart w-25 rounded-1 ms-4 btn_background_gradient">Add to Cart</button>[m
+[32m+[m[32m                  <button className='btn btn-light border ms-4 d-flex align-items-center'>[m[41m [m
+[32m+[m[32m                    <AiOutlineHeart style={{width:"22px", height:"22px" , marginRight:"10px"}}/>  34[m
+[32m+[m[32m                  </button>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div className='d-flex align-items-center p-4'>[m
+[32m+[m[32m                  <div><MdSecurity  style={{width:"32px", height:"32px" ,marginRight:"10px"}}/></div>[m
+[32m+[m[32m                  <div>[m
+[32m+[m[32m                    <b>75-Day Buyer Protection</b> <br />[m
+[32m+[m[32m                    <b><span className='text-secondary'>Money back guarantee</span></b>[m
+[32m+[m[32m                  </div>[m[41m               [m
+                 </div>[m
+[31m-                <p className="shipping">free shipping</p>[m
+[31m-                <button className="btn btn_add_toCart w-25">Add To Cart</button>[m
+               </div>[m
+             </div>[m
+[31m-            <div className="col-3">[m
+[31m-              books [m
+[32m+[m[32m            <div className="col-3 d-flex justify-content-end ">[m
+[32m+[m[32m              <div>[m
+[32m+[m[32m                <div className="book bg_white another_books">[m
+[32m+[m[32m                    <div[m
+[32m+[m[32m                      className="book_cover"[m
+[32m+[m[32m                      style={{ backgroundImage: `url(${book.image})` }}[m
+[32m+[m[32m                    ></div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m              </div>[m[41m [m
+             </div>[m
+           </div>[m
+         ) : ([m
+[31m-          <div>[m
+[31m-[m
+[32m+[m[32m          <div>[m[41m            [m
+           </div>[m
+         )}[m
+       </div>[m
+[36m@@ -92,4 +147,4 @@[m [mfunction Product_details() {[m
+   )[m
+ }[m
+ [m
+[31m-export default Product_details[m
+[32m+[m[32mexport default Product_details[m
+\ No newline at end of file[m
